@@ -1,0 +1,202 @@
+
+/*---------------------*\
+  $Variables LESS BOOTSTRAP
+\*---------------------*/
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+
+/*---------------------*\
+  $Variables LESS
+\*---------------------*/
+@font-family-sans-serif: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+@texte-sombre: #333333;
+@texte-clair: #FFFFFF;
+@texte-aide: #4F5563;
+@texte-alerte: #D00019;
+
+@indicateur: #508319;
+@filet: #89898A;
+@filet-zone-travail: #4F5563;
+@filet-actif: #686f7a;
+@filet-ancre: #eeadbc;
+
+@navigation-active: #d00019;
+
+
+
+@fond-general: #F8F8FB;
+@fond-zone: #E0E0E0;
+@fond-actif: #ADB7C4;
+@fond-sombre: #4F5563;
+@fond-clair:#efefef;
+
+@erreur-border: #f89122;
+@erreur-texte : #9f4f01;
+@erreur-bkg: #fff4e9;
+
+@bouton-principal-fond: #508319;
+@bouton-principal-hover: #2A4D05;
+@bouton-secondaire-fond: #89898a;
+@bouton-secondaire-hover: #656565;
+
+@bouton-contextuel1-fond: #4F5563;
+@bouton-contextuel1-hover: #272a32;
+
+@bouton-contextuel2-fond: #efefef;
+@bouton-contextuel2-hover: #adb7c4;
+
+
+@bouton-formulaire-fond: #4F5563;
+@bouton-formulaire-hover: #ADB7C4;
+@fond-notification :#e2f5ce;   
+@bordure-notification: #cbeaaa;
+
+
+@h1-couleur: @texte-aide;
+@h1-fond: @fond-general;
+@h1-taille: 1.5rem;
+
+@h2-couleur: @texte-sombre;
+@h2-fond: @fond-general;
+@h2-taille: 1.25rem;
+
+@h3-couleur: @texte-sombre;
+@h3-fond: #ADB7C4;
+@h3-taille: 1.125rem;
+
+@h4-taille: 1.062rem;
+@h5-taille: 0.95rem;
+
+
+/*---------------------*\
+  $Mixin
+\*---------------------*/
+.bordure(@color: #EEE) {
+	border: solid 1px @color;
+}
+.bordure(@color: #EEE,@size : 1px ) {
+	border: solid @size @color;
+}
+.degrade-gradient-lineaire-bas-haut (@couleur-bas: #D8DDDD, @couleur-haut: #F3F3F3) {
+	background-color: @couleur-bas;
+	background-image: -moz-linear-gradient(top, @couleur-haut 0%, @couleur-bas 100%);
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from( @couleur-haut), to(@couleur-bas));
+	background-image: -webkit-linear-gradient(top, @couleur-haut 0%, @couleur-bas 100%);
+	background-image: linear-gradient(to bottom, @couleur-haut 0%, @couleur-bas 100%);
+	background-repeat: repeat-x;
+}
+
+/* Mixin Header */
+.h-style-base(){
+	color: @texte-sombre;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+/* Mixin Sidebar */
+.sidebar-mixin(@height) {
+	height: @height;
+	overflow: hidden;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+/* Mixin pour les style des boutons */
+.btn-style-defaut (@bordure-color, @background, @height){
+	.bordure(@bordure-color);
+	background: @background;
+	height: @height;
+}
+.btn-style-hover-focus (@bordure-color, @bordure-size, @background, @color){
+	.bordure(@bordure-color, @bordure-size);
+	background: @background;
+	color: @color;
+}
+.btn-style-hover (@bordure-color, @bordure-size, @background, @color){
+	.bordure(@bordure-color, @bordure-size);
+	background: @background;
+	color: @color;
+}
+
+.btn-style-focus (@bordure-color, @bordure-size, @background, @color){
+	.bordure(@bordure-color, @bordure-size);
+	background: @background;
+	color: @color;
+}
+.btn-style-actif(@bordure-color, @bordure-size, @background, @color){
+	.btn-style-hover-focus (@bordure-color, @bordure-size, @background, @color);
+	.box-shadow(none);
+}
+.btn-style-disabled(@bordure-color, @background, @height){
+	.btn-style-defaut (@bordure-color, @background, @height);
+	cursor: not-allowed;
+}
+/* Mixin Dropdown */
+.dropdown-style-open(@bordure-color, @background, @color){
+	.bordure(@bordure-color);
+	background: @background;
+	color: @color;
+}
+
+/* Mixin nav-tabs */
+.nav-tabs-style-base() {
+	border: 1px solid #ADB7C4;
+	border-bottom: none;
+	background-color: #EEEEEE;
+	color: @texte-sombre;
+}
+.nav-tabs-style-active() {
+	font-weight: bold;
+	color: @texte-sombre;
+	background-color: @fond-actif;
+	border-color: #ADB7C4 #ADB7C4 rgba(0, 0, 0, 0);
+}
+
+.navigation-secondaire() {
+	font-weight: normal;
+	font-size: 0.8rem;
+}
+
+.bouton-lien() {
+	font-size: 0.875rem;
+	font-weight: bold;
+}
+
+.texte-std() {
+	font-weight: normal;
+	font-size: 0.875rem;
+}
+
+.texte-aide() {
+	font-weight: normal;
+	font-size: 0.75rem;
+	font-style: italic;
+}
+
+.texte-champs-non-modifiables(){    
+	padding-top:1rem;
+	font-family: Arial;
+	font-size: 0.875rem;
+	color: @texte-sombre;
+	line-height: 1em;
+}
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}

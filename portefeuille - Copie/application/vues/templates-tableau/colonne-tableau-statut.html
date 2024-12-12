@@ -1,0 +1,5 @@
+﻿<span ng-show="mwTableRow.listeIndicateurs" ng-controller="ColonneStatutControleur as ctrl">
+    <span ng-show="ctrl.isActif(mwTableRow)" class="label label-success" ng-bind="ctrl.indicateurActif"></span>
+    <span ng-show="ctrl.isInactif(mwTableRow)" class="label label-primary" ng-bind="ctrl.indicateurInactif"></span>
+    <span ng-show="ctrl.isProspect(mwTableRow)" class="label label-default" ng-bind="ctrl.indicateurProspect"></span>
+</span>

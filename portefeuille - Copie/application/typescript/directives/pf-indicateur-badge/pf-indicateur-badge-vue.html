@@ -1,0 +1,17 @@
+﻿<div class="pf-indicateur-badge" mw-chargement="pfIndicateurBadgeCtrl.chargementIndicateurBadgeEnCours">
+    <p class="intitule" ng-class="{'sous-intitule': pfIndicateurBadgeCtrl.isSousIntitule}">
+        <span ng-bind="::pfIndicateurBadgeCtrl.intitule"></span>
+        <span class="detail-line">
+            <a class="debranchement"
+               role="button"
+               id="action-details"
+               href="javascript:;"
+               ng-click="pfIndicateurBadgeCtrl.debrancherVers()"
+               ng-show="pfIndicateurBadgeCtrl.show()">
+                Voir détails
+            </a>
+        </span>
+    </p>
+
+    <span class="badge badge-primary pull-right" ng-style="{'width': '5vw'}" ng-bind="pfIndicateurBadgeCtrl.valeur"></span> 
+</div> 

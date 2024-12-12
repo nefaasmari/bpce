@@ -1,0 +1,11 @@
+﻿<ul class="bloc-lien-eds">
+    <li class="list-group-item-eds" ng-transclude></li>
+    <li class="list-group-item-eds"
+        ng-if="popupCtrl.eds.affiche"
+        ng-repeat="child in popupCtrl.eds.agencesInferieur track by $index">
+        <mw-pf-element-eds ng-attr-id="child.id"
+                           eds="child">
+            <div ng-transclude></div>
+        </mw-pf-element-eds>
+    </li>
+</ul>

@@ -1,0 +1,15 @@
+﻿<div class="col-md-12 pf-ligne-relation-eco">
+    <div class="col-md-12 relation-info">
+        <span class="icon itce-business font-size-2-rem" aria-hidden="true"></span>
+        <span class="nom" ng-bind="pfLigneRelationEcoCtrl.relationEconomique.nom"></span>
+    </div>
+    <div class="col-md-12 relation-indicateurs">
+        <mw-pf-tuile-indicateur ng-repeat="indicateur in pfLigneRelationEcoCtrl.listeIndicateursAAfficher track by $index"
+                                type="indicateur.typeIndicateur"
+                                intitule="indicateur.intitule"
+                                icone="indicateur.icone"
+                                valeur="indicateur.valeur"
+                                valeur-number="indicateur.valeurNumber"
+                                ng-attr-id="pf-tuile-indicateur-{{$index}}"></mw-pf-tuile-indicateur>
+    </div>
+</div>

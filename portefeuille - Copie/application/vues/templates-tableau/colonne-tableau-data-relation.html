@@ -1,0 +1,8 @@
+﻿<div class="col-md-12" ng-controller="ColonneDataRelationControleur as templateControleur">
+    <div class="row">
+        <span class="vertical-align-top">
+            <span class="label label-warning" aria-hidden="true" ng-if="templateControleur.isProspect(mwTableRow)" ng-bind="templateControleur.indicateurProspect"></span>
+            <span ng-bind="mwTableRow.nom"></span>
+        </span>
+    </div>
+</div>

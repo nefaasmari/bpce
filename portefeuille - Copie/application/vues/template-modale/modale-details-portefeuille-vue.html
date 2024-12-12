@@ -1,0 +1,46 @@
+﻿<!-- Header -->
+<div class="modal-header">
+    <button type="button" id="bouton-modale-fermer" ng-click="popupCtrl.fermer()" class="close">
+        <span class="icon itce-times" aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title" ng-bind="popupCtrl.titreModale"></h1>
+</div>
+
+<!-- Body -->
+<div id="modale-panier-body" 
+     class="modale-panier-body modal-body texte-gros row" 
+     ng-style="{'padding': '0'}" 
+     role="document" 
+     mw-chargement="popupCtrl.chargementEnCours">
+    <div class="panel panel-primary panel-detail col-md-12" ng-style="{'padding': '0', 'margin' : '0'}" >
+        <div class="bloc-graphique bas-du-bloc text-align-right">
+            <mw-pf-diagramme-colonne id="colonne-detail-ptf"
+                                     svg-id="'svg-colonne-detail-ptf'"
+                                     config="popupCtrl.configDiagrammeColonnePortefeuille"
+                                     type-diagramme="popupCtrl.typeDiagramme">
+            </mw-pf-diagramme-colonne>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="modal-footer modal-footer-custom">
+    <div class="bloc-legende">
+        <mw-pf-puce-legende class="legende" ng-style="{'width': '30%'}"
+                            ng-attr-id="puce-diagramme-bar1"
+                            intitule="{{popupCtrl.configDiagrammeColonnePortefeuille[0].intitule}}"
+                            couleur="{{popupCtrl.configDiagrammeColonnePortefeuille[0].couleur}}">
+        </mw-pf-puce-legende>
+        <mw-pf-puce-legende class="legende" ng-style="{'width': '30%'}"
+                            ng-attr-id="puce-diagramme-bar2"
+                            intitule="{{popupCtrl.configDiagrammeColonnePortefeuille[0].sousIntitule}}"
+                            couleur="{{popupCtrl.configDiagrammeColonnePortefeuille[0].couleurSousValeur}}">
+        </mw-pf-puce-legende>
+        <mw-pf-puce-legende class="legende" ng-style="{'width': '30%'}"
+                            ng-attr-id="puce-diagramme-bar3"
+                            intitule="{{popupCtrl.libelleTotal}}"
+                            couleur="'#FFFFFF'">
+        </mw-pf-puce-legende>
+    </div>
+</div>

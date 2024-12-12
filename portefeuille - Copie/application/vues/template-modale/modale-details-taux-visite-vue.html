@@ -1,0 +1,36 @@
+﻿<!-- Header -->
+<div class="modal-header">
+    <button type="button" id="bouton-modale-fermer" ng-click="popupCtrl.fermer()" class="close">
+        <span class="icon itce-times" aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title" ng-bind="popupCtrl.titreModale"></h1>
+</div>
+
+<!-- Body -->
+<div id="modale-detail-taux-visite-body"
+     class="modale-panier-body modal-body texte-gros row"
+     ng-style="{'padding': '0'}"
+     role="document"
+     mw-chargement="popupCtrl.chargementEnCours">
+    <div class="panel panel-primary panel-detail col-md-12"
+         ng-style="{'padding': '0', 'margin' : '0'}">
+        <div class="bloc-graphique height-100-pourcent">
+            <mw-pf-diagramme-pourcentage id="pourcentage-detail-taux-visite"
+                                         config="popupCtrl.configDiagrammePourcentageTauxVisite">
+            </mw-pf-diagramme-pourcentage>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="modal-footer modal-footer-custom">
+    <div class="bloc-legende">
+        <div class="pf-puce-legende">
+            &nbsp;
+            <span class="intitule">Total taux de visites :&nbsp;</span>
+            <span class="intitule" ng-bind="popupCtrl.pourcentageTauxTotal"></span>
+            <span class="intitule">%</span>
+        </div>
+    </div>
+</div>

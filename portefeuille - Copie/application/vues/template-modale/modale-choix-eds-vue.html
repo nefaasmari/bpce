@@ -1,0 +1,124 @@
+﻿<div class="modal-header">
+    <button type="button" id="bouton-modale-fermer" ng-click="popupCtrl.fermer()" class="close">
+        <span class="icon itce-times" aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title" ng-bind="popupCtrl.titre">Changer d'agent</h1>
+</div>
+
+<div class="modal-body texte-gros row" role="document">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-md-3 control-label"
+                   for="recherche-agent">Rechercher agent</label>
+            <div class="col-sm-12 col-md-8">
+                <mwsf-saisie-agent id="recherche-agent"
+                                   ng-model="popupCtrl.agentChoisi"
+                                   on-select="popupCtrl.changeAgent(selectedItem)"
+                                   required="false"
+                                   code-action="1">
+                </mwsf-saisie-agent>
+            </div>
+        </div>
+        <div class="form-group" ng-if="popupCtrl.estVueEDS">
+            <label class="col-md-3 control-label"
+                   for="choix-agence">EDS de rattachement</label>
+            <div class="col-sm-12 col-md-8"
+                 mw-chargement="popupCtrl.chargementAgences"
+                 ng-show="popupCtrl.afficheListeEdsRattachement">
+                <input type="text"
+                       mw-clear-button
+                       required
+                       id="choix-agence"
+                       class="form-control"
+                       name="choix-agence"
+                       ng-model="popupCtrl.agenceChoisi"
+                       placeholder="Sélectionner EDS de rattachement"
+                       mw-combobox="agence as agence.nomEds for agence in popupCtrl.listeAgences"
+                       mw-combobox-on-select="popupCtrl.changementAgence(popupCtrl.agenceChoisi, null)" />
+            </div>
+            <div class="col-sm-12 col-md-8 libelle-eds"
+                 mw-chargement="popupCtrl.chargementAgences"
+                 ng-show="popupCtrl.afficheLibelleEdsRattachement">
+                <span>
+                    <strong ng-bind="popupCtrl.nomEdsRattachement"></strong>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group"
+             ng-if="popupCtrl.estVueEDS">
+            <label class="col-md-3 control-label"
+                   for="agence-selection">EDS sélectionné</label>
+            <input id="agence-selection"
+                   required
+                   hidden />
+            <div class="col-sm-12 col-md-8 libelle-eds">
+                <span>
+                    <strong ng-bind="popupCtrl.nomEdsSelectionne"></strong>
+                </span>
+            </div>
+        </div>
+        <mw-panel niveau="1"
+                  titre=""
+                  id="groupe"
+                  header-sticky="body"
+                  css-panel=""
+                  ng-if="popupCtrl.estVueEDS">
+            <div class="col-md-12 mw-bloc-contenu bloc-eds">
+                <section ng-style="{'margin-bottom':'2em', 'margin-left':'2em'}">
+                    <span class="icon itce-information-circle"
+                          aria-hidden="true">
+                    </span>
+                    <span>Choisir l'EDS auquel sont rattachés les portefeuilles à agréger.</span>
+                </section>
+                <div class="form-group" ng-if="popupCtrl.afficheBlocEds">
+                    <mw-pf-element-eds id="root"
+                                       eds="popupCtrl.agenceChoisi">
+                        <div class="entree-eds">
+                            <a class="lien-eds"
+                               ng-class="{'eds-est-vide': popupCtrl.estVide}"
+                               ng-attr-id="'liens-'+popupCtrl.eds.id"
+                               ng-click="popupCtrl.ouvrir()"
+                               href="javascript:;">
+                                <span class="icon chevron-eds"
+                                      aria-hidden="true"
+                                      ng-class="{'itce-chevron-right': popupCtrl.estfermer, 'itce-chevron-down': popupCtrl.estOuvert}">
+                                </span>
+                            </a>
+                            <a class="lien-eds"
+                               ng-attr-id="'liens-select-'+popupCtrl.eds.id"
+                               ng-click="popupCtrl.selectionnerEDS()"
+                               href="javascript:;">
+                                <div class="entree-eds">
+                                    <div ng-class="{'check-eds': popupCtrl.estCoche, 'no-check-eds': !popupCtrl.estCoche}"></div>
+                                    <span ng-style="{'color':'black'}" ng-bind="popupCtrl.nomEds"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </mw-pf-element-eds>
+                </div>
+            </div>
+        </mw-panel>
+    </form>
+</div>
+
+<div class="modal-footer modal-footer-custom col-md-12 col-lg-12">
+    <div ng-class="{'col-md-2': popupCtrl.estVueEDS, 'col-lg-2': popupCtrl.estVueEDS, 'col-md-6': !popupCtrl.estVueEDS, 'col-lg-6': !popupCtrl.estVueEDS}">
+        <button type="button"
+                id="bouton-modale-annuler-eds"
+                class="btn  btn-default"
+                ng-click="popupCtrl.fermer()">
+            Annuler
+        </button>
+    </div>
+    <div ng-class="{'col-md-2': popupCtrl.estVueEDS, 'col-lg-2': popupCtrl.estVueEDS, 'col-md-6': !popupCtrl.estVueEDS, 'col-lg-6': !popupCtrl.estVueEDS}">
+        <button type="button"
+                id="bouton-modale-valider-eds"
+                class="btn  btn-primary"
+                ng-click="popupCtrl.valider()"
+                ng-disabled="!popupCtrl.estChoisiEDSvalide">
+            Valider
+        </button>
+    </div>
+</div>

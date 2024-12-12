@@ -1,0 +1,153 @@
+﻿<!-- Contenu de la page -->
+<section class="container-fluid" id="contenu">
+    <br />
+    <div class="col-lg-12 col-md-12 mw-bloc-contenu" 
+         id="bloc-contenu-message-choix-ptf" 
+         ng-if="!clientsCtrl.portefeuilleService.aPortefeuillesAffiche() && clientsCtrl.portefeuilleService.aPortefeuille()">
+        <span id="sp-message-choix-ptf" ng-bind="clientsCtrl.messageChoixPtf"></span>
+    </div>
+    <div class="col-lg-12 col-md-12 mw-bloc-contenu" id="bloc-contenu-message-aucun-ptf" ng-if="!clientsCtrl.portefeuilleService.aPortefeuille()">
+        <span id="sp-message-aucun-ptf" ng-bind="clientsCtrl.messageAucunPtf"></span>
+    </div>
+
+    <div ng-if="clientsCtrl.portefeuilleService.aPortefeuillesAffiche()">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="alert alert-warning" ng-show="clientsCtrl.isAfficherMessageLimiteClientAtteinte">
+                    <span class="icon itce-information-circle alert-warning" aria-hidden="true"></span>
+                    <span aria-hidden="false" ng-bind="clientsCtrl.messageLimiteClientsAtteinte"></span>
+                    <a id="ancre-ouvrir-forcage" 
+                       href="javascript:;" 
+                       ng-click="clientsCtrl.ouvrirChoixForcage()" 
+                       ng-show="clientsCtrl.afficherModifierChoix()">Modifier mon choix.</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-inline pull-right">
+                    <li class="mw-radio-btn">
+                        <input type="radio"
+                               id="radio-btn-vue-relation-eco"
+                               name="radio-btn-vue-relation-eco"
+                               value="VRE"
+                               ng-model="clientsCtrl.radioBoutonEstVueClient"
+                               ng-change="clientsCtrl.affichageVueRelationEco()"
+                               ng-disabled="clientsCtrl.estEnForcageTypeClientsOuProspects()" />
+                        <label for="radio-btn-vue-relation-eco" title="Accéder à la vue relations économiques">Relations économiques</label>
+                    </li>
+                    <li class="mw-radio-btn no-padding-right">
+                        <input type="radio"
+                               id="radio-btn-vue-clients"
+                               name="radio-btn-vue-clients"
+                               value="VC"
+                               ng-model="clientsCtrl.radioBoutonEstVueClient"
+                               ng-change="clientsCtrl.affichageVueClient()" />
+                        <label for="radio-btn-vue-clients" title="Accéder à la vue clients">Clients / Prospects</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <!-- BLOC DE CONTENU -->
+            <div class="bloc col-sm-12">
+                <div class="titre-bloc">
+                    <span class="col-sm-6 mw-troncature">
+                        <span ng-hide="clientsCtrl.isAccesDepuisBlocRevue" ng-bind="clientsCtrl.getNomPanier()"></span>
+                        <span ng-show="clientsCtrl.isAccesDepuisBlocRevue">Ma sélection d'indicateurs: "Revue"</span>
+                    </span>
+                    <div ng-hide="clientsCtrl.isAccesDepuisBlocRevue" class="col-md-3 pull-right">
+                        <button class="btn btn-block btn-contextuel mw-troncature" id="bouton-indicateurs-v2" ng-click="clientsCtrl.accederAuxIndicateursV2()" ng-disabled="clientsCtrl.estEnForcageTypeTout()">
+                            Personnaliser les indicateurs
+                        </button>
+                    </div>
+                </div>
+
+                <div class="clearfix contenu">
+                    <mw-chargement-long id="id-chargement-long"
+                                        etat="clientsCtrl.etatChargementLong"
+                                        visible="clientsCtrl.chargementEnCours">
+                        <div class="panel-body">
+                            <div class="col-md-12 form-group">
+                                <form class="form-horizontal" name="form">
+                                    <div class="col-md-2">
+                                        <button class="btn btn-block btn-default mw-troncature no-padding-left" 
+                                                id="bouton-filtrer" 
+                                                ng-click="clientsCtrl.accederAuxFiltres()" 
+                                                ng-show="clientsCtrl.listeRelationEco.length !== 0">
+                                            <span ng-show="clientsCtrl.afficherFiltreActif()" 
+                                                  class="icon itce-fa-check icon-avec-filtre-bouton" 
+                                                  aria-hidden="true"></span>
+                                            <span class="icon itce-filter" 
+                                                  aria-hidden="true"></span>
+                                            Filtrer
+                                        </button>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <mw-pf-detail-filtre liste-filtres="clientsCtrl.listeFiltres"
+                                                             ng-if="clientsCtrl.afficherFiltreActif()"
+                                                             id="id-detail-filtre"></mw-pf-detail-filtre>
+                                    </div>
+                                </form>
+                            </div>
+                            <mw-pf-ligne-relation-eco relation-economique="clientsCtrl.choixRelationEco"
+                                                      liste-indicateurs-tableau="clientsCtrl.listeIndicateursTableau"
+                                                      ng-attr-id="pf-ligne-relation-eco"
+                                                      ng-if="clientsCtrl.afficherLigneRelationEco()"></mw-pf-ligne-relation-eco>
+                            <div class="col-md-12 form-group" ng-show="clientsCtrl.afficherLigneStatsEtTableau()">
+                                <div class="col-md-7">
+                                    <span class="lbl-nb-clients" ng-bind="clientsCtrl.getTxtRatioFiltrage()"></span>
+                                </div>
+                                <div class="col-md-4 pull-right">
+                                    <span class="lbl-pagination" ng-bind="clientsCtrl.getTxtEtatPagination()"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group" ng-show="!clientsCtrl.afficherLigneStatsEtTableau()">&nbsp;</div>
+                            <mw-table-opefi id="tab-relation" class="tab-relations" options="clientsCtrl.tableauRelations" ng-if="clientsCtrl.afficherTableauRelation()"></mw-table-opefi>
+                            <mw-table-opefi id="tab-client" class="tab-clients" options="clientsCtrl.tableauClients" ng-if="clientsCtrl.afficherTableauClients()"></mw-table-opefi>
+                        </div>
+                    </mw-chargement-long>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<footer class="row mw-footer-fixed-bottom">
+    <div class="overlay-footer" ng-class="{'display-block':(indexCtrl.ouvertureVoletChoixPortefeuille)}"></div>
+    <div class="col-md-12">
+        <div class="col-md-2 col-sm-3" ng-show="!clientsCtrl.afficherLigneRelationEco()">
+            <button class="btn btn-block btn-zone mw-troncature" aria-label="Retour Accueil" ng-click="clientsCtrl.retourAccueil()" id="bouton-retour-accueil">
+                <span class="icon itce-chevron-left" aria-hidden="true"></span>
+                <span>Retour Accueil</span>
+            </button>
+        </div>
+        <div class="col-md-2" ng-show="clientsCtrl.estAfficheBtnRetour()">
+            <button class="btn btn-block btn-zone mw-troncature" aria-label="Retour" ng-click="clientsCtrl.retourVueRelEco()" id="bouton-retour">
+                <span class="icon itce-chevron-left" aria-hidden="true"></span>
+                <span>Retour</span>
+            </button>
+        </div>
+        <div class="col-md-2 pull-right" ng-show="clientsCtrl.estAfficherBoutonSynthese()">
+            <button class="btn btn-block btn-zone mw-troncature" aria-label="Synthèse client" ng-click="clientsCtrl.accederSyntheseClient()" id="bouton-acces-synthese-cli" ng-disabled="clientsCtrl.estDisabledBtnEffectuerRevue()">
+                <span class="icon itce-share-square" aria-hidden="true"></span>
+                <span>Synthèse client</span>
+            </button>
+        </div>
+        <div class="col-md-2 pull-right" ng-show="clientsCtrl.estAfficheBtnEffectuerRevue()">
+            <button class="btn btn-block btn-zone mw-troncature" aria-label="Effectuer la revue" ng-click="clientsCtrl.effectuerRevue()" id="bouton-effectuer-revue" ng-disabled="clientsCtrl.estDisabledBtnEffectuerRevue()">
+                <span>Effectuer la revue</span>
+            </button>
+        </div>
+        <div class="col-md-2 pull-right" ng-show="clientsCtrl.estAfficheBtnVoirProduits()">
+            <button class="btn btn-block btn-zone mw-troncature" aria-label="Voir les produits" ng-click="clientsCtrl.consulterProduits()" id="bouton-consulter-produits" ng-disabled="clientsCtrl.estDisabledBoutonVoirProduits()">
+                <span>Voir les produits</span>
+            </button>
+        </div>
+        <div class="col-md-2 pull-right" ng-show="clientsCtrl.estAfficheBtnExporter()">
+            <button class="btn btn-block btn-zone mw-troncature" aria-label="Exporter la sélection" ng-click="clientsCtrl.exporter()" id="exporter-produits">
+                <span>Exporter la sélection</span>
+            </button>
+        </div>
+    </div>
+</footer>

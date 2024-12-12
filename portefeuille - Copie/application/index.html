@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html lang="fr" ng-app="##NOM-MODULE##">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height, user-scalable=no" />
+        <!--title-->
+        <title>Single Page Application</title>
+        <!--css-->
+        <!-- Style Bootstrap-->
+        <link href="##CDN##/v1/third-party/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    
+        <!-- Style MyWay-->
+        <link href="##CDN##/v1/ui/styles/myway-ce.min.css" rel="stylesheet" />
+    
+        <!-- Librairie pdt-entreprise -->
+        <link href="##CDN##/v1/socle-fonctionnel/myway-trans-pdt-entreprise/myway.trans-pdt-entreprise.pdt-entreprise.css" rel="stylesheet" />
+    
+        <!-- library -->
+        <link href="##CDN##/v1/socle-fonctionnel/com-gestion-client/com-gestion-client.css" rel="stylesheet" />
+        <link href="##CDN##/v1/socle-fonctionnel/com-interdomaine/com-interdomaine.css" rel="stylesheet" />
+        <link href="##CDN##/v1/socle-fonctionnel/com-eds/com-eds.css" rel="stylesheet"/> 
+    
+        <!-- Style Composants Aide -->
+        <link href="##CDN##/v1/socle-fonctionnel/composants-aide/composants-aide.css" rel="stylesheet" />
+    
+        <link rel="stylesheet" href="##NOM-APPLICATION##.css" />
+    </head>
+    
+    <body mw-scroll-spy="" class="container-fluid mw-body-with-header"
+          ng-controller="IndexControleur as indexCtrl"
+          mw-chargement="indexCtrl.chargementEnCours">
+
+        <header class="row mw-header-fixed-top"
+                role="banner">
+            <div class="overlay"
+                 ng-class="{'display-block':(indexCtrl.ouvertureVoletChoixPortefeuille)}"></div>
+            <div class="mw-zone-titre col-md-7">
+                <h1 class="titre-page mw-troncature" ng-show="indexCtrl.afficherHeader" ng-cloak>
+                    <span>
+                        <span class="icon itce-folder" aria-hidden="true"></span>
+                        <span for="input-titre" ng-bind="::indexCtrl.titrePage"></span>
+                        <span ng-show="indexCtrl.estVueMultiSuiviPar()">
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="label-default"><strong>Vue agrégée EDS</strong></span>
+                        </span>
+                    </span>
+                    <br />
+                    <small class="col-xs-5 col-sm-9 mw-troncature" ng-bind="indexCtrl.getSousTitrePage()"></small>
+                </h1>
+            </div>
+
+            <nav class="navbar-right hidden-sm hidden-xs" role="navigation" aria-label="Boutons d'actions">
+                <div class="btn-group" id="btn-aide">
+                    <mwsf-totem-aide id="totem-aide-id"></mwsf-totem-aide>
+                </div>
+                <button class="btn btn-contextuel btn-icon navbar-btn" type="button" id="btn-fermeture" ng-click="indexCtrl.quitter()">
+                    <span class="icon itce-times" aria-hidden="true" title="Fermeture de l'application"></span>
+                    <span class="sr-only">Fermeture de l'application</span>
+                </button>
+            </nav>
+            <mw-pf-choix-portefeuille id="choix-portfeuille"
+                                      liste-portefeuilles-drop-down="indexCtrl.listePortefeuillesDropDown"
+                                      liste-portefeuilles="indexCtrl.listePortefeuilles"
+                                      ouverture-volet-choix-portefeuille="indexCtrl.ouvertureVoletChoixPortefeuille"
+                                      est-vue-global-consolide="indexCtrl.estVueGlobalConsolide">
+            </mw-pf-choix-portefeuille>
+        </header>
+
+        <div class="row" ng-show="indexCtrl.aErreurTechnique">
+            <div class="col-lg-12 col-md-12 mw-bloc-contenu" id="bloc-contenu-message-erreur-tech">
+                <span id="sp-message-aucun-ptf" ng-bind="::indexCtrl.messageErreurTechnique" class="texte-alerte"></span>
+            </div>
+        </div>
+
+        <main role="main" 
+              data-ng-view 
+              ng-hide="indexCtrl.aErreurTechnique">
+        </main>
+
+        <!-- Bundle -->
+        <script type="text/javascript" src="##CDN##/v1/third-party/bundles/global-bundle.min.js"></script>
+
+        <!-- Services MyWay-->
+        <script type="text/javascript" src="##CDN##/v1/services/framework-client-app.min.js"></script>
+
+        <!-- Composants UI MyWay-->
+        <script type="text/javascript" src="##CDN##/v1/ui/myway-ui.min.js"></script>
+
+        <!-- Portail -->
+        <script type="text/javascript" src="##CDN##/v1/core-api/myway-core-api.js"></script>
+        <script type="text/javascript" src="##URL-SPA##/myway.portail.lib-portail/myway.portail.lib-portail.js"></script>
+        <script type="text/javascript" src="##URL-SPA##/myway.lib-synchro-synthese-cc/myway.lib-synchro-synthese-cc.js"></script>
+
+        <!-- Librairie pdt-entreprise -->
+        <script type="text/javascript" src="##CDN##/v1/socle-fonctionnel/myway-trans-pdt-entreprise/myway.trans-pdt-entreprise.pdt-entreprise.js"></script>
+
+        <!-- Socle fonctionnel -->
+        <script type="text/javascript" src="##CDN##/v1/socle-fonctionnel/com-interdomaine/com-interdomaine.js"></script>
+        <script type="text/javascript" src="##CDN##/v1/socle-fonctionnel/com-eds/com-eds.js"></script>
+
+        <!-- Composants Aide -->
+        <script type="text/javascript" src="##CDN##/v1/socle-fonctionnel/composants-aide/composants-aide.js"></script>
+
+        <!-- D3 -->
+        <script type="text/javascript" src="##CDN##/v1/third-party/d3/d3.min.js"></script>
+
+        <!--app-->
+        <script type="text/javascript" src="##NOM-APPLICATION##.js"></script>
+
+    </body>
+</html>

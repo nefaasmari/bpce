@@ -1,0 +1,224 @@
+/*---------------------*\
+  $Variables LESS BOOTSTRAP
+\*---------------------*/
+/*---------------------*\
+  $Variables LESS
+\*---------------------*/
+/*---------------------*\
+  $Mixin
+\*---------------------*/
+/* Mixin Header */
+/* Mixin Sidebar */
+/* Mixin pour les style des boutons */
+/* Mixin Dropdown */
+/* Mixin nav-tabs */
+/*csslint box-model:false */
+.totem-aide-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 999;
+}
+.totem-aide {
+  position: relative;
+}
+.totem-aide .bouton-totem {
+  font-size: 0.75em;
+}
+.totem-aide .bouton-aide {
+  /* Suppression du padding pour la charte V2
+            padding-top: 0.25rem;
+        */
+  padding-right: 0.25rem;
+  float: right;
+}
+.totem-aide .totem-aide-volet-conteneur {
+  background-color: white;
+  border: solid 2px #4F5563;
+  position: absolute;
+  top: 2.5rem;
+  left: auto;
+  right: 0;
+  z-index: 1000;
+  width: 372px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 372px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .bouton-favori-conteneur {
+  padding-top: 15px;
+  padding-right: 15px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .boutons-conteneur {
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur {
+  padding-bottom: 15px;
+  /* Retrait de l'étoile pour un marquage sombre */
+  /* Ajout d'une couleur de tuile */
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-handles.no-edition {
+  padding: 20px 15px 0 15px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-handles.edition {
+  margin: 20px 15px 0 15px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-marqueur-none-lg {
+  padding-top: 11px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-lg {
+  width: 150px;
+  height: 110px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-lg .mw-tuile-marqueur {
+  margin-bottom: 0;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-lg span:not(.mw-tuile-titre):not(.mw-tuile-marqueur) {
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: 4px;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-sombre .mw-tuile-marqueur-picto.itce-star:before {
+  content: '';
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori {
+  background-color: #FFFFFF;
+  color: #4F5563;
+  border-color: #E0E0E0;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori.mw-tuile-avec-marquage {
+  border-left-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori .mw-tuile {
+  border-color: #E0E0E0;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori .mw-tuile .mw-tuile-picto,
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori .mw-tuile .mw-tuile-marqueur-picto {
+  color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:hover {
+  background-color: #FFFFFF;
+  color: #4F5563;
+  border-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:hover .mw-tuile {
+  border-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:hover .mw-tuile .mw-tuile-picto {
+  color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:active,
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori.active {
+  background-color: #FEC000;
+  color: #4F5563;
+  border-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:active .mw-tuile,
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori.active .mw-tuile {
+  border-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:active .mw-tuile .mw-tuile-picto,
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori.active .mw-tuile .mw-tuile-picto {
+  color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:focus {
+  background-color: #FEC000;
+  color: #4F5563;
+  border-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:focus .mw-tuile {
+  border-color: #FEC000;
+}
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:focus .mw-tuile .mw-tuile-picto,
+.totem-aide .totem-aide-volet-conteneur .totem-aide-volet-contenu .tuiles-conteneur .mw-tuile-bloc.couleur-favori:focus .mw-tuile .mw-tuile-marqueur-picto {
+  color: #4F5563;
+}
+.totem-aide-referentiel-aide-modale .modal-body .processus-title {
+  margin-top: 20px;
+  cursor: pointer;
+}
+.totem-aide-referentiel-aide-modale .modal-body .processus-title .icon {
+  margin-right: 10px;
+}
+.totem-aide-referentiel-aide-modale .modal-body .etape-title {
+  margin-top: 10px;
+}
+.totem-aide-referentiel-aide-modale li,
+.totem-aide-assistance-modale li {
+  margin-top: 5px;
+}
+.mwsf-infobulle-wrapper .infobulle-picto {
+  position: absolute;
+  top: 2px;
+  right: -25px;
+  z-index: 101;
+  cursor: pointer;
+}
+.mwsf-infobulle-wrapper .infobulle-new-picto {
+  font-size: 1.7rem;
+  right: -30px;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide {
+  display: block;
+  border: #FFFFFF solid 1px;
+  color: #FFFFFF;
+  border-top: hidden;
+  background-color: #4F5563;
+  margin-bottom: 10px;
+  width: calc(100% + 45px);
+  position: relative;
+  top: 10px;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide::after {
+  border: solid;
+  border-color: #4F5563 transparent;
+  border-width: 0 10px 18px 10px;
+  bottom: 100%;
+  content: "";
+  right: 6px;
+  position: absolute;
+  z-index: 102;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide .mw-popover-aide-header {
+  min-height: 20px;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide .mw-popover-aide-content {
+  padding: 9px 14px;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide .mw-popover-aide-inner {
+  margin-right: 30px;
+  margin-left: 10px;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide .mw-popover-aide-close {
+  color: #FFFFFF;
+  background-color: #4F5563;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 3px;
+  font-size: 1rem;
+  font-weight: normal;
+  border: none;
+  float: right;
+  top: 5px;
+}
+.mwsf-infobulle-wrapper .mw-popover-aide .mw-popover-aide-close:hover {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.mwsf-infobulle-wrapper.infobulle-flottante .mw-popover-aide {
+  position: absolute;
+  top: 50px;
+  z-index: 102;
+  width: calc(100% + 25px);
+}

@@ -1,0 +1,437 @@
+﻿<!-- Contenu de la page -->
+<section class="container-fluid portefeuille-vue"
+         id="contenu">
+    <br />
+    <div ng-show="!portefeuilleCtrl.portefeuilleService.aPortefeuille() || !portefeuilleCtrl.portefeuilleService.aPortefeuillesAffiche()">
+        <div class="overlay-info"></div>
+        <div class="overlay-message">
+            <div ng-if="!portefeuilleCtrl.portefeuilleService.aPortefeuillesAffiche() && portefeuilleCtrl.portefeuilleService.aPortefeuille()">
+                <span id="sp-message-choix-ptf"
+                      ng-bind="portefeuilleCtrl.messageChoixPtf"></span>
+            </div>
+            <div ng-if="!portefeuilleCtrl.portefeuilleService.aPortefeuille()">
+                <span class="icon
+                      itce-warning"
+                      aria-hidden="true">
+                </span>
+                &nbsp;
+                <span id="sp-message-aucun-ptf"
+                      ng-bind="portefeuilleCtrl.messageAucunPtf">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="ligne-panel-2" ng-show="portefeuilleCtrl.portefeuilleService.aPortefeuilleExpertAffiche()">
+        <mw-pf-panel-niveau-2 id="panel-portefeuille"
+                              class="panel-portefeuille col-md-12 col-sm-12 content-mw-pf-panel-niveau-2"
+                              titre="Portefeuille - Domaine d'expertise"
+                              icone="itce-folder"
+                              config-bouton="portefeuilleCtrl.configBoutonDetailsPortefeuilleExpert">
+            <div class="col-sm-12">
+                <div class="col-sm-12 mw-bloc-contenu">
+                    <span ng-bind="portefeuilleCtrl.messageChoixPtfExpert"></span><br />
+                    <ul class="liste-ptf-expert">
+                        <li ng-repeat="lib in portefeuilleCtrl.portefeuilleService.getListeLibelleSuiviParComplementairePortefeuillesExpertVisu() track by $index" ng-bind="lib"></li>
+                    </ul>
+                </div>
+            </div>
+        </mw-pf-panel-niveau-2>
+    </div>
+    <div class="ligne-panel-2" ng-show="!portefeuilleCtrl.portefeuilleService.aPortefeuilleExpertAffiche()">
+        <!-- Panel Portefeuille -->
+        <mw-pf-panel-niveau-2 id="panel-portefeuille-expert"
+                              class="panel-portefeuille col-md-8 col-sm-12 content-mw-pf-panel-niveau-2"
+                              titre="Portefeuille(s)"
+                              icone="itce-folder"
+                              config-bouton="portefeuilleCtrl.configBoutonDetailsPortefeuille">
+            <div class="col-sm-12"
+                 mw-chargement="portefeuilleCtrl.chargementPtfEnCours">
+                <div class="col-sm-12 mw-bloc-contenu"
+                     ng-if="!portefeuilleCtrl.isInitPtf">
+                    <span ng-bind="portefeuilleCtrl.messageInitPtf"></span>
+                </div>
+                <div ng-if="portefeuilleCtrl.isInitPtf">
+                    <div class="col-sm-12 container-badge"
+                         ng-class="{'col-md-12': portefeuilleCtrl.estVueMultiSuiviPar, 'col-md-6': !portefeuilleCtrl.estVueMultiSuiviPar}">
+                        <div class="bloc-graphique bas-du-bloc">
+                            <mw-pf-diagramme-colonne id="colonne-rel"
+                                                     svg-id="'svg-colonne-rel'"
+                                                     config="portefeuilleCtrl.configDiagrammeColonnePortefeuille"></mw-pf-diagramme-colonne>
+                            <div class="bloc-legende bloc-portefeuille">
+                                <mw-pf-puce-legende ng-repeat="config in portefeuilleCtrl.configDiagrammeColonnePortefeuille track by $index"
+                                                    class="legende legende-portefeuille"
+                                                    ng-attr-id="puce-diagramme-bar-{{$index}}"
+                                                    intitule="{{config.intitule}}"
+                                                    couleur="{{config.couleur}}"
+                                                    sous-couleur="{{config.couleurSousValeur}}"
+                                                    sous-intitule="{{config.sousIntitule}}">
+                                </mw-pf-puce-legende>
+                            </div>
+                            <div class="text-align-right">
+                                <span class="margin-right-1-rem">
+                                    <a role="button"
+                                       id="action-details-portfeuille"
+                                       href="javascript:;"
+                                       ng-click="portefeuilleCtrl.debrancherVersDetailsPorteuille()"
+                                       ng-show="portefeuilleCtrl.estVueMultiSuiviPar">
+                                        Voir détails
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <mw-pf-indicateur-badge id="indicateur-colonne-nb-prospects"
+                                                intitule="portefeuilleCtrl.dataIndicateurClientsPmeEsi.intitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurClientsPmeEsi.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-colonne-nb-clients-pe-et-pees"
+                                                intitule="portefeuilleCtrl.dataIndicateurClientsPEetPEES.intitule"
+                                                is-sous-intitule="portefeuilleCtrl.dataIndicateurClientsPEetPEES.isSousIntitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurClientsPEetPEES.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-colonne-nb-clients-me-et-mees"
+                                                intitule="portefeuilleCtrl.dataIndicateurClientsMEetMEES.intitule"
+                                                is-sous-intitule="portefeuilleCtrl.dataIndicateurClientsMEetMEES.isSousIntitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurClientsMEetMEES.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-colonne-nb-clients-ge-et-gees"
+                                                intitule="portefeuilleCtrl.dataIndicateurClientsGEetGEES.intitule"
+                                                is-sous-intitule="portefeuilleCtrl.dataIndicateurClientsGEetGEES.isSousIntitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurClientsGEetGEES.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-entrees-rel-annee"
+                                                intitule="portefeuilleCtrl.dataIndicateurClientsPro.intitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurClientsPro.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-relations"
+                                                intitule="portefeuilleCtrl.dataIndicateurAutres.intitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurAutres.valeur | number"></mw-pf-indicateur-badge>
+                    </div>
+                    <div class="col-md-6 col-sm-12 container-badge"
+                         ng-if="!portefeuilleCtrl.estVueMultiSuiviPar">
+                        <div class="bloc-graphique height-100-pourcent">
+                            <mw-pf-diagramme-donut id="donut-seg-rel"
+                                                   svg-id="'svg-donut-seg-rel'"
+                                                   config="portefeuilleCtrl.configDonutSegRel"></mw-pf-diagramme-donut>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mw-pf-panel-niveau-2>
+        <!-- Panel Rendez-vous -->
+        <mw-pf-panel-niveau-2 id="panel-rendez-vous"
+                              class="panel-rendez-vous col-md-4 col-sm-12 content-mw-pf-panel-niveau-2 "
+                              titre="{{::portefeuilleCtrl.titrePanelRdv}}"
+                              titre2="{{::portefeuilleCtrl.titrePanelRdv2}}"
+                              icone="itce-calendar pull-left">
+            <div class="col-sm-12"
+                 mw-chargement="portefeuilleCtrl.chargementRdvEnCours">
+                <div class="col-sm-12 mw-bloc-contenu"
+                     ng-show="!portefeuilleCtrl.isInitRdv">
+                    <span ng-bind="portefeuilleCtrl.messageInitRdv"></span>
+                </div>
+                <div ng-if="portefeuilleCtrl.isInitRdv">
+                    <div class="col-md-12 col-sm-12 container-badge">
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-rdv-annee-en-cours"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbRdvRealisesAnneeEnCours.intitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbRdvRealisesAnneeEnCours.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-clients-annee-en-cours"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbRdvClientsRealisesAnneeEnCours.intitule"
+                                                is-sous-intitule="portefeuilleCtrl.dataIndicateurNbRdvClientsRealisesAnneeEnCours.isSousIntitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbRdvClientsRealisesAnneeEnCours.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-prospects-realises-annee-en-cours"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbRdvProspectsRealisesAnneeEnCours.intitule"
+                                                is-sous-intitule="portefeuilleCtrl.dataIndicateurNbRdvProspectsRealisesAnneeEnCours.isSousIntitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbRdvProspectsRealisesAnneeEnCours.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-relations-economiques-annee-en-cours"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbRelationsEconomiquesAnneeEnCours.intitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbRelationsEconomiquesAnneeEnCours.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-prospects-vus-annee-en-cours"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbRdvProspectsVusAnneeEnCours.intitule"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbRdvProspectsVusAnneeEnCours.valeur | number"></mw-pf-indicateur-badge>
+                    </div>
+                    <div class="col-md-12 col-sm-12 container-badge">
+                        <div class="bloc-graphique height-100-pourcent text-align-right">
+                            <div class="bloc-en-tete">
+                                <p class="titre" id="titre-taux-visite" ng-bind="portefeuilleCtrl.configPourcentageVisites.titre"></p>
+                            </div>
+                            <div class="conteneur-pourcentage">
+                                <mw-percent-display id="pourcent-revue-ptf"
+                                                    percent="{{portefeuilleCtrl.configPourcentageVisites.pourcentageUn}}"
+                                                    font-size-percent="70">
+                                </mw-percent-display>
+                            </div>
+                            <span class="margin-right-1-rem">
+                                <a role="button"
+                                   id="action-details-taux-visite"
+                                   href="javascript:;"
+                                   ng-click="portefeuilleCtrl.debrancherVersDetailsTauxVisite()"
+                                   ng-show="portefeuilleCtrl.estVueMultiSuiviPar">
+                                    Voir détails
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mw-pf-panel-niveau-2>
+    </div>
+
+    <div class="ligne-panel-2"
+         ng-class="{'ordre-bloc-inverse': !portefeuilleCtrl.estHabiliteBlocRentabilite && portefeuilleCtrl.estHabiliteBlocRevue}"
+         ng-show="!portefeuilleCtrl.portefeuilleService.aPortefeuilleExpertAffiche()">
+        <!-- Panel Rentabilité -->
+        <mw-pf-panel-niveau-2 id="panel-rentabilite"
+                              class="panel-rentabilite col-md-8 col-sm-12 content-mw-pf-panel-niveau-2"
+                              titre="Rentabilité"
+                              icone="itce-eur"
+                              ng-show="portefeuilleCtrl.estHabiliteBlocRentabilite">
+            <div class="col-md-12"
+                 mw-chargement="portefeuilleCtrl.chargementRentabEnCours">
+                <div class="col-md-12 mw-bloc-contenu"
+                     ng-if="!portefeuilleCtrl.isInitRentab">
+                    <span ng-bind="portefeuilleCtrl.messageInitRentab"></span>
+                </div>
+                <div class="bloc-wrap-stretch"
+                     ng-if="portefeuilleCtrl.isInitRentab">
+                    <div class="container-badge"
+                         ng-class="{'col-md-12': portefeuilleCtrl.estVueMultiSuiviPar, 'col-md-6': !portefeuilleCtrl.estVueMultiSuiviPar}">
+                        <div class="bloc-graphique height-100-pourcent bas-du-bloc">
+                            <div class="bloc-en-tete">
+                                <p class="titre">PNB (IPADE)</p>
+                                <mw-pf-indicateur-fleche id="indicateur-fleche-pnb"
+                                                         class="margin-left-auto"
+                                                         config="portefeuilleCtrl.configFlecheRentabilite"></mw-pf-indicateur-fleche>
+                            </div>
+                            <mw-pf-diagramme-colonne id="colonne-rent"
+                                                     svg-id="'svg-colonne-rent'"
+                                                     config="portefeuilleCtrl.configDiagrammeColonneRentabilite"></mw-pf-diagramme-colonne>
+                            <div class="bloc-legende bloc-pnb">
+                                <mw-pf-puce-legende ng-repeat="config in portefeuilleCtrl.configDiagrammeColonneRentabilite track by $index"
+                                                    class="legende legende-pnb"
+                                                    ng-attr-id="puce-{{$index}}"
+                                                    intitule="{{config.intitule}}"
+                                                    couleur="{{config.couleur}}"
+                                                    affichage-puce-legende-actif="true"></mw-pf-puce-legende>
+                            </div>
+                            <div class="text-align-right align-bas-droite">
+                                <span class="margin-right-1-rem">
+                                    <a role="button"
+                                       id="action-details-rentabilite-pnb"
+                                       href="javascript:;"
+                                       ng-click="portefeuilleCtrl.debrancherVersDetailsRentabilitePNB()"
+                                       ng-show="portefeuilleCtrl.estVueMultiSuiviPar">
+                                        Voir détails
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 container-badge"
+                         ng-if="!portefeuilleCtrl.estVueMultiSuiviPar">
+                        <div class="bloc-graphique height-100-pourcent">
+                            <div class="bloc-en-tete">
+                                <p class="titre"
+                                   ng-bind="portefeuilleCtrl.configPourcentageRentabilite.titre"></p>
+                            </div>
+                            <div class="conteneur-pourcentage"
+                                 ng-if="!portefeuilleCtrl.afficheErreurPoidsPNB">
+                                <mw-percent-display id="pourcentage-rentabilite"
+                                                    percent="{{::portefeuilleCtrl.configPourcentageRentabilite.pourcentageUn}}"
+                                                    font-size-percent="70">
+                                </mw-percent-display>
+                            </div>
+                            <div class="text-center" ng-if="portefeuilleCtrl.afficheErreurPoidsPNB">
+                                <p>
+                                    <span class="icon itce-warning"
+                                          aria-hidden="true">
+                                    </span> Calcul non pertinent, PNB total négatif
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mw-pf-panel-niveau-2>
+        <!-- Panel Revue Portefeuille -->
+        <mw-pf-panel-niveau-2 id="panel-revue-portefeuille"
+                              class="panel-revue-portefeuille col-md-4 col-sm-12 content-mw-pf-panel-niveau-2"
+                              titre="Revue Portefeuille"
+                              icone="itce-pencil"
+                              ng-show="portefeuilleCtrl.estHabiliteBlocRevue"
+                              config-bouton="portefeuilleCtrl.configBoutonAccederRevuePortefeuille">
+            <div class="col-md-12" mw-chargement="portefeuilleCtrl.chargementRevuePtfEnCours">
+                <div class="col-md-12 mw-bloc-contenu" ng-if="!portefeuilleCtrl.isInitRevuePtf">
+                    <span ng-bind="portefeuilleCtrl.messageInitRevuePtf"></span>
+                </div>
+                <div ng-if="portefeuilleCtrl.isInitRevuePtf">
+                    <div class="col-md-12 container-badge">
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-produits-a-equiper"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbProduitsAEquiper.intitule"
+                                                debranchement-lisa="portefeuilleCtrl.dataIndicateurNbProduitsAEquiper.debranchementLisa"
+                                                debranchement-local="portefeuilleCtrl.dataIndicateurNbProduitsAEquiper.debranchementLocal"
+                                                show-zero="false"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbProduitsAEquiper.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-produits-appetences"
+                                                ng-show="portefeuilleCtrl.afficheAppetencesProduits"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbProduitsAppetence.intitule"
+                                                show-zero="false"
+                                                debranchement-lisa="portefeuilleCtrl.dataIndicateurNbProduitsAppetence.debranchementLisa"
+                                                debranchement-local="portefeuilleCtrl.dataIndicateurNbProduitsAppetence.debranchementLocal"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbProduitsAppetence.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-affaires-en-cours"
+                                                ng-show="portefeuilleCtrl.estHabiliteConsultAffaires"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbAffairesEnCours.intitule"
+                                                debranchement-lisa="portefeuilleCtrl.dataIndicateurNbAffairesEnCours.debranchementLisa"
+                                                debranchement-local="portefeuilleCtrl.dataIndicateurNbAffairesEnCours.debranchementLocal"
+                                                show-zero="true"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbAffairesEnCours.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-proposition-en-cours"
+                                                ng-show="portefeuilleCtrl.estHabiliteConsultPropositions"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbPropositionsEnCours.intitule"
+                                                debranchement-lisa="portefeuilleCtrl.dataIndicateurNbPropositionsEnCours.debranchementLisa"
+                                                debranchement-local="portefeuilleCtrl.dataIndicateurNbPropositionsEnCours.debranchementLocal"
+                                                show-zero="true"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbPropositionsEnCours.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-clients-a-activer"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbClientsAActiver.intitule"
+                                                debranchement-lisa="portefeuilleCtrl.dataIndicateurNbClientsAActiver.debranchementLisa"
+                                                show-zero="false"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbClientsAActiver.valeur | number"></mw-pf-indicateur-badge>
+                        <mw-pf-indicateur-badge id="indicateur-badge-nb-clients-a-renegocier"
+                                                intitule="portefeuilleCtrl.dataIndicateurNbClientsARenegocier.intitule"
+                                                debranchement-lisa="portefeuilleCtrl.dataIndicateurNbClientsARenegocier.debranchementLisa"
+                                                show-zero="false"
+                                                valeur="portefeuilleCtrl.dataIndicateurNbClientsARenegocier.valeur | number"></mw-pf-indicateur-badge>
+
+
+
+
+                    </div>
+                    <div class="col-md-12 container-badge">
+                        <div class="bloc-graphique height-100-pourcent text-align-right">
+                            <div class="bloc-en-tete">
+                                <p class="titre" ng-bind="portefeuilleCtrl.configPourcentagePortefeuilleRealise.titre"></p>
+                            </div>
+                            <div class="conteneur-pourcentage">
+                                <mw-percent-display id="pourcentage-portefeuille-realise"
+                                                    percent="{{portefeuilleCtrl.configPourcentagePortefeuilleRealise.pourcentageUn}}"
+                                                    font-size-percent="70">
+                                </mw-percent-display>
+                            </div>
+                            <span class="margin-right-1-rem">
+                                <a role="button"
+                                   id="action-details-revue-portefeuille"
+                                   href="javascript:;"
+                                   ng-click="portefeuilleCtrl.debrancherVersDetailsRevuePortfeuille()"
+                                   ng-show="portefeuilleCtrl.estVueMultiSuiviPar">
+                                    Voir détails
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </mw-pf-panel-niveau-2>
+        <!-- Panel Flux -->
+        <mw-pf-panel-niveau-2 id="panel-flux"
+                              class="panel-flux col-md-8 col-sm-12 content-mw-pf-panel-niveau-2"
+                              titre="Flux commerciaux"
+                              icone="itce-eur"
+                              ng-show="portefeuilleCtrl.estActifBlocFlux">
+            <div class="col-md-12" mw-chargement="portefeuilleCtrl.chargementFluxEnCours">
+
+                <div class="col-md-12 mw-bloc-contenu"
+                     ng-if="!portefeuilleCtrl.isInitFlux">
+                    <span ng-bind="portefeuilleCtrl.messageInitFlux"></span>
+                </div>
+
+                <div class="bloc-wrap-stretch"
+                     ng-if="portefeuilleCtrl.isInitFlux">
+                    <div class="col-md-6 container-badge">
+                        <div class="bloc-graphique height-100-pourcent bas-du-bloc text-align-right">
+                            <div class="bloc-en-tete">
+                                <p class="titre">Flux commerciaux créditeurs</p>
+                                <mw-pf-indicateur-fleche id="indicateur-fleche-flux-crediteurs"
+                                                         class="margin-left-auto"
+                                                         config="portefeuilleCtrl.configFlecheFluxCrediteurs"></mw-pf-indicateur-fleche>
+                            </div>
+
+                            <mw-pf-diagramme-colonne id="colonne-flux-crediteurs"
+                                                     svg-id="'svg-colonne-flux-crediteurs'"
+                                                     config="portefeuilleCtrl.configDiagrammeColonneFluxCrediteurs"></mw-pf-diagramme-colonne>
+                            <div class="bloc-legende bloc-flux">
+                                <mw-pf-puce-legende ng-repeat="configFluxCrediteurs in portefeuilleCtrl.configDiagrammeColonneFluxCrediteurs track by $index"
+                                                    class="legende legende-flux"
+                                                    ng-attr-id="puce-{{$index}}-crediteurs"
+                                                    intitule="{{configFluxCrediteurs.intitule}}"
+                                                    couleur="{{configFluxCrediteurs.couleur}}"
+                                                    affichage-puce-legende-actif="true"></mw-pf-puce-legende>
+                            </div>
+                            <span class="margin-right-1-rem">
+                                <a role="button"
+                                   id="action-details-flux-crediteur"
+                                   href="javascript:;"
+                                   ng-click="portefeuilleCtrl.debrancherVersDetailsFluxCrediteur()"
+                                   ng-show="portefeuilleCtrl.estVueMultiSuiviPar">
+                                    Voir détails
+                                </a>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 container-badge">
+                        <div class="bloc-graphique height-100-pourcent bas-du-bloc text-align-right">
+                            <div class="bloc-en-tete">
+                                <p class="titre">Flux commerciaux débiteurs</p>
+                                <mw-pf-indicateur-fleche id="indicateur-fleche-flux-debiteurs"
+                                                         class="margin-left-auto"
+                                                         config="portefeuilleCtrl.configFlecheFluxDebiteurs"></mw-pf-indicateur-fleche>
+                            </div>
+
+                            <mw-pf-diagramme-colonne id="colonne-flux-debiteurs"
+                                                     svg-id="'svg-colonne-flux-debiteurs'"
+                                                     config="portefeuilleCtrl.configDiagrammeColonneFluxDebiteurs"></mw-pf-diagramme-colonne>
+                            <div class="bloc-legende bloc-flux">
+                                <mw-pf-puce-legende ng-repeat="configFluxDebiteurs in portefeuilleCtrl.configDiagrammeColonneFluxDebiteurs track by $index"
+                                                    class="legende legende-flux"
+                                                    ng-attr-id="puce-{{$index}}-debiteurs"
+                                                    intitule="{{configFluxDebiteurs.intitule}}"
+                                                    couleur="{{configFluxDebiteurs.couleur}}"
+                                                    affichage-puce-legende-actif="true"></mw-pf-puce-legende>
+                            </div>
+                            <span class="margin-right-1-rem">
+                                <a role="button"
+                                   id="action-details-flux-debiteur"
+                                   href="javascript:;"
+                                   ng-click="portefeuilleCtrl.debrancherVersDetailsFluxDebiteur()"
+                                   ng-show="portefeuilleCtrl.estVueMultiSuiviPar">
+                                    Voir détails
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mw-pf-panel-niveau-2>
+    </div>
+</section>
+<footer class="row mw-footer-fixed-bottom">
+    <div class="overlay-footer"
+         ng-class="{'display-block':(indexCtrl.ouvertureVoletChoixPortefeuille)}">
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-2" ng-show="indexCtrl.estHabiliteChoixAgent">
+            <button class="btn btn-block btn-default mw-troncature"
+                    aria-label="Changer d'agent"
+                    ng-click="indexCtrl.afficherPopupChoixAgent()"
+                    id="bouton-changer-agent">
+                Changer d'agent
+            </button>
+        </div>
+        <div class="col-md-2" ng-show="indexCtrl.estHabiliteChoixEDS">
+            <button class="btn btn-block btn-default mw-troncature"
+                    aria-label="Choisir EDS"
+                    ng-click="indexCtrl.afficherPopupChoixEds()"
+                    id="bouton-choix-eds">
+                Choisir l'EDS
+            </button>
+        </div>
+    </div>
+</footer>

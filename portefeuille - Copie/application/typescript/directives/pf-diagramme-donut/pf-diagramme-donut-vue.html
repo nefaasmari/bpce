@@ -1,0 +1,24 @@
+﻿<div class="form-horizontal pf-diagramme-donut">
+    <div class="bloc-en-tete form-group">
+        <p class="titre col-lg-8 col-md-6" ng-bind="pfDiagrammeDonutCtrl.config.titre"></p>
+        <div class="col-lg-5 col-md-6">
+            <input type="text"
+                   mw-clear-button
+                   id="id-donut"
+                   class="form-control"
+                   name="idMedia"
+                   ng-change="pfDiagrammeDonutCtrl.echangerDonuts()"
+                   ng-model="pfDiagrammeDonutCtrl.config.donutChoisi"
+                   mw-combobox="nomDonut as nomDonut for nomDonut in pfDiagrammeDonutCtrl.listeDonuts"
+                   mw-combobox-on-select="pfDiagrammeDonutCtrl.echangerDonuts($item, $model, $label, $event)" />
+        </div>
+    </div>
+    <div ng-attr-id="{{::pfDiagrammeDonutCtrl.svgId}}" class="svg-container"></div>
+    <div class="bloc-legende">
+        <mw-pf-puce-legende ng-repeat="config in pfDiagrammeDonutCtrl.listeConfigPuceLegende track by $index" ng-show="config.affichagePuceLegendeActif"
+                            class="legende"
+                            ng-attr-id="puce-donut-{{$index}}"
+                            intitule="{{config.intitule}}"
+                            couleur="{{config.couleur}}"></mw-pf-puce-legende>
+    </div>
+</div>

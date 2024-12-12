@@ -1,0 +1,7 @@
+﻿<div class="colonne-tableau-data-client" ng-controller="ColonneDataCAN1Controleur as templateControleur">
+    <!--<div class="row template-colonne">-->
+    <div class="row">
+        <span ng-bind="templateControleur.getTexteCA(mwTableRow)"></span><br />
+        <span ng-bind="templateControleur.getTexteDate(mwTableRow)" ng-if="templateControleur.afficherDate"></span>
+    </div>
+</div>

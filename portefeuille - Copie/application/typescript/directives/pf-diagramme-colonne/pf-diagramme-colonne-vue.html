@@ -1,0 +1,9 @@
+﻿<div>
+    <div ng-class="{0:'pf-diagramme-colonne', 1:'pf-diagramme-colonne-detail'}[pfDiagrammeColonneCtrl.typeDiagramme]"  ng-style="{'max-height': '30em'}">
+        <mw-pf-indicateur-colonne class="colonne-indicateur"
+                                  ng-repeat="config in pfDiagrammeColonneCtrl.config track by $index"
+                                  ng-attr-id="config.id"
+                                  data="config">
+        </mw-pf-indicateur-colonne>
+    </div>
+</div>

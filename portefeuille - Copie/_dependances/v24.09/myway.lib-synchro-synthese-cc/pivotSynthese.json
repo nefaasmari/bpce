@@ -1,0 +1,3157 @@
+[
+  {
+    "MyWay": "SyntheseClientGP",
+    "ParentMyWayObject": null,
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3L",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODMGP",
+            "MyWay": "codeEtatSuiviPersonnalise",
+            "Type": 2,
+            "Size": 1,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LCCEL2",
+            "MyWay": "libelleCalculeCourtEds",
+            "Type": 2,
+            "Size": 32,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 4,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LCCEL3",
+            "MyWay": "libelleCalculeCourtEds1",
+            "Type": 2,
+            "Size": 32,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 36,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDDMVA",
+            "MyWay": "debutValiditeGestionPrivee",
+            "Type": 8,
+            "Size": 8,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 68,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LCCEL1",
+            "MyWay": "libelleCourtEDS",
+            "Type": 2,
+            "Size": 32,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 76,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientOrigineClient",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3M",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COLIDV",
+            "MyWay": "codeDevise",
+            "Type": 2,
+            "Size": 3,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODXET",
+            "MyWay": "codeEtablissement",
+            "Type": 2,
+            "Size": 5,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 6,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODAPE",
+            "MyWay": "numeroPersonne",
+            "Type": 3,
+            "Size": 9,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 11,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CGDACL",
+            "MyWay": "typeCategorieClient",
+            "Type": 2,
+            "Size": 1,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 20,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAPJ",
+            "MyWay": "edsDomiciliation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 21,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODASO",
+            "MyWay": "indicSocietaire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 22,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LCIQSL",
+            "MyWay": "libelleCourtSle",
+            "Type": 2,
+            "Size": 15,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 23,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODATP",
+            "MyWay": "numeroTelephone",
+            "Type": 2,
+            "Size": 20,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 38,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODATL",
+            "MyWay": "numeroTelephoneDomicile",
+            "Type": 2,
+            "Size": 20,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 58,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODATC",
+            "MyWay": "numeroTelephoneEnrolement",
+            "Type": 2,
+            "Size": 20,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 78,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDATC",
+            "MyWay": "commentaireTelephone",
+            "Type": 2,
+            "Size": 20,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 98,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODAEM",
+            "MyWay": "adresseEMail",
+            "Type": 2,
+            "Size": 80,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 118,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPCO",
+            "MyWay": "totalCollectePersonne",
+            "Type": 4,
+            "Size": 13,
+            "Position": 14,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 198,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPCR",
+            "MyWay": "totalCreditPersonne",
+            "Type": 3,
+            "Size": 13,
+            "Position": 15,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 211,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPIM",
+            "MyWay": "totalImpayesPersonne",
+            "Type": 3,
+            "Size": 13,
+            "Position": 16,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 224,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPDD",
+            "MyWay": "totalDebitsDifferesPersonne",
+            "Type": 3,
+            "Size": 13,
+            "Position": 17,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 237,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDAPA",
+            "MyWay": "indExistenceParticipations",
+            "Type": 2,
+            "Size": 1,
+            "Position": 18,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 250,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDALI",
+            "MyWay": "indicateurExistenceLiens",
+            "Type": 2,
+            "Size": 1,
+            "Position": 19,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 251,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDASE",
+            "MyWay": "indicateurExistenceServices",
+            "Type": 2,
+            "Size": 1,
+            "Position": 20,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 252,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGIP",
+            "MyWay": "libelleInseePays",
+            "Type": 2,
+            "Size": 32,
+            "Position": 21,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 253,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPTR",
+            "MyWay": "totalTresoreriePersonne",
+            "Type": 3,
+            "Size": 13,
+            "Position": 22,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 285,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NOCEEL",
+            "MyWay": "idEdsInterne",
+            "Type": 3,
+            "Size": 7,
+            "Position": 23,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 298,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODER3",
+            "MyWay": "codeResident",
+            "Type": 2,
+            "Size": 1,
+            "Position": 24,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 305,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPCX",
+            "MyWay": "totalDesContentieuxPersonne",
+            "Type": 3,
+            "Size": 13,
+            "Position": 25,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 306,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEMKDO",
+            "MyWay": "codeStatutDouteuxPersonne",
+            "Type": 2,
+            "Size": 1,
+            "Position": 26,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 319,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEMJCB",
+            "MyWay": "codeBlocageVao",
+            "Type": 2,
+            "Size": 1,
+            "Position": 27,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 320,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPTS",
+            "MyWay": "totalTresoPersonneCpteJoint",
+            "Type": 4,
+            "Size": 13,
+            "Position": 28,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 321,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPCP",
+            "MyWay": "totalCollectePersonneCpteJoint",
+            "Type": 4,
+            "Size": 13,
+            "Position": 29,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 334,
+            "Precision": 0
+          },
+          {
+            "NSDK": "IDNSBD",
+            "MyWay": "identifiantBad",
+            "Type": 2,
+            "Size": 10,
+            "Position": 30,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 347,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODMSP",
+            "MyWay": "codeEtatStatutPro",
+            "Type": 2,
+            "Size": 1,
+            "Position": 31,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 357,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDMKSO",
+            "MyWay": "codePhaseRecouvrement",
+            "Type": 2,
+            "Size": 1,
+            "Position": 32,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 358,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPCG",
+            "MyWay": "totalCreancesGeleesPersonne",
+            "Type": 4,
+            "Size": 13,
+            "Position": 33,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 359,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODCSI",
+            "MyWay": "codeSituation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 34,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 372,
+            "Precision": 0
+          },
+          {
+            "NSDK": "MCDPCA",
+            "MyWay": "totalCptCantonnementPersonne",
+            "Type": 4,
+            "Size": 13,
+            "Position": 35,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 373,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientSegRevise",
+    "ParentMyWayObject": null,
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3O",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADLCA",
+            "MyWay": "dateSegmentationRisque",
+            "Type": 8,
+            "Size": 8,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODLSH",
+            "MyWay": "codeSegmentation",
+            "Type": 2,
+            "Size": 8,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 11,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDLSC",
+            "MyWay": "libelleCourtSegmentation",
+            "Type": 2,
+            "Size": 11,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 19,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDLSG",
+            "MyWay": "libelleSegmentation",
+            "Type": 2,
+            "Size": 80,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 30,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODLFR",
+            "MyWay": "codeForcageTpSegmentation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 110,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientAdresse",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3Q",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODGAD",
+            "MyWay": "identifiant",
+            "Type": 3,
+            "Size": 12,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CNDGAD",
+            "MyWay": "codeType",
+            "Type": 2,
+            "Size": 1,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 15,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGNV",
+            "MyWay": "codeValiditeAdresseUniserv",
+            "Type": 2,
+            "Size": 2,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 16,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGPH",
+            "MyWay": "codeValiditeAdresseUnimail",
+            "Type": 2,
+            "Size": 2,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 18,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDGIP",
+            "MyWay": "codePays",
+            "Type": 2,
+            "Size": 5,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 20,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGNP",
+            "MyWay": "codeTypeRetourPtt",
+            "Type": 2,
+            "Size": 1,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 25,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DMDGRT",
+            "MyWay": "dateDernierRetourPttAdresse",
+            "Type": 8,
+            "Size": 8,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 26,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV2",
+            "MyWay": "ligne2",
+            "Type": 2,
+            "Size": 32,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 34,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV3",
+            "MyWay": "ligne3",
+            "Type": 2,
+            "Size": 32,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 66,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV4",
+            "MyWay": "ligne4",
+            "Type": 2,
+            "Size": 32,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 98,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV5",
+            "MyWay": "ligne5",
+            "Type": 2,
+            "Size": 32,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 130,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV6",
+            "MyWay": "ligne6",
+            "Type": 2,
+            "Size": 32,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 162,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ2",
+            "MyWay": "ligne2Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 14,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 194,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ3",
+            "MyWay": "ligne3Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 15,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 232,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ4",
+            "MyWay": "ligne4Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 16,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 270,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ5",
+            "MyWay": "ligne5Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 17,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 308,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ6",
+            "MyWay": "ligne6Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 18,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 346,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientAdresseNPAI",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3R",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODAPS",
+            "MyWay": "numeroChrono",
+            "Type": 3,
+            "Size": 2,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODALS",
+            "MyWay": "numeroLieuActivite",
+            "Type": 3,
+            "Size": 3,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 5,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODGAD",
+            "MyWay": "identifiant",
+            "Type": 3,
+            "Size": 12,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 8,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CNDGAD",
+            "MyWay": "codeType",
+            "Type": 2,
+            "Size": 1,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 20,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGNV",
+            "MyWay": "codeValiditeAdresseUniserv",
+            "Type": 2,
+            "Size": 2,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 21,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGPH",
+            "MyWay": "codeValiditeAdresseUnimail",
+            "Type": 2,
+            "Size": 2,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 23,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDACR",
+            "MyWay": "raisonSociale",
+            "Type": 2,
+            "Size": 32,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 25,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODATP",
+            "MyWay": "numeroTelephone",
+            "Type": 2,
+            "Size": 20,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 57,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDGIP",
+            "MyWay": "codePays",
+            "Type": 2,
+            "Size": 5,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 77,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGNP",
+            "MyWay": "codeTypeRetourPtt",
+            "Type": 2,
+            "Size": 1,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 82,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DMDGRT",
+            "MyWay": "dateDernierRetourPttAdresse",
+            "Type": 8,
+            "Size": 8,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 83,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDDGAD",
+            "MyWay": "dateCreationAdresse",
+            "Type": 8,
+            "Size": 8,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 91,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DMDGUT",
+            "MyWay": "dateRestructurationAdresses",
+            "Type": 8,
+            "Size": 8,
+            "Position": 14,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 99,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DMDGAD",
+            "MyWay": "dateDerniereMiseAJourAdresse",
+            "Type": 8,
+            "Size": 8,
+            "Position": 15,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 107,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV2",
+            "MyWay": "ligne2",
+            "Type": 2,
+            "Size": 32,
+            "Position": 16,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 115,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV3",
+            "MyWay": "ligne3",
+            "Type": 2,
+            "Size": 32,
+            "Position": 17,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 147,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV4",
+            "MyWay": "ligne4",
+            "Type": 2,
+            "Size": 32,
+            "Position": 18,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 179,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV5",
+            "MyWay": "ligne5",
+            "Type": 2,
+            "Size": 32,
+            "Position": 19,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 211,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGV6",
+            "MyWay": "ligne6",
+            "Type": 2,
+            "Size": 32,
+            "Position": 20,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 243,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ2",
+            "MyWay": "ligne2Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 21,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 275,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ3",
+            "MyWay": "ligne3Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 22,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 313,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ4",
+            "MyWay": "ligne4Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 23,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 351,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ5",
+            "MyWay": "ligne5Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 24,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 389,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDGZ6",
+            "MyWay": "ligne6Adresse38c",
+            "Type": 2,
+            "Size": 38,
+            "Position": 25,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 427,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientProfilPP",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3S",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDA1C",
+            "MyWay": "designationCourte",
+            "Type": 2,
+            "Size": 32,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAAC",
+            "MyWay": "codeCategorieSocioProf",
+            "Type": 2,
+            "Size": 4,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 35,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADACS",
+            "MyWay": "dateEffetCsp",
+            "Type": 8,
+            "Size": 8,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 39,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDAPR",
+            "MyWay": "libelleProfessionParticulier",
+            "Type": 2,
+            "Size": 40,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 47,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADANA",
+            "MyWay": "dateNaissance",
+            "Type": 8,
+            "Size": 8,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 87,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODARE",
+            "MyWay": "codeAppartenanceReseau",
+            "Type": 2,
+            "Size": 1,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 95,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODASU",
+            "MyWay": "codeSuiviCommercial",
+            "Type": 2,
+            "Size": 1,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 96,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDANO",
+            "MyWay": "nomCommercial",
+            "Type": 2,
+            "Size": 40,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 97,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDANP",
+            "MyWay": "id",
+            "Type": 2,
+            "Size": 25,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 137,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDAPP",
+            "MyWay": "prenom",
+            "Type": 2,
+            "Size": 20,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 162,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDECA",
+            "MyWay": "codeCapaciteJuridique",
+            "Type": 2,
+            "Size": 2,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 182,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODACL",
+            "MyWay": "codeMotifClotureEntiteTitulaire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 184,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODACV",
+            "MyWay": "codeCivilite",
+            "Type": 2,
+            "Size": 1,
+            "Position": 14,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 185,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDANM",
+            "MyWay": "nomUsage",
+            "Type": 2,
+            "Size": 25,
+            "Position": 15,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 186,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODATI",
+            "MyWay": "codeClientTiers",
+            "Type": 2,
+            "Size": 1,
+            "Position": 16,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 211,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADADC",
+            "MyWay": "dateDeces",
+            "Type": 8,
+            "Size": 8,
+            "Position": 17,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 212,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMRCT",
+            "MyWay": "typeCotationFIBEN",
+            "Type": 2,
+            "Size": 4,
+            "Position": 18,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 220,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODEXP",
+            "MyWay": "indicExistenceProfessionnel",
+            "Type": 2,
+            "Size": 1,
+            "Position": 19,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 224,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CORSSA",
+            "MyWay": "codeScoreAssuranceAutomobile",
+            "Type": 2,
+            "Size": 2,
+            "Position": 20,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 225,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CORSSH",
+            "MyWay": "codeScoreAssuranceHabitation",
+            "Type": 2,
+            "Size": 2,
+            "Position": 21,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 227,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODGLN",
+            "MyWay": "codeCommuneNaissance",
+            "Type": 2,
+            "Size": 5,
+            "Position": 22,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 229,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAQL",
+            "MyWay": "codeCotation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 23,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 234,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADAQL",
+            "MyWay": "dateDerniereMajCotationProf",
+            "Type": 8,
+            "Size": 8,
+            "Position": 24,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 235,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DLDQQL",
+            "MyWay": "dateDerniereRevisionCotationPro",
+            "Type": 8,
+            "Size": 8,
+            "Position": 25,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 243,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DAMRAS",
+            "MyWay": "dateSituationBDF",
+            "Type": 8,
+            "Size": 8,
+            "Position": 26,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 251,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CBMBNC",
+            "MyWay": "noteBale2",
+            "Type": 2,
+            "Size": 20,
+            "Position": 27,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 259,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMBEN",
+            "MyWay": "date",
+            "Type": 8,
+            "Size": 8,
+            "Position": 28,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 279,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LBMBML",
+            "MyWay": "libelleMoteur",
+            "Type": 2,
+            "Size": 32,
+            "Position": 29,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 287,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMBNT",
+            "MyWay": "codeEtablissementNotation",
+            "Type": 2,
+            "Size": 5,
+            "Position": 30,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 319,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WCODM",
+            "MyWay": "codeDomaineGestionPacbase",
+            "Type": 2,
+            "Size": 3,
+            "Position": 31,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 324,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WCOLE",
+            "MyWay": "codeMessageErreur",
+            "Type": 2,
+            "Size": 8,
+            "Position": 32,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 327,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WLE80",
+            "MyWay": "libelleReponse",
+            "Type": 2,
+            "Size": 80,
+            "Position": 33,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 335,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMRC1",
+            "MyWay": "cotationPrecedenteFibenBdf",
+            "Type": 2,
+            "Size": 4,
+            "Position": 34,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 415,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DAMRAT",
+            "MyWay": "dateCotationFibenBdfN1",
+            "Type": 8,
+            "Size": 8,
+            "Position": 35,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 419,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAQM",
+            "MyWay": "codeDegradationCotationFiben",
+            "Type": 2,
+            "Size": 1,
+            "Position": 36,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 427,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DAMRC3",
+            "MyWay": "dateBdfAttributionEventFiben",
+            "Type": 8,
+            "Size": 8,
+            "Position": 37,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 428,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LBMBEN",
+            "MyWay": "libelleEtablissementNotation",
+            "Type": 2,
+            "Size": 32,
+            "Position": 38,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 436,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMBPI",
+            "MyWay": "codeEtablissementPilote",
+            "Type": 2,
+            "Size": 5,
+            "Position": 39,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 468,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LBMBEP",
+            "MyWay": "libelleEtablissementPilote",
+            "Type": 2,
+            "Size": 32,
+            "Position": 40,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 473,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CINCTC",
+            "MyWay": "indicPresenceActeAtdSaisie",
+            "Type": 2,
+            "Size": 1,
+            "Position": 41,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 505,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYWL",
+            "MyWay": "codeAlerteWatchList",
+            "Type": 2,
+            "Size": 1,
+            "Position": 42,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 506,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYAL",
+            "MyWay": "indicAlerteSurPersonne",
+            "Type": 2,
+            "Size": 1,
+            "Position": 43,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 507,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYRE",
+            "MyWay": "indicateurAlerteReclamation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 44,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 508,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODADS",
+            "MyWay": "codeAdministrationSpecifique",
+            "Type": 2,
+            "Size": 2,
+            "Position": 45,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 509,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDMJDS",
+            "MyWay": "codeDegreSensibilitePersonne",
+            "Type": 2,
+            "Size": 1,
+            "Position": 46,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 511,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADBRL",
+            "MyWay": "dateEntreeRelation",
+            "Type": 8,
+            "Size": 8,
+            "Position": 47,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 512,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIMHN1",
+            "MyWay": "codeNiveauWatchListLocale",
+            "Type": 2,
+            "Size": 1,
+            "Position": 48,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 520,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMHW1",
+            "MyWay": "dateEntreeEnWatchListLocale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 49,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 521,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DFMHW1",
+            "MyWay": "dateSortieWatchListLocale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 50,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 529,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIMHN2",
+            "MyWay": "codeNiveauWatchListNationale",
+            "Type": 2,
+            "Size": 1,
+            "Position": 51,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 537,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMHW2",
+            "MyWay": "dateEntreeEnWatchListNationale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 52,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 538,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DFMHW2",
+            "MyWay": "dateSortieWatchListNationale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 53,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 546,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIMHN3",
+            "MyWay": "codeNiveauWatchListBanqueRef",
+            "Type": 2,
+            "Size": 1,
+            "Position": 54,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 554,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMHW3",
+            "MyWay": "dateEntreeEnWatchListBanqueRef",
+            "Type": 7,
+            "Size": 8,
+            "Position": 55,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 555,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DFMHW3",
+            "MyWay": "dateSortieWatchListBanqueRef",
+            "Type": 7,
+            "Size": 8,
+            "Position": 56,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 563,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDCHP",
+            "MyWay": "indicEnregHorsPresenceClient",
+            "Type": 2,
+            "Size": 1,
+            "Position": 57,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 571,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDHQL",
+            "MyWay": "codeTeteGroupe",
+            "Type": 2,
+            "Size": 1,
+            "Position": 58,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 572,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CNDHNR",
+            "MyWay": "codeNatureLienReglementaire",
+            "Type": 2,
+            "Size": 2,
+            "Position": 59,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 573,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDHGL",
+            "MyWay": "typeGroupe",
+            "Type": 2,
+            "Size": 1,
+            "Position": 60,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 575,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CWDKSC",
+            "MyWay": "codeSensContact",
+            "Type": 2,
+            "Size": 1,
+            "Position": 61,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 576,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDDKCL",
+            "MyWay": "codeCanalContact",
+            "Type": 2,
+            "Size": 2,
+            "Position": 62,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 577,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDDKME",
+            "MyWay": "codeMediaContact",
+            "Type": 2,
+            "Size": 2,
+            "Position": 63,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 579,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADSCT",
+            "MyWay": "dateContact",
+            "Type": 8,
+            "Size": 8,
+            "Position": 64,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 581,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CMDKMC",
+            "MyWay": "codeMotifContact",
+            "Type": 2,
+            "Size": 2,
+            "Position": 65,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 589,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CVD1SC",
+            "MyWay": "codeNiveauConnaissanceClient",
+            "Type": 2,
+            "Size": 2,
+            "Position": 66,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 591,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DMDEC1",
+            "MyWay": "dateDernEvaluationConnaissance",
+            "Type": 7,
+            "Size": 8,
+            "Position": 67,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 593,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDDAPO",
+            "MyWay": "codeProspect",
+            "Type": 2,
+            "Size": 1,
+            "Position": 68,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 601,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDADP",
+            "MyWay": "indicDecesPresume",
+            "Type": 2,
+            "Size": 1,
+            "Position": 69,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 602,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADADP",
+            "MyWay": "dateDecesPresume",
+            "Type": 7,
+            "Size": 8,
+            "Position": 70,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 603,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDBEK",
+            "MyWay": "codePresenceCompteDesherence",
+            "Type": 2,
+            "Size": 1,
+            "Position": 71,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 611,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CMCEDC",
+            "MyWay": "codeOrigineInformationDeces",
+            "Type": 2,
+            "Size": 5,
+            "Position": 72,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 612,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientProfilPM",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3T",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDARS",
+            "MyWay": "raisonSocial",
+            "Type": 2,
+            "Size": 64,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODASU",
+            "MyWay": "codeSuiviCommercial",
+            "Type": 2,
+            "Size": 1,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 67,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDANO",
+            "MyWay": "nomCommercial",
+            "Type": 2,
+            "Size": 40,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 68,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODASR",
+            "MyWay": "numeroSIREN",
+            "Type": 2,
+            "Size": 9,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 108,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAFJ",
+            "MyWay": "codeCategorieJuridique",
+            "Type": 2,
+            "Size": 2,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 117,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODASC",
+            "MyWay": "codeCategoJuridi2DerCaracteres",
+            "Type": 2,
+            "Size": 2,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 119,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDALI",
+            "MyWay": "designationEntiteTitulaire",
+            "Type": 2,
+            "Size": 32,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 121,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODAST",
+            "MyWay": "numeroSIRET",
+            "Type": 2,
+            "Size": 14,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 153,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODACL",
+            "MyWay": "codeMotifClotureEntiteTitulaire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 167,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADATJ",
+            "MyWay": "dateCreationJuridique",
+            "Type": 8,
+            "Size": 8,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 168,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODATI",
+            "MyWay": "codeClientTiers",
+            "Type": 2,
+            "Size": 1,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 176,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMRCT",
+            "MyWay": "typeCotationFIBEN",
+            "Type": 2,
+            "Size": 4,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 177,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAQL",
+            "MyWay": "codeCotation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 14,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 181,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADAQL",
+            "MyWay": "dateDerniereMajCotationProf",
+            "Type": 8,
+            "Size": 8,
+            "Position": 15,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 182,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DLDQQL",
+            "MyWay": "dateDerniereRevisionCotationPro",
+            "Type": 8,
+            "Size": 8,
+            "Position": 16,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 190,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DAMRAS",
+            "MyWay": "dateSituationBDF",
+            "Type": 8,
+            "Size": 8,
+            "Position": 17,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 198,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CBMBNC",
+            "MyWay": "noteBale2",
+            "Type": 2,
+            "Size": 20,
+            "Position": 18,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 206,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMBEN",
+            "MyWay": "date",
+            "Type": 8,
+            "Size": 8,
+            "Position": 19,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 226,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LBMBML",
+            "MyWay": "libelleMoteur",
+            "Type": 2,
+            "Size": 32,
+            "Position": 20,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 234,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMBNT",
+            "MyWay": "codeEtablissementNotation",
+            "Type": 2,
+            "Size": 5,
+            "Position": 21,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 266,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WCODM",
+            "MyWay": "codeDomaineGestionPacbase",
+            "Type": 2,
+            "Size": 3,
+            "Position": 22,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 271,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WCOLE",
+            "MyWay": "codeMessageErreur",
+            "Type": 2,
+            "Size": 8,
+            "Position": 23,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 274,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WLE80",
+            "MyWay": "libelleReponse",
+            "Type": 2,
+            "Size": 80,
+            "Position": 24,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 282,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMRC1",
+            "MyWay": "cotationPrecedenteFibenBdf",
+            "Type": 2,
+            "Size": 4,
+            "Position": 25,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 362,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DAMRAT",
+            "MyWay": "dateCotationFibenBdfN1",
+            "Type": 8,
+            "Size": 8,
+            "Position": 26,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 366,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAQM",
+            "MyWay": "codeDegradationCotationFiben",
+            "Type": 2,
+            "Size": 1,
+            "Position": 27,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 374,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DAMRC3",
+            "MyWay": "dateBdfAttributionEventFiben",
+            "Type": 8,
+            "Size": 8,
+            "Position": 28,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 375,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDHQL",
+            "MyWay": "codeTeteGroupe",
+            "Type": 2,
+            "Size": 1,
+            "Position": 29,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 383,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LBMBEN",
+            "MyWay": "libelleEtablissementNotation",
+            "Type": 2,
+            "Size": 32,
+            "Position": 30,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 384,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COMBPI",
+            "MyWay": "codeEtablissementPilote",
+            "Type": 2,
+            "Size": 5,
+            "Position": 31,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 416,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LBMBEP",
+            "MyWay": "libelleEtablissementPilote",
+            "Type": 2,
+            "Size": 32,
+            "Position": 32,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 421,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CINCTC",
+            "MyWay": "indicPresenceActeAtdSaisie",
+            "Type": 2,
+            "Size": 1,
+            "Position": 33,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 453,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYWL",
+            "MyWay": "codeAlerteWatchList",
+            "Type": 2,
+            "Size": 1,
+            "Position": 34,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 454,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYAL",
+            "MyWay": "indicAlerteSurPersonne",
+            "Type": 2,
+            "Size": 1,
+            "Position": 35,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 455,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYRE",
+            "MyWay": "indicateurAlerteReclamation",
+            "Type": 2,
+            "Size": 1,
+            "Position": 36,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 456,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDMJDS",
+            "MyWay": "codeDegreSensibilitePersonne",
+            "Type": 2,
+            "Size": 1,
+            "Position": 37,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 457,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADBRL",
+            "MyWay": "dateEntreeRelation",
+            "Type": 8,
+            "Size": 8,
+            "Position": 38,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 458,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIMHN1",
+            "MyWay": "codeNiveauWatchListLocale",
+            "Type": 2,
+            "Size": 1,
+            "Position": 39,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 466,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMHW1",
+            "MyWay": "dateEntreeEnWatchListLocale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 40,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 467,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DFMHW1",
+            "MyWay": "dateSortieWatchListLocale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 41,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 475,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIMHN2",
+            "MyWay": "codeNiveauWatchListNationale",
+            "Type": 2,
+            "Size": 1,
+            "Position": 42,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 483,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMHW2",
+            "MyWay": "dateEntreeEnWatchListNationale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 43,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 484,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DFMHW2",
+            "MyWay": "dateSortieWatchListNationale",
+            "Type": 7,
+            "Size": 8,
+            "Position": 44,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 492,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIMHN3",
+            "MyWay": "codeNiveauWatchListBanqueRef",
+            "Type": 2,
+            "Size": 1,
+            "Position": 45,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 500,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDMHW3",
+            "MyWay": "dateEntreeEnWatchListBanqueRef",
+            "Type": 7,
+            "Size": 8,
+            "Position": 46,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 501,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DFMHW3",
+            "MyWay": "dateSortieWatchListBanqueRef",
+            "Type": 7,
+            "Size": 8,
+            "Position": 47,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 509,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDCHP",
+            "MyWay": "indicEnregHorsPresenceClient",
+            "Type": 2,
+            "Size": 1,
+            "Position": 48,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 517,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CNDHNR",
+            "MyWay": "codeNatureLienReglementaire",
+            "Type": 2,
+            "Size": 2,
+            "Position": 49,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 518,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDHGL",
+            "MyWay": "typeGroupe",
+            "Type": 2,
+            "Size": 1,
+            "Position": 50,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 520,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CWDKSC",
+            "MyWay": "codeSensContact",
+            "Type": 2,
+            "Size": 1,
+            "Position": 51,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 521,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDDKCL",
+            "MyWay": "codeCanalContact",
+            "Type": 2,
+            "Size": 2,
+            "Position": 52,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 522,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDDKME",
+            "MyWay": "codeMediaContact",
+            "Type": 2,
+            "Size": 2,
+            "Position": 53,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 524,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADSCT",
+            "MyWay": "dateContact",
+            "Type": 8,
+            "Size": 8,
+            "Position": 54,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 526,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CMDKMC",
+            "MyWay": "codeMotifContact",
+            "Type": 2,
+            "Size": 2,
+            "Position": 55,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 534,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CDDAPO",
+            "MyWay": "codeProspect",
+            "Type": 2,
+            "Size": 1,
+            "Position": 56,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 536,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTDBEK",
+            "MyWay": "codePresenceCompteDesherence",
+            "Type": 2,
+            "Size": 1,
+            "Position": 57,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 537,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientEntiteTitulaire",
+    "ParentMyWayObject": null,
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3U",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODIET",
+            "MyWay": "numeroEntiteTitulaire",
+            "Type": 3,
+            "Size": 10,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDICD",
+            "MyWay": "designationBancaire",
+            "Type": 2,
+            "Size": 32,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 13,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODIMC",
+            "MyWay": "modeCompositionEntiteTitulaire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 45,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODIUS",
+            "MyWay": "codeUsageEntiteTitulaire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 46,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODAET",
+            "MyWay": "codeEtatPersonne",
+            "Type": 2,
+            "Size": 1,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 47,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NOCEEL",
+            "MyWay": "idEdsInterne",
+            "Type": 3,
+            "Size": 7,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 48,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COCEEL",
+            "MyWay": "edsDomiciliation",
+            "Type": 3,
+            "Size": 7,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 55,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTCEEL",
+            "MyWay": "typeEDS",
+            "Type": 2,
+            "Size": 3,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 62,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LCCELB",
+            "MyWay": "libelleCalculeCourtEds",
+            "Type": 2,
+            "Size": 32,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 65,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NOCEE1",
+            "MyWay": "identifiantElementStructure",
+            "Type": 3,
+            "Size": 7,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 97,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COCEE1",
+            "MyWay": "referenceExterneEDSNiveau1",
+            "Type": 3,
+            "Size": 7,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 104,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTCEE1",
+            "MyWay": "typeElementStructure",
+            "Type": 2,
+            "Size": 3,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 111,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LCCEL1",
+            "MyWay": "libelleCourtEDS",
+            "Type": 2,
+            "Size": 32,
+            "Position": 14,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 114,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NODATP",
+            "MyWay": "numeroTelephone",
+            "Type": 2,
+            "Size": 20,
+            "Position": 15,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 146,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDIED",
+            "MyWay": "indEntiteTitulaireDouteuse",
+            "Type": 3,
+            "Size": 1,
+            "Position": 16,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 166,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODACB",
+            "MyWay": "codeCotationBancaire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 17,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 167,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODIM5",
+            "MyWay": "sousCodeModeCompositionET",
+            "Type": 2,
+            "Size": 1,
+            "Position": 18,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 168,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CBMBNC",
+            "MyWay": "noteBale2",
+            "Type": 2,
+            "Size": 20,
+            "Position": 19,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 169,
+            "Precision": 0
+          },
+          {
+            "NSDK": "HDMBEV",
+            "MyWay": "timestampEvenementNotation",
+            "Type": 6,
+            "Size": 26,
+            "Position": 20,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 189,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WCODM",
+            "MyWay": "codeDomaineGestionPacbase",
+            "Type": 2,
+            "Size": 3,
+            "Position": 21,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 215,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WCOLE",
+            "MyWay": "codeMessageErreur",
+            "Type": 2,
+            "Size": 8,
+            "Position": 22,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 218,
+            "Precision": 0
+          },
+          {
+            "NSDK": "WLE80",
+            "MyWay": "libelleReponse",
+            "Type": 2,
+            "Size": 80,
+            "Position": 23,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 226,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientSuivi",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3V",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODUSU",
+            "MyWay": "codeSuiviPar",
+            "Type": 2,
+            "Size": 1,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LICEAG",
+            "MyWay": "nomAgentTraitement",
+            "Type": 2,
+            "Size": 32,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 4,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COCEEL",
+            "MyWay": "edsDomiciliation",
+            "Type": 3,
+            "Size": 7,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 36,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COCEE1",
+            "MyWay": "referenceExterneEDSNiveau1",
+            "Type": 3,
+            "Size": 7,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 43,
+            "Precision": 0
+          },
+          {
+            "NSDK": "COCEAG",
+            "MyWay": "codeAgent",
+            "Type": 3,
+            "Size": 7,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 50,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NOCEEL",
+            "MyWay": "idEdsInterne",
+            "Type": 3,
+            "Size": 7,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 57,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTCEEL",
+            "MyWay": "typeEDS",
+            "Type": 2,
+            "Size": 3,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 64,
+            "Precision": 0
+          },
+          {
+            "NSDK": "NOCEE1",
+            "MyWay": "identifiantElementStructure",
+            "Type": 3,
+            "Size": 7,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 67,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CTCEE1",
+            "MyWay": "typeElementStructure",
+            "Type": 2,
+            "Size": 3,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 74,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODACV",
+            "MyWay": "codeCivilite",
+            "Type": 2,
+            "Size": 1,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 77,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODUMP",
+            "MyWay": "codeTypePortefeuille",
+            "Type": 2,
+            "Size": 1,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 78,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientDonneesCommercial",
+    "ParentMyWayObject": "Container",
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX3X",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDSAL",
+            "MyWay": "codeExistenceAlertesCom",
+            "Type": 2,
+            "Size": 1,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDSEC",
+            "MyWay": "codeExistenceEventCommerciaux",
+            "Type": 2,
+            "Size": 1,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 4,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDICL",
+            "MyWay": "codeExistenceInfoclient",
+            "Type": 2,
+            "Size": 1,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 5,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDISR",
+            "MyWay": "codeExistenceInfoInterneService",
+            "Type": 2,
+            "Size": 1,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 6,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDNLN",
+            "MyWay": "codeExistenceInfoListeNoire",
+            "Type": 2,
+            "Size": 1,
+            "Position": 6,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 7,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDCEDA",
+            "MyWay": "dateArreteDossierSuccession",
+            "Type": 8,
+            "Size": 8,
+            "Position": 7,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 8,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CEDSAG",
+            "MyWay": "codeExistenceAccrocheGuichet",
+            "Type": 2,
+            "Size": 1,
+            "Position": 8,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 16,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDSRD",
+            "MyWay": "indicExistenceRdvJourclient",
+            "Type": 2,
+            "Size": 1,
+            "Position": 9,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 17,
+            "Precision": 0
+          },
+          {
+            "NSDK": "QCDSDV",
+            "MyWay": "nbDossiersVenteActifs",
+            "Type": 3,
+            "Size": 4,
+            "Position": 10,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 18,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CIDYCC",
+            "MyWay": "codeEtatCompletudeDossier",
+            "Type": 2,
+            "Size": 2,
+            "Position": 11,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 22,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DDDMCT",
+            "MyWay": "dateEnregistrementRendezVous",
+            "Type": 8,
+            "Size": 8,
+            "Position": 12,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 24,
+            "Precision": 0
+          },
+          {
+            "NSDK": "QCDSOR",
+            "MyWay": "nbOpportunitesParRelation",
+            "Type": 3,
+            "Size": 4,
+            "Position": 13,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 32,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "SyntheseClientAu1erJanv",
+    "ParentMyWayObject": null,
+    "SubMyWayObjects": {},
+    "Arrays": {},
+    "Segments": [
+      {
+        "NSDK": "DCSX8P",
+        "Rubriques": [
+          {
+            "NSDK": "WCORE3",
+            "MyWay": "codeRetour",
+            "Type": 3,
+            "Size": 3,
+            "Position": 1,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 0,
+            "Precision": 0
+          },
+          {
+            "NSDK": "DADLCA",
+            "MyWay": "dateSegmentationRisque",
+            "Type": 8,
+            "Size": 8,
+            "Position": 2,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 3,
+            "Precision": 0
+          },
+          {
+            "NSDK": "CODLSH",
+            "MyWay": "codeSegmentation",
+            "Type": 2,
+            "Size": 8,
+            "Position": 3,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 11,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDLSC",
+            "MyWay": "libelleCourtSegmentation",
+            "Type": 2,
+            "Size": 11,
+            "Position": 4,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 19,
+            "Precision": 0
+          },
+          {
+            "NSDK": "LIDLSG",
+            "MyWay": "libelleSegmentation",
+            "Type": 2,
+            "Size": 80,
+            "Position": 5,
+            "DefaultFormat": null,
+            "DefaultValue": null,
+            "Offset": 30,
+            "Precision": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "MyWay": "Container",
+    "ParentMyWayObject": null,
+    "SubMyWayObjects": {
+      "syntheseClientOrigineClient": "SyntheseClientOrigineClient",
+      "syntheseClientAdresse": "SyntheseClientAdresse",
+      "syntheseClientAdresseNPAI": "SyntheseClientAdresseNPAI",
+      "syntheseClientProfilPP": "SyntheseClientProfilPP",
+      "syntheseClientProfilPM": "SyntheseClientProfilPM",
+      "syntheseClientSuivi": "SyntheseClientSuivi",
+      "syntheseClientDonneesCommercial": "SyntheseClientDonneesCommercial"
+    },
+    "Arrays": {
+      "syntheseClientGP": "SyntheseClientGP",
+      "syntheseClientSegRevise": "SyntheseClientSegRevise",
+      "syntheseClientEntiteTitulaire": "SyntheseClientEntiteTitulaire",
+      "syntheseClientSegAu1erJanv": "SyntheseClientAu1erJanv"
+    },
+    "Segments": []
+  }
+]

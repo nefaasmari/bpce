@@ -1,0 +1,27 @@
+﻿<div class="pf-indicateur-colonne">
+    <span ng-hide="pfIndicateurColonneCtrl.data.estMontant"
+          ng-bind="pfIndicateurColonneCtrl.data.valeur | number"></span>
+    <span ng-style="{'color': (pfIndicateurColonneCtrl.data.valeur < 0) ? 'red' : 'none'}"
+          ng-show="pfIndicateurColonneCtrl.data.estMontant"
+          ng-bind="pfIndicateurColonneCtrl.data.valeur | montantFiltre"></span>
+    <span class="colonne"
+          ng-style="{'background-color': GREY, 'height': (100 - (pfIndicateurColonneCtrl.data.hauteur + pfIndicateurColonneCtrl.data.sousHauteur)) + '%'}">
+        <span></span>
+    </span>
+    <span class="colonne"
+          ng-style="{'background-color': pfIndicateurColonneCtrl.data.couleur, 'height': pfIndicateurColonneCtrl.data.hauteur + '%', 'align-items' : (pfIndicateurColonneCtrl.data.sousHauteur >  pfIndicateurColonneCtrl.data.hauteur) ? 'center' : 'flex-end' }">
+    </span>
+    <span class="colonne"
+          ng-show="pfIndicateurColonneCtrl.estVisibleSousValeur()"
+          ng-style="{'background-color': pfIndicateurColonneCtrl.data.couleurSousValeur, 'height': pfIndicateurColonneCtrl.data.sousHauteur + '%', 'position': 'relative'}">
+        <span class="sous-valeur-colonne shadow"
+              ng-show="pfIndicateurColonneCtrl.estSousValeurEnNombre"
+              ng-bind="pfIndicateurColonneCtrl.data.sousValeur | number"></span>
+    </span>
+    <span class="intitule mw-troncature" 
+          ng-style="{'width':'10rem', 'text-align': 'center'}" 
+          ng-hide="!pfIndicateurColonneCtrl.estVisibleSuiviPar"
+          ng-bind="pfIndicateurColonneCtrl.data.nomSuiviPar">
+    </span>
+</div>
+

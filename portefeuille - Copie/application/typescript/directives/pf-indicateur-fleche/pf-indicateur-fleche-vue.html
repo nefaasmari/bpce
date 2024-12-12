@@ -1,0 +1,12 @@
+﻿<span class="pf-indicateur-fleche">
+
+    <!--  A réactiver quand les images seront intégrées au framework via les icone -->
+    <!--<span aria-hidden="true" class="icon" ng-class="[pfIndicateurFlecheCtrl.config.icone, pfIndicateurFlecheCtrl.config.couleur]"></span>-->
+
+    <!--  /* A supprimer quand les images seront intégrées au framework  */ -->
+    <img id="fleche-montante" alt="évolution des flux positive" ng-show="pfIndicateurFlecheCtrl.isPositif" src="images/fleche-montante.png" />
+    <img id="fleche-descendante" alt="évolution des flux négative" ng-show="pfIndicateurFlecheCtrl.isNegatif" src="images/fleche-descendante.png" />
+    <img id="fleche-neutre" alt="évolution des flux neutre" ng-show="pfIndicateurFlecheCtrl.isNeutre" src="images/fleche-neutre.png" />
+
+    <span class="valeur" ng-bind="pfIndicateurFlecheCtrl.config.valeurFormate"></span>
+</span>

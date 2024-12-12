@@ -1,0 +1,164 @@
+﻿<div class="col-md-4 col-lg-4 pull-right content-choix-portefeuille"
+     ng-if="PfChoixPortefeuilleCtrl.aPortefeuille()">
+    <mw-bouton-volet id="btn-volet-portefeuille"
+                     modele="zone"
+                     texte="{{PfChoixPortefeuilleCtrl.getTxtChoixPortefeuille()}}"
+                     fermeture-auto="non"
+                     ng-show="PfChoixPortefeuilleCtrl.estDesignation()"
+                     ng-click="PfChoixPortefeuilleCtrl.ouvrirFermerChoixPortefeuille()"
+                     ouvert="PfChoixPortefeuilleCtrl.ouvertureVoletChoixPortefeuille"
+                     role="button"
+                     class="col-md-12 col-lg-10 pull-right no-padding-right">
+        <div class="form-group dv-choix-portefeuille"
+             ng-click="PfChoixPortefeuilleCtrl.stopPropagation($event)"
+             role="button"
+             ng-class="{'display-block':(PfChoixPortefeuilleCtrl.finInit)}">
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-show="PfChoixPortefeuilleCtrl.estVueGlobalConsolide">
+                        <div class="mw-input-check vertical-alignement">
+                            <label for="id-checkbox-multi"
+                                   id="id-label-multi"
+                                   ng-click="PfChoixPortefeuilleCtrl.forceMultiSelection($event)"
+                                   ng-keydown="PfChoixPortefeuilleCtrl.keyDownTroisEtat($event)"
+                                   role="button">
+                                <input type="checkbox"
+                                       id="id-checkbox-multi"
+                                       ng-model="PfChoixPortefeuilleCtrl.tousPortfeuillesSelectionnes"
+                                       indeterminate="{{PfChoixPortefeuilleCtrl.setIndetermine()}}"
+                                       aria-checked="{{PfChoixPortefeuilleCtrl.aTousPortefeuillesCoches()}}"
+                                       aria-labelledby="id-label-multi"
+                                       mw-indeterminate-trois-etats />
+                                <span aria-hidden="true"
+                                      class="icon "
+                                      ng-class="{'itce-fa-check':(PfChoixPortefeuilleCtrl.isCheckedGlobal()), 'itce-minus':(PfChoixPortefeuilleCtrl.setIndetermine())}">
+                                </span>
+                                <span ng-bind="PfChoixPortefeuilleCtrl.getLabelTroisEtats()"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li ng-repeat="ptf in PfChoixPortefeuilleCtrl.listePortefeuillesDropDown track by $index"
+                        ng-init="indexAgent = $index"
+                        class="list-group-item">
+                        <div class="mw-input-check vertical-alignement">
+                            <label ng-attr-for="id-agent-portefeuille-{{indexAgent}}"
+                                   ng-attr-id="id-agent-label-portefeuille-{{indexAgent}}"
+                                   ng-click="PfChoixPortefeuilleCtrl.forceMultiSelection($event, indexAgent)"
+                                   ng-keydown="PfChoixPortefeuilleCtrl.keyDownTroisEtat($event, indexAgent)"
+                                   ng-show="PfChoixPortefeuilleCtrl.estVueGlobalConsolide"
+                                   role="button">
+                                <input type="checkbox"
+                                       ng-attr-id="id-agent-portefeuille-{{indexAgent}}"
+                                       ng-model="PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].estAffiche"
+                                       indeterminate="{{PfChoixPortefeuilleCtrl.setIndetermine(indexAgent)}}"
+                                       aria-checked="{{PfChoixPortefeuilleCtrl.aTousPortefeuillesCoches(indexAgent)}}"
+                                       ng-attr-aria-labelledby="id-agent-label-portefeuille-{{indexAgent}}"
+                                       mw-indeterminate-trois-etats />
+                                <span aria-hidden="true"
+                                      class="icon "
+                                      ng-class="{'itce-fa-check':(PfChoixPortefeuilleCtrl.isCheckedGlobal(indexAgent)), 'itce-minus':(PfChoixPortefeuilleCtrl.setIndetermine(indexAgent))}">
+                                </span>
+                                <span ng-bind="PfChoixPortefeuilleCtrl.getLibelleAgent(indexAgent)"></span><br /><br />
+                            </label>
+                            <div ng-class="{'bloc-choix-ptf': PfChoixPortefeuilleCtrl.aPortefeuilleReel() && PfChoixPortefeuilleCtrl.aSuiviParComplementaire() }" ng-show="PfChoixPortefeuilleCtrl.aPortefeuilleReel()">
+                                <span ng-show="PfChoixPortefeuilleCtrl.aPortefeuilleReel() && !PfChoixPortefeuilleCtrl.estVueGlobalConsolide">Choisir un ou plusieurs portefeuilles</span>
+                                <ul class="bloc-liste-portefeuille">
+                                    <li class="list-group-item" ng-show="PfChoixPortefeuilleCtrl.aPortefeuilleReel() && PfChoixPortefeuilleCtrl.nbPortefeuilleReel() > 1 && !PfChoixPortefeuilleCtrl.estVueGlobalConsolide">
+                                        <div class="mw-input-check vertical-alignement">
+                                            <label for="id-checkbox-multi"
+                                                   id="id-label-multi-portefeuille"
+                                                   ng-click="PfChoixPortefeuilleCtrl.forceMultiSelection($event, indexAgent, false)"
+                                                   ng-keydown="PfChoixPortefeuilleCtrl.keyDownTroisEtat($event, indexAgent)"
+                                                   role="button">
+                                                <input type="checkbox"
+                                                       id="id-checkbox-multi"
+                                                       ng-model="PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].estAffiche"
+                                                       indeterminate="{{PfChoixPortefeuilleCtrl.setIndetermine(indexAgent, false)}}"
+                                                       aria-checked="{{PfChoixPortefeuilleCtrl.aTousPortefeuillesCoches(indexAgent, false)}}"
+                                                       aria-labelledby="id-label-multi-portefeuille"
+                                                       mw-indeterminate-trois-etats />
+                                                <span aria-hidden="true"
+                                                      class="icon "
+                                                      ng-class="{'itce-fa-check':(PfChoixPortefeuilleCtrl.aTousPortefeuillesCoches(indexAgent, false)), 'itce-minus':(PfChoixPortefeuilleCtrl.setIndetermine(indexAgent, false))}">
+                                                </span>
+                                                <span ng-bind="PfChoixPortefeuilleCtrl.getLabelTroisEtats(indexAgent, false)"></span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li ng-repeat="ptf in PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent track by $index"
+                                        ng-init="indexPortfeuille = $index"
+                                        class="list-group-item"
+                                        ng-show="PfChoixPortefeuilleCtrl.getEstPortefeuille(indexPortfeuille, indexAgent)">
+                                        <div class="mw-input-check vertical-alignement">
+                                            <label ng-attr-for="id-portefeuille-{{indexAgent}}-{{indexPortfeuille}}"
+                                                   ng-attr-id="id-label-portefeuille-{{indexAgent}}-{{indexPortfeuille}}">
+                                                <input type="checkbox"
+                                                       ng-attr-id="id-portefeuille-{{indexAgent}}-{{indexPortfeuille}}"
+                                                       ng-model="PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent[indexPortfeuille].estAffiche"
+                                                       ng-attr-aria-checked="PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent[indexPortfeuille].isVisu"
+                                                       ng-attr-aria-labelledby="id-label-portefeuille-{{indexAgent}}-{{indexPortfeuille}}"
+                                                       ng-change="PfChoixPortefeuilleCtrl.majSelection(indexPortfeuille, indexAgent)" />
+                                                <span aria-hidden="true"
+                                                      class="icon "
+                                                      ng-class="{'itce-fa-check':PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent[indexPortfeuille].estAffiche}">
+                                                </span>
+                                                <span ng-bind="PfChoixPortefeuilleCtrl.getLibelleEtIdPortefeuille(indexPortfeuille, indexAgent)"></span><br />
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div ng-if="PfChoixPortefeuilleCtrl.aPortefeuilleReel() && PfChoixPortefeuilleCtrl.aSuiviParComplementaire()" class="separateur">Ou</div>
+                            <div ng-class="{'bloc-choix-ptf': PfChoixPortefeuilleCtrl.aPortefeuilleReel() && PfChoixPortefeuilleCtrl.aSuiviParComplementaire() }" ng-show="PfChoixPortefeuilleCtrl.aSuiviParComplementaire()">
+                                <span ng-if="PfChoixPortefeuilleCtrl.aSuiviParComplementaire()">Choisir un portefeuille complémentaire</span>
+                                <ul class="bloc-liste-portefeuille" ng-show="PfChoixPortefeuilleCtrl.aSuiviParComplementaire()">
+                                    <li ng-repeat="ptf in PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent track by $index"
+                                        ng-init="indexPortfeuille = $index"
+                                        class="list-group-item"
+                                        ng-show="PfChoixPortefeuilleCtrl.getEstSuiviParComplementaire(indexPortfeuille, indexAgent)">
+                                        <div class="mw-input-check vertical-alignement">
+                                            <label ng-attr-for="id-portefeuille-{{indexAgent}}-{{indexPortfeuille}}"
+                                                   ng-attr-id="id-label-portefeuille-{{indexAgent}}-{{indexPortfeuille}}">
+                                                <input type="checkbox"
+                                                       ng-attr-id="id-portefeuille-{{indexAgent}}-{{indexPortfeuille}}"
+                                                       ng-model="PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent[indexPortfeuille].estAffiche"
+                                                       ng-attr-aria-checked="PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent[indexPortfeuille].isVisu"
+                                                       ng-attr-aria-labelledby="id-label-portefeuille-{{indexAgent}}-{{indexPortfeuille}}"
+                                                       ng-change="PfChoixPortefeuilleCtrl.majSelection(indexPortfeuille, indexAgent)" />
+                                                <span aria-hidden="true"
+                                                      class="icon "
+                                                      ng-class="{'itce-fa-check':PfChoixPortefeuilleCtrl.listePortefeuillesDropDown[indexAgent].listPortefeuilleParAgent[indexPortfeuille].estAffiche}">
+                                                </span>
+                                                <span ng-bind="PfChoixPortefeuilleCtrl.getLibelleEtIdPortefeuille(indexPortfeuille, indexAgent)"></span><br />
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class="col-md-6">
+                    <button class="btn btn-block btn-default margin-bottom-1-rem"
+                            aria-label="Annuler"
+                            ng-click="PfChoixPortefeuilleCtrl.annulerChoixPortefeuille()"
+                            id="bouton-annuler">
+                        <span>Annuler</span>
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-block btn-primary margin-bottom-1-rem"
+                            aria-label="Valider"
+                            ng-click="PfChoixPortefeuilleCtrl.validerChoixPortefeuille()"
+                            id="bouton-valider"
+                            ng-disabled="!PfChoixPortefeuilleCtrl.aPortefeuilleCoche()">
+                        <span>Valider</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mw-bouton-volet>
+</div>

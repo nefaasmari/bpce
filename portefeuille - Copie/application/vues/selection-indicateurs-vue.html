@@ -1,0 +1,123 @@
+﻿<!-- Contenu de la page -->
+<section class="container-fluid" id="contenu">
+    <div id="modale-panier-body" class="modale-panier-body modal-body">
+        <div class="col-md-12">
+            <div class="col-md-12 selection-indicateurs">
+                <form class="form-horizontal" role="form" name="selectionIndicateursCtrl.myForm" novalidate>
+                    <div ng-if="!selectionIndicateursCtrl.estEnEditionPanier">
+                        <div class="col-md-8 form-group">
+                            <label class="col-md-4 control-label" for="choix-selection">Liste des sélections d'indicateurs</label>
+                            <div class="form-group has-feedback">
+                                <div class="col-md-7" ng-class="{'has-error': selectionIndicateursCtrl.erreurSelection}">
+                                    <input type="text"
+                                           mw-clear-button
+                                           id="choix-selection"
+                                           class="form-control"
+                                           name="choix-panier"
+                                           ng-model="selectionIndicateursCtrl.panierEnCours"
+                                           placeholder="Séléctionner un panier"
+                                           mw-combobox="panier as panier.nom for panier in selectionIndicateursCtrl.listePaniers"
+                                           mw-combobox-on-select="selectionIndicateursCtrl.changePanier($item)" />
+                                    <span class="error-msg col-md-12" ng-class="{'hide-a11y' : !selectionIndicateursCtrl.erreurSelection }" aria-hidden="{{!selectionIndicateursCtrl.erreurSelection}}" ng-attr-role="selectionIndicateursCtrl.getRoleIndicateurNom()">Veuillez sélectionner une sélection</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-block btn-default mw-troncature" aria-label="Gérer la sélection" ng-click="selectionIndicateursCtrl.gererSelection()" id="bouton-gerer"
+                                    tooltip-id="tooltip-bouton-gerer-selection"
+                                    aria-describedby="tooltip-bouton-gerer-selection"
+                                    tooltip-trigger="focus blur mouseenter mouseleave"
+                                    tooltip-placement="bottom"
+                                    tooltip="Ce bouton permet d'ajouter, supprimer, ordonner les indicateurs et de modifier le nom de la sélection.">
+                                Gérer la sélection
+                            </button>
+                        </div>
+                    </div>
+                    <div ng-if="selectionIndicateursCtrl.estEnEditionPanier">
+                        <div class="form-group has-feedback col-md-8">
+                            <label class="col-md-4 control-label" for="id-nom">Nom de la sélection</label>
+                            <div class="col-md-7" ng-class="{'has-error': !selectionIndicateursCtrl.estFormulaireValide() || selectionIndicateursCtrl.estNomAChanger()}">
+                                <input type="text"
+                                       mw-clear-button
+                                       required placeholder=""
+                                       id="id-nom"
+                                       class="form-control"
+                                       name="nom"
+                                       ng-model="selectionIndicateursCtrl.panierEnCours.nom"
+                                       maxlength="32" />
+                                <span class="error-msg col-md-12" ng-if="!selectionIndicateursCtrl.estFormulaireValide()" ng-bind="selectionIndicateursCtrl.messageErreurNomSelection"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 pull-right">
+                            <button class="btn btn-block btn-primary mw-troncature" aria-label="Enregistrer la sélection" ng-click="selectionIndicateursCtrl.enregistrerSelection()" id="bouton-enregistrer" ng-disabled="!selectionIndicateursCtrl.estFormulaireValide()">
+                                <span>Enregistrer la sélection</span>
+                            </button>
+                        </div>
+                        <div class="col-md-2 pull-right">
+                            <button class="btn btn-block btn-default mw-troncature" aria-label="Annuler la modification de la sélection" ng-click="selectionIndicateursCtrl.annulerModifSelection()" id="bouton-annuler">
+                                <span>Annuler</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-md-12 no-padding-left">
+                    <p class="col-md-3 label-nb-indicateur"><span class="label-nb-indicateur" ng-bind="selectionIndicateursCtrl.getEtatNbIndicateurs()"></span></p>
+                </div>
+                <div class="row drop-content-panier-global pf-drop-target-element"
+                     mw-pf-core-drop-target
+                     drop-settings="selectionIndicateursCtrl.panierDropSettings"
+                     ng-show="selectionIndicateursCtrl.panierEnCours"
+                     mw-chargement="selectionIndicateursCtrl.chargementEnCours"
+                     ng-if="selectionIndicateursCtrl.panierDropSettings">
+                    <ul class="nav col-md-12 no-padding-left no-padding-right">
+                        <mw-pf-tuile-panier ng-repeat="tuilePanierSettings in selectionIndicateursCtrl.listeTuilePanierSettings track by tuilePanierSettings.id"
+                                            tuile-panier-settings="tuilePanierSettings"
+                                            liste-tuile-catalogue-settings="selectionIndicateursCtrl.listeTuileCatalogueSettings"
+                                            liste-tuile-panier-settings="selectionIndicateursCtrl.listeTuilePanierSettings"
+                                            liste-filtres-clients="selectionIndicateursCtrl.listeFiltresClients"
+                                            liste-filtres-relation-eco="selectionIndicateursCtrl.listeFiltresRelationEco"
+                                            ng-attr-id="pf-tuile-panier-{{$index}}"></mw-pf-tuile-panier>
+                        <li class="bloc-content-panier" ng-if="selectionIndicateursCtrl.afficherTuileEmplacementVide()">
+                            <div class="drop-content-panier pf-drop-target-element"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div mw-chargement="selectionIndicateursCtrl.chargementEnCours">
+            <mw-panel niveau="2" titre="Liste des indicateurs" id="panel-catalogue-indicateur" ng-show="selectionIndicateursCtrl.panierEnCours">
+                <div class="row drop-content-poubelle pf-drop-target-element"
+                     mw-pf-core-drop-target
+                     drop-settings="selectionIndicateursCtrl.poubelleDropSettings"
+                     ng-if="selectionIndicateursCtrl.poubelleDropSettings">
+                    <ul class="nav col-md-12">
+                        <mw-pf-tuile-catalogue ng-hide="tuileCatalogueSettings.indicateur.choisi" ng-repeat="tuileCatalogueSettings in selectionIndicateursCtrl.listeTuileCatalogueSettings track by tuileCatalogueSettings.id"
+                                               mw-combobox-select-on-exact="true"
+                                               tuile-catalogue-settings="tuileCatalogueSettings"
+                                               liste-tuile-catalogue-settings="selectionIndicateursCtrl.listeTuileCatalogueSettings"
+                                               liste-tuile-panier-settings="selectionIndicateursCtrl.listeTuilePanierSettings"
+                                               liste-filtres-clients="selectionIndicateursCtrl.listeFiltresClients"
+                                               liste-filtres-relation-eco="selectionIndicateursCtrl.listeFiltresRelationEco"
+                                               ng-attr-id="pf-tuile-catalogue-{{$index}}"></mw-pf-tuile-catalogue>
+                    </ul>
+                </div>
+            </mw-panel>
+        </div>
+    </div>
+</section>
+<footer class="row mw-footer-fixed-bottom">
+    <div class="overlay-footer" ng-class="{'display-block':(indexCtrl.ouvertureVoletChoixPortefeuille)}"></div>
+    <div class="col-md-12">
+        <div class="col-md-2 pull-right">
+            <button class="btn btn-block btn-primary mw-troncature" aria-label="Appliquer" ng-click="selectionIndicateursCtrl.appliquer()" id="bouton-appliquer" ng-disabled="selectionIndicateursCtrl.estEnEditionPanier">
+                <span>Appliquer la sélection</span>
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-block btn-default mw-troncature" aria-label="Annuler" ng-click="selectionIndicateursCtrl.retour()" id="bouton-retour" ng-disabled="selectionIndicateursCtrl.estEnEditionPanier">
+                <span class="icon itce-chevron-left" aria-hidden="true"></span>
+                <span>Retour</span>
+            </button>
+        </div>
+    </div>
+</footer>

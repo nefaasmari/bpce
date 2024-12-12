@@ -1,0 +1,159 @@
+﻿<div class="modal-header">
+    <button type="button" id="bouton-modale-fermer" ng-click="popupCtrl.fermer()" class="close">
+        <span class="icon itce-times" aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title">Personnaliser les indicateurs</h1>
+</div>
+
+<div id="modale-panier-body" class="modale-panier-body modal-body texte-gros row" role="document" mw-chargement="popupCtrl.chargementEnCours">
+    <mw-synthese-erreurs id="id-erreur-form">
+        <ul>
+            <li ng-repeat="e in popupCtrl.listeErreurs track by e.champs">
+                <span ng-if="e.message == ''">
+                    <a href="javascript:void(0)"
+                       ng-click="popupCtrl.goToAnchor(e.ancre)"
+                       ng-bind="e.champs"
+                       id="id-erreur"
+                       title="Libellé de l'erreur"></a> est incorrect
+                </span>
+                <a ng-if="e.message != ''"
+                   href="javascript:void(0)"
+                   ng-click="popupCtrl.goToAnchor(e.ancre)"
+                   ng-bind="e.message"
+                   id="id-erreur-lien"
+                   title="Libellé de l'erreur"></a>
+            </li>
+        </ul>
+    </mw-synthese-erreurs>
+    <div class="panel panel-primary col-md-12">
+        <div class="panel-body no-padding-bottom">
+            <div class="row">
+                <form class="form-horizontal" role="form" name="popupCtrl.myForm" novalidate>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <input type="text"
+                                   mw-clear-button
+                                   id="choix-panier"
+                                   class="form-control"
+                                   name="choix-panier"
+                                   ng-model="popupCtrl.panierEnCours"
+                                   placeholder="Séléctionner un panier"
+                                   mw-combobox="panier as panier.nom for panier in popupCtrl.listePaniers"
+                                   mw-combobox-on-select="popupCtrl.changePanier($item)"
+                                   ng-disabled="popupCtrl.estEnEditionCatalogue || !popupCtrl.estChangementPanierDisponible()" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group has-feedback">
+                                <label class="col-md-3 control-label" for="id-nom">Nom</label>
+                                <div class="col-md-9" ng-class="{'has-error': popupCtrl.myForm.nom.$invalid}">
+                                    <input type="text"
+                                           mw-clear-button
+                                           id="id-nom"
+                                           name="nom"
+                                           class="form-control"
+                                           required
+                                           placeholder=""
+                                           ng-model="popupCtrl.panierEnCours.nom"
+                                           maxlength="32" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row" ng-show="popupCtrl.panierEnCours">
+                <div class="col-md-3 no-padding-left">
+                    <p class="col-md-12 no-padding-left label-nb-indicateur">Nombre d'indicateurs: <span class="label-nb-indicateur" ng-bind="popupCtrl.getNombreIndicateurPanier()"></span>/6</p>
+                </div>
+                <div class="col-md-2 pull-right" ng-show="popupCtrl.estEnEditionPanier">
+                    <button id="bouton-mode-edition-panier-enregistrer"
+                            class="btn btn-block btn-primary"
+                            ng-click="popupCtrl.enregistrerEditionPanier()">
+                        Valider
+                    </button>
+                </div>
+                <div class="col-md-2 pull-right" ng-show="popupCtrl.estEnEditionPanier">
+                    <button id="bouton-mode-edition-panier-annuler"
+                            class="btn btn-block btn-zone"
+                            ng-click="popupCtrl.annulerEditionPanier()">
+                        Annuler
+                    </button>
+                </div>
+                <div class="col-md-3 pull-right" ng-show="popupCtrl.estAfficheBtnGererLaSelection()">
+                    <button id="bouton-mode-edition-panier"
+                            class="btn btn-block btn-contextuel"
+                            ng-click="popupCtrl.activerModeEditionPanier()">
+                        Gérer la sélection
+                    </button>
+                </div>
+                <div class="col-md-3 pull-right" ng-show="popupCtrl.estAfficheBtnSupprimerLaSelection()">
+                    <button id="bouton-supprimer-selection"
+                            class="btn btn-block btn-contextuel"
+                            ng-click="popupCtrl.supprimerTousLesIndicateurs()">
+                        Supprimer la sélection
+                    </button>
+                </div>
+            </div>
+            <div class="row drop-content-panier-global pf-drop-target-element" mw-pf-core-drop-target drop-settings="popupCtrl.panierDropSettings" ng-show="popupCtrl.panierEnCours">
+                <ul class="nav col-md-12 no-padding-left no-padding-right">
+                    <mw-pf-tuile-panier ng-repeat="tuilePanierSettings in popupCtrl.listeTuilePanierSettings track by tuilePanierSettings.id"
+                                        tuile-panier-settings="tuilePanierSettings"
+                                        liste-tuile-catalogue-settings="popupCtrl.listeTuileCatalogueSettings"
+                                        liste-tuile-panier-settings="popupCtrl.listeTuilePanierSettings"
+                                        liste-filtres-clients="popupCtrl.listeFiltresClients"
+                                        liste-filtres-relation-eco="popupCtrl.listeFiltresRelationEco"
+                                        ng-attr-id="pf-tuile-panier-{{$index}}"></mw-pf-tuile-panier>
+                    <li class="bloc-content-panier" ng-show="popupCtrl.estAfficherDropPanier">
+                        <div class="drop-content-panier pf-drop-target-element"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <p class="col-md-12 text-color-rouge no-padding-left">
+                    <span ng-show="popupCtrl.nomFiltre1 || popupCtrl.nomFiltre3">Attention ! Cette nouvelle configuration supprimera :</span>
+
+                    <span ng-show="popupCtrl.nomFiltre1"><br />- le filtre <span class="texte-gras">"<span ng-bind="popupCtrl.nomFiltre1"></span>"</span></span>
+                    <span ng-show="popupCtrl.nomFiltre2"> et le filtre <span class="texte-gras">"<span ng-bind="popupCtrl.nomFiltre2"></span>"</span></span>
+                    <span ng-show="popupCtrl.nomFiltre1"> de la vue relation économique</span>
+
+                    <span ng-show="popupCtrl.nomFiltre3"><br />- le filtre <span class="texte-gras">"<span ng-bind="popupCtrl.nomFiltre3"></span>"</span></span>
+                    <span ng-show="popupCtrl.nomFiltre4"> et le filtre <span class="texte-gras">"<span ng-bind="popupCtrl.nomFiltre4"></span>"</span></span>
+                    <span ng-show="popupCtrl.nomFiltre3"> de la vue clients</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <mw-panel niveau="2" titre="Les indicateurs" id="panel-catalogue-indicateur" ng-show="popupCtrl.panierEnCours">
+        <div class="row drop-content-poubelle pf-drop-target-element" mw-pf-core-drop-target drop-settings="popupCtrl.poubelleDropSettings">
+            <ul class="nav col-md-12">
+                <mw-pf-tuile-catalogue ng-repeat="tuileCatalogueSettings in popupCtrl.listeTuileCatalogueSettings track by tuileCatalogueSettings.id"
+                                       mw-combobox-select-on-exact="true"
+                                       tuile-catalogue-settings="tuileCatalogueSettings"
+                                       liste-tuile-catalogue-settings="popupCtrl.listeTuileCatalogueSettings"
+                                       liste-tuile-panier-settings="popupCtrl.listeTuilePanierSettings"
+                                       liste-filtres-clients="popupCtrl.listeFiltresClients"
+                                       liste-filtres-relation-eco="popupCtrl.listeFiltresRelationEco"
+                                       ng-attr-id="pf-tuile-catalogue-{{$index}}">
+                </mw-pf-tuile-catalogue>
+            </ul>
+        </div>
+    </mw-panel>
+
+</div>
+
+<div class="modal-footer modal-footer-custom">
+    <div class="col-md-offset-6 col-md-3">
+        <button type="button" id="bouton-modale-annuler" class="btn  btn-default" ng-click="popupCtrl.fermer()">Annuler</button>
+    </div>
+    <div class="col-md-3">
+        <button type="button"
+                id="bouton-modale-valider"
+                class="btn btn-primary"
+                ng-click="popupCtrl.valider()"
+                ng-disabled="popupCtrl.estValidable()">
+            Enregistrer la sélection
+        </button>
+    </div>
+</div>

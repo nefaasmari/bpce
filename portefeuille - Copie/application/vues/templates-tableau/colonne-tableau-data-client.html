@@ -1,0 +1,50 @@
+﻿<div class="col-md-12 colonne-tableau-data-client" ng-controller="ColonneDataClientControleur as templateControleur">
+    <!--<div class="row template-colonne">-->
+    <div class="row">
+        <span class="vertical-align-top">
+            <span class="label label-success"
+                  aria-hidden="true"
+                  ng-if="templateControleur.isActif(mwTableRow)"
+                  ng-bind="templateControleur.indicateurActif">
+            </span>
+            <span class="label label-primary"
+                  aria-hidden="true"
+                  ng-if="templateControleur.isInactif(mwTableRow)"
+                  ng-bind="templateControleur.indicateurInactif">
+            </span>
+            <span class="label label-warning label-sans-contrat"
+                  aria-hidden="true"
+                  ng-show="templateControleur.isPremierEquipement(mwTableRow)">
+                <span aria-hidden="true" class="icon itce-contact"></span>
+                <span ng-bind ="templateControleur.indicateurPremierEquipement"></span>
+            </span>
+
+            <span class="label label-warning label-prospet"
+                  aria-hidden="true"
+                  ng-if="templateControleur.isProspect(mwTableRow)">
+                Prospect
+                <span aria-hidden="true" class="icon itce-star"
+                      ng-if="templateControleur.afficherEtoile(mwTableRow, 1)">
+                </span>
+                <span aria-hidden="true" class="icon itce-star"
+                      ng-if="templateControleur.afficherEtoile(mwTableRow, 2)">
+                </span>
+                <span aria-hidden="true" class="icon itce-star"
+                      ng-if="templateControleur.afficherEtoile(mwTableRow, 3)">
+                </span>
+            </span>
+            <span class="label label-warning label-sans-contrat"
+                  aria-hidden="true"
+                  ng-show="templateControleur.isSansContrat(mwTableRow)">Sans contrat</span>
+            <span ng-bind="mwTableRow.nom"></span> (<span ng-bind="mwTableRow.id"></span>)<br />
+            <span class="label label-default"
+                  aria-hidden="true"
+                  ng-if="mwTableRow.estLeader"
+                  ng-bind="templateControleur.indicateurLeader">
+            </span>
+            <span ng-bind="mwTableRow.nomRelationEconomique"
+                  class="texte-relation-eco">
+            </span><br />
+        </span>
+    </div>
+</div>

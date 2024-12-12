@@ -1,0 +1,53 @@
+﻿<div class="modal-header">
+    <button type="button" 
+            id="bouton-modale-fermer" 
+            ng-click="popupCtrl.fermer()" 
+            class="close">
+        <span class="icon itce-times" 
+              aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title">Filtres</h1>
+</div>
+
+<div class="modal-body texte-gros row modal-body-select-produits" 
+     role="document" 
+     ng-keypress="popupCtrl.appuiToucheEntrer($event)">
+
+    <mw-pf-bloc-condition-filtre ng-repeat="filtre in popupCtrl.listeFiltres track by filtre.id"
+                                 ng-attr-id="mw-bloc-condition-filtre-{{$index}}"
+                                 liste-indicateurs="popupCtrl.listeIndicateursFiltreDisponible"
+                                 liste-filtres="popupCtrl.listeFiltres"
+                                 no-index="$index"
+                                 filtre="filtre"
+                                 afficher-operateur="$index !== 0"
+                                 est-vue-client="popupCtrl.estVueClient"></mw-pf-bloc-condition-filtre>
+
+    <!-- Bouton Ajouter condition -->
+    <div ng-show="popupCtrl.afficherBoutonAjouter()" class="col-md-3">
+        <br />
+        <button class="btn btn-block btn-zone" 
+                id="bouton-ajouter-condition-interne" 
+                ng-click="popupCtrl.ajouterCondition(true)"
+                ng-disabled="popupCtrl.pasDeFiltreDisponible">+ Ajouter</button>
+    </div>
+
+    <div class="col-md-9" ng-show="popupCtrl.pasDeFiltreDisponible">
+        <br />
+        <br />
+        <p>Pas de filtre disponible pour les indicateurs sélectionnés</p>
+    </div>
+
+</div>
+
+<div class="modal-footer modal-footer-custom">
+    <div class="col-lg-offset-6 col-lg-3 col-md-offset-6 col-md-3 col-sm-offset-6 col-sm-3">
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <button type="button" 
+                id="bouton-modale-valider" 
+                class="btn  btn-primary" 
+                ng-click="popupCtrl.appliquer()" 
+                ng-disabled="popupCtrl.desactiverBoutonAppliquer()">Appliquer</button>
+    </div>
+</div>

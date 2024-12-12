@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="<% BuildNumber %>" application="BIS10/CEF42/RIA-V1/SPA/{{cia-app}}/{{cia-bloc}}-{{xld-app}}">
+  <orchestrator />
+  <application />
+  <deployables>
+    <file-bpceit.CommandFolder name="{{cia-bloc}}-{{name}}" file="{{name}}.tar.gz">
+      <scanPlaceholders>true</scanPlaceholders>
+        <targetPath></targetPath>
+        <targetPathShared>true</targetPathShared>
+        <createTargetPath>true</createTargetPath>
+        <textFileNamesRegex>.+\.(htm | html | js)</textFileNamesRegex> 
+        <delimiters>## ##</delimiters>
+    </file-bpceit.CommandFolder>
+  </deployables>
+  <applicationDependencies />
+  <dependencyResolution>LATEST</dependencyResolution>
+  <undeployDependencies>false</undeployDependencies>
+</udm.DeploymentPackage>

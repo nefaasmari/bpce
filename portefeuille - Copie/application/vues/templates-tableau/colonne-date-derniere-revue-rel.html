@@ -1,0 +1,5 @@
+﻿<div class="col-md-12 colonne-tableau-data-client"
+     ng-controller="ColonneDataDerniereRevueRelControleur as templateControleur">
+    <span ng-class="{'ancienne-revue texte-gras' : templateControleur.ancienneRevue(mwTableRow)}"
+          ng-bind="templateControleur.valoriserDateRevue(mwTableRow)"></span>
+</div>

@@ -1,0 +1,70 @@
+﻿<!-- Header -->
+<div class="modal-header">
+    <button type="button"
+            id="bouton-modale-fermer"
+            ng-click="popupCtrl.fermer()" class="close">
+        <span class="icon itce-times" aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title" ng-bind="popupCtrl.titreModale"></h1>
+</div>
+
+<!-- Body -->
+<div id="modale-panier-body"
+     class="modale-panier-body modal-body texte-gros row"
+     ng-style="{'padding': '0'}"
+     role="document"
+     mw-chargement="popupCtrl.chargementEnCours">
+    <div class="panel panel-primary panel-detail col-md-12"
+         ng-style="{'padding': '0', 'margin' : '0'}">
+        <div class="bloc-graphique bas-du-bloc"
+             ng-style="{'text-align':'right', 'overflow': 'auto'}">
+            <mw-pf-diagramme-multi-colonne id="colonne-detail-flux-crediteur"
+                                           config="popupCtrl.configDiagrammeColonneFluxCrediteur">
+            </mw-pf-diagramme-multi-colonne>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="modal-footer modal-footer-custom">
+    <div class="bloc-legende">
+
+        <div class="bloc-legende" ng-style="{'width': '33%'}">
+            <mw-pf-puce-legende class="legende" ng-style="{'width': '100%', 'margin': '0'}"
+                                ng-attr-id="puce-diagramme-bar1"
+                                intitule="{{popupCtrl.legendeColonne1}}"
+                                couleur="{{popupCtrl.couleurColonne1}}">
+            </mw-pf-puce-legende>
+            <mw-pf-puce-legende class="legende" ng-style="{'width': '100%', 'margin': '0'}"
+                                ng-attr-id="puce-diagramme-bar2"
+                                intitule="{{popupCtrl.legendeColonne2}}"
+                                couleur="{{popupCtrl.couleurColonne2}}">
+            </mw-pf-puce-legende>
+        </div>
+        <div class="bloc-legende"
+             ng-style="{'width': '33%'}">
+            <div class="pf-puce-legende"
+                 ng-style="{'width': '100%', 'margin': '0'}">
+                &nbsp;
+                <span class="intitule"
+                      ng-bind="popupCtrl.libelle1Total"></span>
+            </div>
+            <div class="pf-puce-legende"
+                 ng-style="{'width': '100%', 'margin': '0'}">
+                &nbsp;
+                <span class="intitule"
+                      ng-bind="popupCtrl.libelle2Total"></span>
+            </div>
+        </div>
+        <div class="bloc-legende" ng-style="{'width': '33%'}">
+            <div class="pf-puce-legende">
+                &nbsp;
+                <mw-pf-indicateur-fleche id="indicateur-fleche-pnb"
+                                         class="margin-left-auto" ng-style="{'margin-top': '20%'}"
+                                         config="popupCtrl.configTendenceFluxCrediteurTotal">
+                </mw-pf-indicateur-fleche>
+            </div>
+        </div>
+    </div>
+</div>

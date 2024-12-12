@@ -1,0 +1,47 @@
+﻿<div class="modal-header">
+    <button type="button" id="bouton-modale-fermer" ng-click="popupCtrl.fermer()" class="close">
+        <span class="icon itce-times" aria-hidden="true"></span>
+        <span class="adobe-blank">Fermer la modale</span>
+    </button>
+    <h1 class="modal-title">
+        <span>Total clients / prospects de votre choix &gt; <span ng-bind="popupCtrl.nbMaxPortefeuilles"></span></span>
+    </h1>
+</div>
+<div class="modal-body row" id="mw-modal-corps" role="document">
+    <div class="col-md-12 message-modale-gros-volume">
+        <strong>Détail de votre sélection :</strong>
+        <div class="col-md-12">
+            <article ng-repeat="ptf in popupCtrl.listePortefeuilles track by $index">
+                <span ng-bind="ptf.libelle + ' - ' + ptf.id + ' : '"></span>
+                <strong><span ng-bind="ptf.nombreTotalClients"></span></strong>
+                <span> clients (y compris sans contrat) / </span>
+                <strong><span ng-bind="ptf.nombreTotalProspectsTiers"></span></strong>
+                <span> prospects</span>
+                <br />
+            </article>
+        </div>
+    </div>
+    <!--<div class="col-md-12 message-modale-gros-volume" ng-show="popupCtrl.listeMessageAction.length > 0">
+        <strong>Vous pouvez :</strong>
+        <div class="col-md-12">
+            <article ng-repeat="mess in popupCtrl.listeMessageAction track by $index">
+                <span ng-bind="mess"></span>
+            </article>
+        </div>
+    </div>-->
+</div>
+
+<div class="modal-footer modal-footer-custom">
+    <div class="col-md-4 pull-right" ng-show="popupCtrl.estEnMultiPortefeuille">
+        <button type="button" id="bouton-modale-nouvelle-selection" class="btn btn-primary" ng-click="popupCtrl.nouvelleSelection()">Nouvelle SELECTION</button>
+    </div>
+    <div class="col-md-4 pull-right" ng-hide="popupCtrl.estEnMultiPortefeuille">
+        <button type="button" id="bouton-modale-afficher" class="btn btn-primary" ng-click="popupCtrl.afficherTout()">Afficher TOUT</button>
+    </div>
+    <div class="col-md-4 pull-right" ng-show="popupCtrl.estAfficherBtnClients">
+        <button type="button" id="bouton-modale-afficher-clients" class="btn btn-zone" ng-click="popupCtrl.afficherClients()">Afficher CLIENTS</button>
+    </div>
+    <div class="col-md-4 pull-right" ng-show="popupCtrl.estAfficherBtnProspects">
+        <button type="button" id="bouton-modale-afficher-prospects" class="btn btn-zone" ng-click="popupCtrl.afficherProspects()">Afficher PROSPECTS</button>
+    </div>
+</div>

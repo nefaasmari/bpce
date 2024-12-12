@@ -1,0 +1,17 @@
+﻿<li class="pf-tuile-catalogue"> 
+    <!--<div class="container-pf-tuile-catalogue" mw-pf-core-draggable drag-settings="pfTuileCatalogueCtrl.tuileCatalogueSettings.dragSettings">-->
+    <div class="container-pf-tuile-catalogue" mw-pf-core-draggable drag-settings="pfTuileCatalogueCtrl.tuileCatalogueSettings.dragSettings">
+            <mw-tuile-standard ng-attr-id="indicateur-{{pfTuileCatalogueCtrl.tuileCatalogueSettings.indicateur.indicateur.code}}"
+                               avec-marquage="pfTuileCatalogueCtrl.afficherMarquage()"
+                               texte-marquage="pfTuileCatalogueCtrl.nomMarquage()"
+                               titre="pfTuileCatalogueCtrl.tuileCatalogueSettings.indicateur.indicateur.intitule"
+                               ligne1="pfTuileCatalogueCtrl.tuileCatalogueSettings.indicateur.indicateur.famille"
+                               object="pfTuileCatalogueCtrl.tuileCatalogueSettings.indicateur"
+                               couleur="{{pfTuileCatalogueCtrl.couleur()}}"
+                               config="pfTuileCatalogueCtrl.configTuile">
+            </mw-tuile-standard>
+            <button ng-show="pfTuileCatalogueCtrl.tuileCatalogueSettings.estEnEdition" class="mw-tuile-action bouton-ajout" id="bouton-ajout" ng-click="pfTuileCatalogueCtrl.ajouter()">
+                <span class="icon itce-plus" aria-hidden="true"></span>
+            </button>
+        </div>
+</li>

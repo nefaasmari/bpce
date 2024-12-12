@@ -1,0 +1,86 @@
+﻿@import "../../../../_dependances/style/variables-itce";
+
+.mw-pf-panel-niveau-2 {
+    height: 100%;
+    border: 1px solid rgb(29, 89, 112);
+    border-radius: 6px;
+    padding: 0;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+
+    .titre-bloc {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 3.625rem;
+        width: 100%;
+        padding: 5px;
+        //background-color: #4F5563;
+        background-color: rgb(29, 89, 112);
+        color: #fff;
+        font-weight: bold;
+        overflow: hidden;
+
+        .btn {
+            border: 1px solid white;
+            //border-radius: 6px;
+            background-color:  rgb(29, 89, 112);
+        }
+
+        .btn:hover {
+            border: 1px solid white;
+            //border-radius: 6px;
+            background-color:  white;
+            color: rgb(29, 89, 112);
+        }
+
+        & > span {
+            line-height: 1.5rem;
+            font-size: 1rem;
+            //text-shadow: rgba(70, 70, 70, 0.6) 1px 1px;
+            text-shadow:  rgb(29, 89, 112) 1px 1px;
+        }
+
+        & .icon {
+            display: inline-block;
+            line-height: 2.925rem;
+            border-radius: 1.4375rem;
+            width: 2.8125rem;
+            height: 2.8125rem;
+            //color: #4F5563;
+            color:  rgb(29, 89, 112);
+            font-size: 1.8rem;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 0.9375rem;
+            background-color: #fff;
+        }
+    }
+
+    .contenu {
+        padding-bottom: .75rem;
+        padding-top: .75rem;
+        //padding-left: .75rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .mw-bloc-contenu {
+            border-radius: 6px;
+        }
+
+        ng-transclude {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            .directive-contenu {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+        }
+    }
+}

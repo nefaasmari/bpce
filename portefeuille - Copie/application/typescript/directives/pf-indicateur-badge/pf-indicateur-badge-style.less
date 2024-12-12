@@ -1,0 +1,46 @@
+﻿@import "../../../../_dependances/style/variables-itce";
+
+.pf-indicateur-badge {
+    background-color: @fond-zone;
+    //height: 2.5rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    border-radius: 6px;
+
+    .intitule {
+        font-weight: bold;
+        margin: 0 2px 0 0;
+        width: 75%;
+
+        .detail-line {
+            display: inline-block;
+
+            a:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .badge {
+        margin-left: auto;
+        width: 4rem;
+    }
+
+    .sous-intitule {
+        margin-left: 1rem;
+    }
+
+    .debranchement {
+        margin-left: 0.5rem;
+    }
+}
+
+mw-pf-indicateur-badge {
+    &.indicateur-bleu {
+        .badge {
+            background-color: #007399;
+        }
+    }
+}

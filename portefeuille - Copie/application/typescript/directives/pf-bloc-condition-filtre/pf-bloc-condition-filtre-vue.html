@@ -1,0 +1,295 @@
+﻿<form class="form-horizontal col-md-12 pf-bloc-condition-filtre" 
+      name="form">
+    <div class="col-md-12" 
+         ng-show="pfBlocConditionFiltreCtrl.afficherOperateur">
+        <!-- Opérateur booléen -->
+        <br />
+        <div class="col-md-4">
+            <input type="text"
+                   mw-clear-button
+                   id="choix-operateur"
+                   class="form-control"
+                   name="choix-operateur"
+                   ng-model="pfBlocConditionFiltreCtrl.filtre.operateur"
+                   placeholder="ET / OU"
+                   mw-combobox="operateur for operateur in pfBlocConditionFiltreCtrl.listeOperateurs" />
+            <br />
+        </div>
+    </div>
+    <div class="col-md-12 mw-bloc-contenu" id="bloc-contenu-condition">
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text"
+                       mw-clear-button
+                       id="choix-indicateur"
+                       class="form-control"
+                       name="choix-indicateur"
+                       ng-model="pfBlocConditionFiltreCtrl.filtre.indicateur"
+                       placeholder="Sélectionner un indicateur"
+                       mw-combobox="indicateur as indicateur.indicateur.intitule for indicateur in pfBlocConditionFiltreCtrl.getListeIndicateurs(pfBlocConditionFiltreCtrl.noIndex)"
+                       mw-combobox-on-select="pfBlocConditionFiltreCtrl.selectionIndicateur()"
+                       mw-combobox-open="pfBlocConditionFiltreCtrl.isOpen"
+                       mw-combobox-focus-first="true"
+                       ng-change="pfBlocConditionFiltreCtrl.selectionIndicateur()" />
+            </div>
+            <!--| sansIndicateurDateFiltre"-->
+            <div class="col-md-offset-5 col-md-3">
+                <button class="btn btn-block btn-default" 
+                        id="bouton-supprimer-condition" 
+                        ng-click="pfBlocConditionFiltreCtrl.supprimerCondition()" 
+                        type="button">Supprimer</button>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <!-- Label -->
+            <label ng-show="pfBlocConditionFiltreCtrl.filtre.indicateur"
+                   class="control-label col-md-2 label-valeurs"
+                   for="choix-comparateur">Afficher</label>
+
+            <!-- Type Nombre ou Montant ou Pourcent -->
+            <div ng-show="pfBlocConditionFiltreCtrl.estIndicateurNumerique">
+                <!-- Choix du comparateur -->
+                <div class="col-md-4">
+                    <input type="text"
+                           mw-clear-button
+                           id="choix-comparateur"
+                           class="form-control"
+                           name="choix-comparateur"
+                           required
+                           ng-model="pfBlocConditionFiltreCtrl.filtre.comparateur"
+                           placeholder="Sens de comparaison"
+                           mw-combobox="comparateur for comparateur in pfBlocConditionFiltreCtrl.listeComparateurs" />
+                </div>
+                <div ng-hide="pfBlocConditionFiltreCtrl.estComparateurDeTypeNC">
+                    <!-- Comparaison simple -->
+                    <div ng-hide="pfBlocConditionFiltreCtrl.comparateurUniqueInactif"
+                         class="col-md-5 form-group">
+                        <div class="col-md-5">
+                            <input type="number"
+                                   mw-clear-button
+                                   class="form-control"
+                                   id="valeur-unique"
+                                   ng-model="pfBlocConditionFiltreCtrl.filtre.valeurUnique" />
+                        </div>
+                        <span class="col-md-2 control-label label-valeurs"
+                              ng-bind="pfBlocConditionFiltreCtrl.uniteMax">
+                        </span>
+                    </div>
+                    <!-- Comparaison multiple -->
+                    <div ng-show="pfBlocConditionFiltreCtrl.estComparateurDeTypeEntre"
+                         class="col-md-5 form-group">
+                        <div class="col-md-4">
+                            <input type="number"
+                                   mw-clear-button
+                                   class="form-control"
+                                   id="valeur-multiple-1"
+                                   ng-model="pfBlocConditionFiltreCtrl.filtre.valeurMultiple1" />
+                        </div>
+                        <span class="col-md-1 control-label"
+                              ng-show="pfBlocConditionFiltreCtrl.estUniteMin"
+                              ng-bind="pfBlocConditionFiltreCtrl.uniteMin">
+                        </span>
+                        <div class="col-md-2">
+                            <p class="centrer-aligner-text">et</p>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="number"
+                                   mw-clear-button
+                                   class="form-control"
+                                   id="valeur-multiple-2"
+                                   ng-model="pfBlocConditionFiltreCtrl.filtre.valeurMultiple2" />
+                        </div>
+                        <span class="col-md-1 control-label"
+                              ng-bind="pfBlocConditionFiltreCtrl.uniteMax">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Type Texte -->
+            <div ng-show="pfBlocConditionFiltreCtrl.estIndicateurTexte">
+                <div class="form-group col-md-8">
+                    <section ng-repeat="valeur in pfBlocConditionFiltreCtrl.listeValeurs track by $index"
+                             class="mw-input-check vertical-alignement col-md-12">
+                        <label ng-attr-for="id-check-{{pfBlocConditionFiltreCtrl.codeIndicateur}}-{{valeur.libelle}}"
+                               ng-attr-id="id-label-check-{{pfBlocConditionFiltreCtrl.codeIndicateur}}-{{valeur.libelle}}"
+                               class="col-md-5">
+                            <input ng-attr-id="id-check-{{pfBlocConditionFiltreCtrl.codeIndicateur}}-{{valeur.libelle}}"
+                                   type="checkbox"
+                                   ng-model="valeur.actif"
+                                   ng-attr-aria-checked="valeur.actif"
+                                   ng-attr-aria-labelledby="id-check-{{pfBlocConditionFiltreCtrl.codeIndicateur}}-{{valeur.libelle}}" />
+                            <span aria-hidden="true" class="icon "
+                                  ng-class="{'itce-fa-check':valeur.actif}"></span>
+                            <span ng-bind="valeur.libelle"></span>
+                        </label>
+                    </section>
+                </div>
+            </div>
+
+                <!-- Type Begacli -->
+                <div ng-show="pfBlocConditionFiltreCtrl.estIndicateurBegacli" class="col-md-12">
+
+                    <div class="form-group col-md-12 cadre-begacli">
+                        <div class="col-md-12 vertical-alignement">
+                            <span class="col-md-6 a-gauche-titre">Univers</span>
+                            <span class="col-md-2">Equipé</span>
+                            <span class="col-md-2">Non Equipé</span>
+
+                        </div>
+
+                        <section ng-repeat="lettreBegacli in pfBlocConditionFiltreCtrl.filtreBegacli.listeLettres track by $index"
+                                 class="mw-input-check vertical-alignement col-md-12">
+
+                            <span class="col-md-6 control-label a-gauche-text"
+                                  ng-bind="lettreBegacli.univers">
+                            </span>
+                            <label ng-attr-for="id-check-begacli-maj-{{$index}}"
+                                   ng-attr-id="id-label-begacli-maj-{{$index}}"
+                                   class="col-md-2 cadrer-coche">
+                                <input ng-attr-id="id-check-begacli-maj-{{$index}}"
+                                       type="checkbox"
+                                       ng-model="lettreBegacli.choisiMaj"
+                                       ng-change="pfBlocConditionFiltreCtrl.begacliChangeMaj(lettreBegacli)"
+                                       ng-attr-aria-checked="lettreBegacli.choisiMaj"
+                                       ng-attr-aria-labelledby="id-check-begacli-maj-{{$index}}" />
+                                <span aria-hidden="true" class="icon "
+                                      ng-class="{'itce-fa-check':lettreBegacli.choisiMaj}"></span>
+                                <span ng-bind="lettreBegacli.lettreMaj"></span>
+                            </label>
+
+                            <label ng-attr-for="id-check-begacli-min-{{$index}}"
+                                   ng-attr-id="id-label-begacli-min-{{$index}}"
+                                   class="col-md-2 cadrer-coche">
+                                <input ng-attr-id="id-check-begacli-min-{{$index}}"
+                                       type="checkbox"
+                                       ng-model="lettreBegacli.choisiMin"
+                                       ng-change="pfBlocConditionFiltreCtrl.begacliChangeMin(lettreBegacli)"
+                                       ng-attr-aria-checked="lettreBegacli.choisiMin"
+                                       ng-attr-aria-labelledby="id-check-begacli-min-{{$index}}" />
+                                <span aria-hidden="true" class="icon "
+                                      ng-class="{'itce-fa-check':lettreBegacli.choisiMin}"></span>
+                                <span ng-bind="lettreBegacli.lettreMin"></span>
+                            </label>
+
+                        </section>
+                    </div>
+
+
+                    <div class="form-group col-md-offset-2 col-md-9 cadre-begacli">
+                        <div class="col-md-12">
+                            <span class="col-md-6 a-gauche-titre">Nombre d'univers équipés</span>
+                        </div>
+                        <section ng-repeat="nombreBegacli in pfBlocConditionFiltreCtrl.filtreBegacli.listeNombres track by $index"
+                                 class="mw-input-check  col-md-2  ">
+
+                            <label ng-attr-for="id-check-begacli-nombre-{{$index}}"
+                                   ng-attr-id="id-label-begacli-nombre-{{$index}}"
+                                   class="col-md-2">
+                                <input ng-attr-id="id-check-begacli-nombre-{{$index}}"
+                                       type="checkbox"
+                                       ng-model="nombreBegacli.choisi"
+                                       ng-attr-aria-checked="nombreBegacli.choisi"
+                                       ng-attr-aria-labelledby="id-check-begacli-nombre-{{$index}}" />
+                                <span aria-hidden="true" class="icon "
+                                      ng-class="{'itce-fa-check':nombreBegacli.choisi}"></span>
+                                <span ng-bind="nombreBegacli.nombre"></span>
+                            </label>
+                        </section>
+                    </div>
+
+
+                    <!--<div class="form-group col-md-12">     
+                        <span class="col-md-2 control-label a-gauche-text">
+                            Afficher les valeurs NC
+                        </span>
+
+                        <section class="mw-input-check  col-md-2  ">
+                            <label ng-attr-for="id-check-begacli-nc"
+                                   ng-attr-id="id-label-begacli-nc"
+                                   class="col-md-12 cadrer-coche-nc">
+                                <input ng-attr-id="id-check-begacli-nc"
+                                       type="checkbox"
+                                       ng-model="pfBlocConditionFiltreCtrl.filtreBegacli.choisiNC"
+                                       ng-attr-aria-checked="pfBlocConditionFiltreCtrl.filtreBegacli.choisiNC"
+                                       ng-attr-aria-labelledby="id-check-begacli-nc" />
+                                <span aria-hidden="true" class="icon "
+                                      ng-class="{'itce-fa-check':pfBlocConditionFiltreCtrl.filtreBegacli.choisiNC}"></span>
+                            </label>
+                            </section>
+
+                    </div>-->
+
+                </div>
+
+                <!-- Type Date -->
+                <div ng-show="pfBlocConditionFiltreCtrl.estIndicateurDeTypeDate">
+                    <!-- Choix du comparateur -->
+                    <div class="col-md-4">
+                        <input type="text"
+                               mw-clear-button
+                               id="choix-comparateur-date"
+                               class="form-control"
+                               name="choix-comparateur"
+                               required
+                               ng-model="pfBlocConditionFiltreCtrl.filtre.comparateur"
+                               placeholder="Sens de comparaison"
+                               mw-combobox="comparateur for comparateur in pfBlocConditionFiltreCtrl.listeComparateurs" />
+                    </div>
+                    <div ng-hide="pfBlocConditionFiltreCtrl.cacheChampsSaisieDate">
+                        <!-- Comparaison simple -->
+                        <div ng-hide="pfBlocConditionFiltreCtrl.cacheChampSaisieDateSimple"
+                             class="col-md-5 form-group">
+                            <div class="col-sm-6 has-feedback">
+                                <input type="text"
+                                       class="form-control ng-pristine ng-valid ng-isolate-scope ng-valid-date ng-valid-required ng-touched"
+                                       id="date-comparaison-simple"
+                                       name="dateRelance"
+                                       ng-model="pfBlocConditionFiltreCtrl.filtre.valeurUnique"
+                                       mw-date-legere
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       datepicker-options="{ showWeeks: false, startingDay:1}"
+                                       is-open="champsLibres.valeurUnique"
+                                       show-button-bar="true"
+                                       date-disabled="champsLibres.dateDisabled(date,mode)" />
+                            </div>
+                        </div>
+
+                        <!-- Comparaison multiple -->
+                        <div ng-show="pfBlocConditionFiltreCtrl.estComparateurDeTypeEntre"
+                             class="col-md-6 form-group">
+                            <div class="col-sm-5 has-feedback">
+                                <input type="text"
+                                       class="form-control ng-pristine ng-valid ng-isolate-scope ng-valid-date ng-valid-required ng-touched"
+                                       id="date-comparaison-multiple-1"
+                                       name="dateComparaisonMultiple1"
+                                       ng-model="pfBlocConditionFiltreCtrl.filtre.valeurMultiple1"
+                                       mw-date-legere=""
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       datepicker-options="{ showWeeks: false, startingDay:1}"
+                                       is-open="champsLibres.valeurMultiple1"
+                                       show-button-bar="true"
+                                       date-disabled="champsLibres.dateDisabled(date,mode)" />
+                            </div>
+                            <div class="col-md-1">
+                                <p class="centrer-aligner-text">et</p>
+                            </div>
+                            <div class="col-sm-5 has-feedback">
+                                <input type="text"
+                                       class="form-control ng-pristine ng-valid ng-isolate-scope ng-valid-date ng-valid-required ng-touched"
+                                       id="date-comparaison-multiple-2"
+                                       name="dateComparaisonMultiple2"
+                                       ng-model="pfBlocConditionFiltreCtrl.filtre.valeurMultiple2"
+                                       mw-date-legere=""
+                                       uib-datepicker-popup="dd/MM/yyyy"
+                                       datepicker-options="{ showWeeks: false, startingDay:1}"
+                                       show-button-bar="true"
+                                       is-open="champsLibres.valeurMultiple2"
+                                       date-disabled="champsLibres.dateDisabled(date,mode)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</form>

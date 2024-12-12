@@ -1,0 +1,13 @@
+﻿<div class="colonne-tableau-data-client" ng-controller="ColonneDataCANControleur as templateControleur">
+    <!--<div class="row template-colonne">-->
+    <div class="row">
+        <span ng-bind="templateControleur.getTexteCA(mwTableRow)"></span>&nbsp;
+        <!--  /* A supprimer quand les images seront intégrées au framework  */ -->
+        <img id="fleche-montante" alt="tendance positive" ng-show="templateControleur.getTendance(mwTableRow) > 0 " src="images/fleche-montante.png" />
+        <img id="fleche-descendante" alt="tendance négative" ng-show="templateControleur.getTendance(mwTableRow) < 0" src="images/fleche-descendante.png" />
+        <img id="fleche-neutre" alt="tendance neutre" ng-show="templateControleur.getTendance(mwTableRow) == 0" src="images/fleche-neutre.png" />
+        <br />
+        <span ng-bind="templateControleur.getTexteDate(mwTableRow)" ng-if="templateControleur.afficherDate"></span>
+
+    </div>
+</div>

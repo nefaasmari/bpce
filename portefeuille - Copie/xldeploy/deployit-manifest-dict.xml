@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<udm.DeploymentPackage version="<% BuildNumber %>" application="BIS10/CEF42/RIA-V1/SPA/{{cia-app}}/{{cia-bloc}}-{{xld-app}}-DICT">
+	<application />
+	<orchestrator />
+	<deployables>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-DEV-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-DEV.DICT/CEF42-RIA-V1-LP1-DEV.DICT.properties">
+			<tags>
+				<value>DEV-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-ASS-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-ASS.DICT/CEF42-RIA-V1-LP1-ASS.DICT.properties">
+			<tags>
+				<value>ASS-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP2-ASS-{{name}}.DICT" file="/CEF42-RIA-V1-LP2-ASS.DICT/CEF42-RIA-V1-LP2-ASS.DICT.properties">
+			<tags>
+				<value>ASS-LP2</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP3-ASS-{{name}}.DICT" file="/CEF42-RIA-V1-LP3-ASS.DICT/CEF42-RIA-V1-LP3-ASS.DICT.properties">
+			<tags>
+				<value>ASS-LP3</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP4-ASS-{{name}}.DICT" file="/CEF42-RIA-V1-LP4-ASS.DICT/CEF42-RIA-V1-LP4-ASS.DICT.properties">
+			<tags>
+				<value>ASS-LP4</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-VER-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-VER.DICT/CEF42-RIA-V1-LP1-VER.DICT.properties">
+			<tags>
+				<value>VER-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP2-VER-{{name}}.DICT" file="/CEF42-RIA-V1-LP2-VER.DICT/CEF42-RIA-V1-LP2-VER.DICT.properties">
+			<tags>
+				<value>VER-LP2</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP3-VER-{{name}}.DICT" file="/CEF42-RIA-V1-LP3-VER.DICT/CEF42-RIA-V1-LP3-VER.DICT.properties">
+			<tags>
+				<value>VER-LP3</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP4-VER-{{name}}.DICT" file="/CEF42-RIA-V1-LP4-VER.DICT/CEF42-RIA-V1-LP4-VER.DICT.properties">
+			<tags>
+				<value>VER-LP4</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-VAL-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-VAL.DICT/CEF42-RIA-V1-LP1-VAL.DICT.properties">
+			<tags>
+				<value>VAL-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP2-VAL-{{name}}.DICT" file="/CEF42-RIA-V1-LP2-VAL.DICT/CEF42-RIA-V1-LP2-VAL.DICT.properties">
+			<tags>
+				<value>VAL-LP2</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP3-VAL-{{name}}.DICT" file="/CEF42-RIA-V1-LP3-VAL.DICT/CEF42-RIA-V1-LP3-VAL.DICT.properties">
+			<tags>
+				<value>VAL-LP3</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP4-VAL-{{name}}.DICT" file="/CEF42-RIA-V1-LP4-VAL.DICT/CEF42-RIA-V1-LP4-VAL.DICT.properties">
+			<tags>
+				<value>VAL-LP4</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-HOM-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-HOM.DICT/CEF42-RIA-V1-LP1-HOM.DICT.properties">
+			<tags>
+				<value>HOM-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-PPR-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-PPR.DICT/CEF42-RIA-V1-LP1-PPR.DICT.properties">
+			<tags>
+				<value>PPR-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+		<bpceDictGeneric.DictFile name="/CEF42-RIA-V1-LP1-PRD-{{name}}.DICT" file="/CEF42-RIA-V1-LP1-PRD.DICT/CEF42-RIA-V1-LP1-PRD.DICT.properties">
+			<tags>
+				<value>PRD-LP1</value>
+			</tags>
+			<scanPlaceholders>false</scanPlaceholders>
+			<textFileNamesRegex>. \.(cfg | conf | config | ini | properties | props | txt | asp | aspx | htm | html | jsf | jsp | xht | xhtml | sql | xml | xsd | xsl | xslt | yml)</textFileNamesRegex>
+			<checksum></checksum>
+		</bpceDictGeneric.DictFile>
+	</deployables>
+	<applicationDependencies />
+	<dependencyResolution>LATEST</dependencyResolution>
+	<undeployDependencies>false</undeployDependencies>
+</udm.DeploymentPackage>

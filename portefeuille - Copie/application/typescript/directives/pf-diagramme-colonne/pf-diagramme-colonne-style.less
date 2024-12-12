@@ -1,0 +1,39 @@
+﻿.pf-diagramme-colonne {
+    height: 11rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex: 1 1 auto;
+    min-height: 0rem;
+    flex-direction: column;
+
+    .colonne-indicateur {
+        height: 100%;
+        padding: 0.5rem 0.6rem;
+        min-width: 0;
+        border-width: 0;
+    }
+}
+
+.pf-diagramme-colonne-detail {
+    height: 33rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0rem;
+    //justify-content: space-around;
+
+    .colonne-indicateur {
+        height: 45%;
+        padding: 0.5rem 0.6rem;
+        margin: 0.5rem;
+        border-style: outset;
+        border-color: gray;
+    }
+}
+
+/* Pour mettre max 5 elements par lignes 100% / 5 = 20%  mais + assenceur = 15% */
+.pf-diagramme-colonne-detail > * {
+    flex: 0 0 15%;
+}

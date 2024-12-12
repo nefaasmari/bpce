@@ -1,0 +1,102 @@
+{
+    "configuration": {
+        "outputField": "CTGXM1"
+    },
+    "ruleSet": [
+        {
+            "description": "Livret CDD / Ouverture / Personne Majeure - Mineure / IND - VPC",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "in", "value":  ["OUVERTURE_CDD", "OUVERTURE_EPARGNE"], "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["IND","VPC"], "type": "base", "output": ["02", "06"]}
+            ]
+        },
+        {
+            "description": "Livret CDD / Ouverture / Personne Majeure - Mineure / MEGI ",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "in", "value":  ["OUVERTURE_CDD", "OUVERTURE_EPARGNE"], "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["MEGI"], "type": "base", "output": ["06"]}
+            ]
+        },
+        {
+            "description": "Livret CDD / Versement / Personne Majeure - Mineure / IND - VPC",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "VERSEMENT_SIMPLE", "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["IND", "VPC"], "type": "core" },
+                { "context": "produit", "operator": "in", "field": "CODIPR", "value": ["0004", "0000", "0001", "0005", "0006"], "type": "base", "output": [ "02", "06" ] }
+            ]
+        },
+        {
+            "description": "Livret CDD / Versement / Personne Majeure - Mineure / MEGI",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "VERSEMENT_SIMPLE", "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["MEGI"], "type": "core" },
+                { "context": "produit", "operator": "in", "field": "CODIPR", "value": ["0004", "0000", "0001", "0005", "0006"], "type": "base", "output": ["06"] }
+            ]
+        },
+        {
+            "description": "Livret CDD / Abonnement ",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "ABONNEMENT_CDD", "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["MEGI"], "type": "base", "output": ["06"]}
+            ]
+        },
+        {
+            "description": "PEL / Ouverture ",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "OUVERTURE_PEL", "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["IND", "VPC"], "type": "base", "output": ["01", "02", "06"]}
+            ]
+        },
+        {
+            "description": "PEL / Versement ",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "VERSEMENT_SIMPLE", "type":  "core" },
+                { "context": "majeur", "operator": "=", "value":  false, "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["MEGI"], "type": "core"}, 
+                { "context": "produit", "operator": "in", "field": "CODIPR", "value": ["0012", "0013", "0014", "0015", "0016"], "type": "base", "output": [ "01", "02", "06" ] }
+            ]
+        },
+        {
+            "description": "Livret Jeune / Ouverture ",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "OUVERTURE_LIVRET_JEUNE", "type":  "core" },
+                { "context": "majeur", "operator": "=", "value":  false, "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["IND", "VPC"], "type": "core"}, 
+                { "context": "produit", "operator": "=", "field": "CODIPR", "value": "0010", "type": "base", "output": [ "02", "06" ] }
+            ]
+        },
+        {
+            "description": "Livret Jeune / Ouverture - MEGI",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "OUVERTURE_LIVRET_JEUNE", "type":  "core" },
+                { "context": "majeur", "operator": "=", "value":  false, "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["MEGI"], "type": "core"}, 
+                { "context": "produit", "operator": "=", "field": "CODIPR", "value": "0010", "type": "base", "output": [ "06" ] }
+            ]
+        },
+        {
+            "description": "CEL / Ouverture ",
+            "rule": [
+                { "context": "canal", "operator": "=", "value":  "TL", "type":  "core" },
+                { "context": "fonctionnalite", "operator": "=", "value":  "OUVERTURE_CEL", "type":  "core" },
+                { "context": "majeur", "operator": "in", "value":  [false, true], "type":  "core"},
+                { "context": "modeVente", "operator": "in", "value":  ["IND", "VPC"], "type": "base", "output": ["01", "02", "06"]}
+            ]
+        }
+    ]
+}

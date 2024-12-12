@@ -1,0 +1,75 @@
+﻿@import "../../../../_dependances/style/variables-itce";
+
+.pf-tuile-panier {
+    display: inline-block;
+    padding: 1.25rem 1.25rem 0 0;
+    position: relative;
+    /*.drop-content-tuile-panier.pf-drop-target-on-drag {
+        padding: 0.1rem 0.1rem 0 0.1rem;
+    }*/
+    .drop-content-tuile-panier.pf-drop-target-on-drag {
+        border: 0.1rem dashed @bouton-secondaire-fond;
+        background-color: @fond-zone;
+        opacity: 0.75;
+        padding: 0.1rem 0.1rem 0 0.1rem;
+    }
+
+    .container-pf-tuile-panier {
+        display: inline-block;
+
+        .mw-tuile-bloc:not(.mw-tuile-avec-marquage) .mw-tuile span.mw-tuile-titre, .table caption {
+            margin-top: 1.5rem;
+        }
+
+        .mw-tuile-titre {
+            white-space: normal;
+            text-align: left;
+        }
+    }
+
+    .container-pf-tuile-panier[draggable="false"] {
+        mw-tuile-standard {
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    .no-edition.mw-tuile-handles {
+        padding: 0;
+    }
+
+    .bouton-poubelle {
+        right: 0.5rem;
+        top: 0.5rem;
+    }
+
+    .bouton-droit {
+        right: 0.5rem;
+        bottom: -0.5rem;
+    }
+
+    .bouton-gauche {
+        left: -0.5rem;
+        bottom: -0.5rem;
+    }
+
+    .mw-tuile-action {
+        font-size: inherit;
+        width: 2.1rem;
+    }
+    /* Déplacement de la ligne 1 en bas */
+    .mw-troncature-multiline-tuile {
+        position: absolute;
+        bottom: 0.5rem;
+    }
+}
+
+.pf-tuile-panier.tuile-mode-edition {
+    margin-left: 0.4rem;
+}
+
+
+
+.mw-tuile-bloc:not(.mw-tuile-ajout-btn).couleur-sombre.mw-tuile-avec-marquage {
+    border-left-color: white;
+}

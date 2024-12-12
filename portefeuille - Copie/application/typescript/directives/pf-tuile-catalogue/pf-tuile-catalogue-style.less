@@ -1,0 +1,61 @@
+﻿.pf-tuile-catalogue {
+    display: inline-block;
+    padding: 1.25rem 1.25rem 0 0;
+    position: relative;
+
+    .container-pf-tuile-catalogue {
+        display: inline-block;
+
+        .mw-tuile-bloc:not(.mw-tuile-avec-marquage) .mw-tuile span.mw-tuile-titre, .table caption {
+            margin-top : 1.5rem;
+        }
+    }
+
+    .container-pf-tuile-catalogue[draggable="false"] {
+        mw-tuile-standard {
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+
+    .no-edition.mw-tuile-handles {
+        padding: 0;
+    }
+
+    .mw-tuile-titre {
+        white-space: normal;
+        text-align: left;
+    }
+
+    /* Déplacement de la ligne 1 en bas */
+    .mw-troncature-multiline-tuile {
+        position: absolute;
+        bottom: 0.5rem;
+    }
+
+    .marqueur-client {
+        position: absolute;
+        user-select: none;
+        //top: 1.8rem;
+        left: 2.5rem;
+        color: #d80129;
+        border-color: #d80129;
+    }
+
+    .bouton-ajout {
+        right: 0.5rem;
+        top: 0.5rem;
+    }
+
+    .mw-tuile-action {
+        font-size: inherit;
+        width: 2.1rem;
+    }
+}
+
+/* rustine pour surcharger taille du badge pour le bloc rentabilite. */
+#indicateur-badge-pnb-annee-precedente .pf-indicateur-badge .badge {
+    width: 6rem;
+    margin-bottom: 0;
+    margin-left: auto;
+}

@@ -1,0 +1,8 @@
+﻿<!-- Code spécifique pour Chromium -->
+<div class="conteneur-petit-pourcentage" ng-if="!pfIndicateurPourcentageCtrl.isIE">
+    <div ng-attr-id="{{pfIndicateurPourcentageCtrl.id}}" class="svg-container"></div>
+</div>
+<!-- Code spécifique pour IE11 -->
+<div class="scaling-svg-container" ng-if="pfIndicateurPourcentageCtrl.isIE">
+    <div ng-attr-id="{{pfIndicateurPourcentageCtrl.id}}" class="scaling-svg"></div>
+</div>

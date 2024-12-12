@@ -1,0 +1,136 @@
+{
+    "configuration": {
+        "outputField": "CTGXM1"
+    },
+    "ruleSet": [
+        {
+            "description": "Versement générique/simple",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "VERSEMENT_GENERIQUE", "type": "base", "output": [ "00", "01", "02", "06", "07", "09" ] },
+                { "context": "fonctionnalite", "operator": "=", "value": "VERSEMENT_SIMPLE", "type": "base", "output": [ "06", "07" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": ["00", "10"] },
+                { "context": "deviseEuro", "operator": "=", "value": false, "type": "intersect", "output": [ "00", "06" ] },
+                { "context": "produit", "operator": "=", "field": "CODIPR", "value": "0088", "type": "intersect", "output": [ "00", "02", "06" ] }
+            ]
+
+        },
+        {
+            "description": "Ouverture / Annulation ouverture CDD",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "in", "value": [ "OUVERTURE_CDD", "ANNULATION_OUVERTURE_CDD", "OUVERTURE_EPARGNE" ], "type": "base", "output": [ "00", "01", "02", "06", "07" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Clôture normale / Annulation clôture normale CDD sans mise en contentieux",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "in", "value": [ "CLOTURE_CDD_SANS_MISE_EN_CONTENTIEUX", "ANNULATION_CLOTURE_CDD_SANS_MISE_EN_CONTENTIEUX", "CLOTURE_CDD" ], 
+                                               "type": "base", "output": [ "00", "01", "06", "07", "09" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Clôture normale / Annulation clôture normale CDD avec mise en contentieux",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "in", "value": [ "CLOTURE_CDD_AVEC_MISE_EN_CONTENTIEUX", "ANNULATION_CLOTURE_CDD_AVEC_MISE_EN_CONTENTIEUX" ], 
+                                               "type": "base", "output": [ "10" ] }
+            ]
+
+        },
+        {
+            "description": "Annulation ouverture Compte d’instance",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "ANNULATION_OUVERTURE_COMPTE_INSTANCE", "type": "base", "output": [ "01", "02", "06", "07" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Clôture / Annulation de clôture Compte d’instance",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "in", "value": [ "CLOTURE_COMPTE_INSTANCE", "ANNULATION_CLOTURE_COMPTE_INSTANCE" ], 
+                                               "type": "base", "output": [ "01", "06", "07", "09" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Ouverture Compte d’attente",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "OUVERTURE_COMPTE_ATTENTE", "type": "base", "output": "01" }
+            ]
+
+        },
+        {
+            "description": "Annulation ouverture Compte d’attente",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "ANNULATION_OUVERTURE_COMPTE_ATTENTE", "type": "base", "output": [ "00", "01", "02", "06" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Clôture normale / Annulation de clôture normale Compte d’attente",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "in", "value": [ "CLOTURE_COMPTE_ATTENTE", "ANNULATION_CLOTURE_COMPTE_ATTENTE" ], 
+                                               "type": "base", "output": [ "00", "01", "06", "07", "09" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Clôture par virement transfert / Annulation de clôture par virement transfert Compte d’attente",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "in", "value": [ "CLOTURE_PAR_VIREMENT_TRANSFERT_COMPTE_ATTENTE", "ANNULATION_CLOTURE_PAR_VIREMENT_TRANSFERT_COMPTE_ATTENTE" ], 
+                                               "type": "base", "output": "00" }
+            ]
+
+        },
+        {
+            "description": "OAD",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "OAD", "type": "base", "output": [ "01", "02", "09" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+
+        },
+        {
+            "description": "Correction OAD",
+            "rule": { "context": "fonctionnalite", "operator": "=", "value": "CORRECTION_OAD", "type": "base", "output": [ "10" ] }
+        },
+        {
+            "description": "Recyclage",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "RECYCLAGE", "type": "base", "output": [ "00", "01", "02", "06", "07", "09" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+        },
+        {
+            "description": "Recyclage OAD",
+            "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "RECYCLAGE_OAD", "type": "base", "output": [ "01", "02", "07", "09" ] },
+                { "context": "habilitation", "operator": "=", "value": "SHJM25", "type": "union", "output": "10" }
+            ]
+        },
+        {
+            "description": "CEL / Ouverture normale / Annulation ouverture normale ",
+             "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "OUVERTURE_CEL", "type": "base", "output": [ "01", "02", "06" ] }
+            ]
+        },
+        {
+            "description": "CEL / Clôture normale / Annulation clôture normale ",
+             "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "CLOTURE_CEL", "type": "base", "output": [ "01", "06", "09" ] }
+            ]
+        },
+        {
+            "description": "PEL / Ouverture",
+             "rule": [
+                { "context": "fonctionnalite", "operator": "=", "value": "OUVERTURE_PEL", "type": "base", "output": [ "01", "02", "06" ] }
+            ]
+        }
+    ]
+}

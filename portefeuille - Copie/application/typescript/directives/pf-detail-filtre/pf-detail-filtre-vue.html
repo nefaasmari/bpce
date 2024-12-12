@@ -1,0 +1,7 @@
+﻿<section class="pf-detail-filtre">
+    <span class="btn-supprimer icon itce-times" aria-hidden="true" ng-click="pfDetailFiltreCtrl.supprimerFiltres()" role="button" title="Supprimer tous les filtres"></span>
+    <article class="filtre" ng-repeat="filtre in pfDetailFiltreCtrl.listeFiltres track by $index">
+        <span ng-if="filtre.operateur" ng-bind="filtre.operateur"></span>
+        <span ng-bind="pfDetailFiltreCtrl.getTxtFiltre(filtre)"></span>
+    </article>
+</section>

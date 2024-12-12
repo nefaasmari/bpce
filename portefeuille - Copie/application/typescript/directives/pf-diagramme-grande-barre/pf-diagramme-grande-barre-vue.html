@@ -1,0 +1,6 @@
+﻿<div class="pf-diagramme-grande-barre">
+    <p class="intitule" ng-bind="pfDiagrammeGrandeBarreCtrl.config.intitule"></p>
+    <div class="barre" ng-style="{'background-color': pfDiagrammeGrandeBarreCtrl.config.couleur, 'width': pfDiagrammeGrandeBarreCtrl.pourcentage + '%'}">
+        <span class="valeur" ng-bind="(pfDiagrammeGrandeBarreCtrl.config.valeur | number) + ' k€'"></span>
+    </div>
+</div>

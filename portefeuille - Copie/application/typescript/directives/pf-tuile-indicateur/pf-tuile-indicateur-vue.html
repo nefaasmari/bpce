@@ -1,0 +1,31 @@
+﻿<div class="pf-tuile-indicateur" >
+    <div class="cadre" ng-class="{green:(pfTuileIndicateurCtrl.isGreen()), orange:(pfTuileIndicateurCtrl.isOrange())}">
+        <div class="pf-corps">
+            <div class="en-tete">
+                <p class="text intitule" ng-bind="pfTuileIndicateurCtrl.intitule"></p>
+            </div>
+            <div>
+                <p class="valeur" 
+                   ng-show="pfTuileIndicateurCtrl.isTypeDate()" 
+                   ng-bind="pfTuileIndicateurCtrl.valeur | date: 'dd/MM/yyyy'">
+                </p>
+                <p class="valeur" 
+                   ng-show="pfTuileIndicateurCtrl.isTypeNombre()">
+                    <span ng-bind="pfTuileIndicateurCtrl.valeurNumber | nombreFiltre"></span>
+                </p>
+                <p class="valeur" 
+                   ng-show="pfTuileIndicateurCtrl.isTypeMontant()">
+                    <span ng-bind="pfTuileIndicateurCtrl.valeurNumber | montantFiltre: pfTuileIndicateurCtrl.isEuro"></span>
+                </p>
+                <p class="valeur" 
+                   ng-show="pfTuileIndicateurCtrl.isTypePourcent()">
+                    <span ng-bind="pfTuileIndicateurCtrl.valeurNumber | pourcentFiltre"></span>
+                </p>
+                <p class="valeur" 
+                   ng-show="pfTuileIndicateurCtrl.isTypeTexte()">
+                    <span ng-bind="pfTuileIndicateurCtrl.valeur"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

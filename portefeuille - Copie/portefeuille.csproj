@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{B3DA036A-882B-4009-AE71-C1106D4F17C8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="application\assets\images\fleche-descendante.png" />
+    <Content Include="application\assets\images\fleche-montante.png" />
+    <Content Include="application\assets\images\fleche-neutre.png" />
+    <Content Include="application\index.html" />
+    <Content Include="application\typescript\directives\pf-diagramme-multi-colonne\pf-diagramme-multi-colonne-vue.html" />
+    <Content Include="application\typescript\directives\pf-diagramme-pourcentage\pf-diagramme-pourcentage-vue.html" />
+    <Content Include="application\typescript\directives\pf-element-eds\pf-element-eds-style.less" />
+    <Content Include="application\typescript\directives\pf-diagramme-pourcentage\pf-diagramme-pourcentage-style.less" />
+    <Content Include="application\typescript\directives\pf-indicateur-pourcentage\pf-indicateur-pourcentage-style.less" />
+    <Content Include="application\typescript\directives\pf-diagramme-multi-colonne\pf-diagramme-multi-colonne-style.less" />
+    <Content Include="properties\CEF42-LOCAL-LP1.DICT\CEF42-LOCAL-LP1.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-ASS.DICT\CEF42-RIA-V1-LP1-ASS.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-DEV.DICT\CEF42-RIA-V1-LP1-DEV.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-HOM.DICT\CEF42-RIA-V1-LP1-HOM.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-PPR.DICT\CEF42-RIA-V1-LP1-PPR.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-PRD.DICT\CEF42-RIA-V1-LP1-PRD.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-VAL.DICT\CEF42-RIA-V1-LP1-VAL.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP1-VER.DICT\CEF42-RIA-V1-LP1-VER.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP2-ASS.DICT\CEF42-RIA-V1-LP2-ASS.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP2-VAL.DICT\CEF42-RIA-V1-LP2-VAL.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP2-VER.DICT\CEF42-RIA-V1-LP2-VER.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP3-ASS.DICT\CEF42-RIA-V1-LP3-ASS.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP3-VAL.DICT\CEF42-RIA-V1-LP3-VAL.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP3-VER.DICT\CEF42-RIA-V1-LP3-VER.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP4-ASS.DICT\CEF42-RIA-V1-LP4-ASS.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP4-VAL.DICT\CEF42-RIA-V1-LP4-VAL.DICT.properties" />
+    <Content Include="properties\CEF42-RIA-V1-LP4-VER.DICT\CEF42-RIA-V1-LP4-VER.DICT.properties" />
+    <Content Include="xldeploy\deployit-manifest-dict.xml" />
+    <Content Include="xldeploy\deployit-manifest.xml" />
+    <Content Include="_dependances\gulpfile.js" />
+    <Content Include="_dependances\style\variables-itce.less" />
+    <Content Include="_dependances\templates\template_jasmine_rapport_tests_unitaires.html" />
+    <Content Include="_dependances\v24.09\cdn\v1\api-garantie-credit\api-garantie-credit.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\api-segmentation-risque\api-segmentation-risque.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\core-api\myway-core-api.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\services\framework-client-app.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\services\framework-client-mobile.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\services\framework-client-tech.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\c07-10-api-instruction-credit\api-instruction-credit.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-adresse-dqe\com-adresse-dqe.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-adresse-dqe\com-adresse-dqe.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-caisse-auto\com-caisse-auto.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-contract\com-contract.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-contract\com-contract.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-echeancier\com-echeancier.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-echeancier\com-echeancier.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-editique-num\com-editique-num.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-editique-num\com-editique-num.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-eds\com-eds.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-eds\com-eds.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-gcedoc\com-gcedoc.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-gest-commerciale\com-gest-commerciale.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-gest-commerciale\com-gest-commerciale.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-gestion-client\com-gestion-client.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-gestion-client\com-gestion-client.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-interdomaine\com-interdomaine.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-interdomaine\com-interdomaine.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-interdomaine\json\mode-financier-rules.json" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-interdomaine\json\mode-financier-vad-rules.json" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-opes-financieres\com-opes-financieres.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-opes-financieres\com-opes-financieres.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-risques-bale2\com-risques-bale2.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-risques-bale2\com-risques-bale2.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-risques-client\com-risques-client.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\com-risques-client\com-risques-client.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\composants-aide\composants-aide.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\composants-aide\composants-aide.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-avenants-api\myway.credits.avenants-api.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-avenants-business\myway.credits.avenants-business.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-avenants-rest\myway.credits.avenants-rest.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-contentieux-commun\myway.risques.contentieux-commun.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-contentieux-directives\myway.risques.contentieux-directives.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-contentieux-editique\myway.risques.contentieux-editique.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-contentieux-parametrage\myway.risques.contentieux-parametrage.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-contentieux-services\myway.risques.contentieux-services.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-mad-commun\myway.risques.mad-commun.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-mad-rest\myway.risques.mad-rest.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-risques-rest-services\myway.risques.rest-services.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-trans-pdt-entreprise\myway.trans-pdt-entreprise.pdt-entreprise.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\piece-jointe\api.piece-jointe.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\piece-jointe\api.piece-jointe.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\trans-editique-vad-api\myway.cdn.v1.socle-fonctionnel.trans-editique-vad-api.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\trans-prdt-engg\myway.trans-prdt-engg.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\angular-ui\ui-bootstrap-tpls-0.12.0.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\angular-ui\ui-utils.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\angular\angular-animate.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\angular\angular-mocks.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\angular\angular-route.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\angular\angular.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\bootstrap\css\bootstrap.min.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\bundles\global-bundle.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\d3\d3.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\gojs\gojs.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\jquery\jquery.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\third-party\jsonc\jsonc.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\ui\myway-ui.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\ui\myway-ui.min.js" />
+    <Content Include="_dependances\v24.09\cdn\v1\ui\styles\common.min.css" />
+    <Content Include="_dependances\v24.09\cdn\v1\ui\styles\myway-ce.min.css" />
+    <Content Include="_dependances\v24.09\myway.c04.10.commun\myway.c04.10.commun.js" />
+    <Content Include="_dependances\v24.09\myway.c04.10.compte-de-depot\myway.c04.10.compte-de-depot.js" />
+    <Content Include="_dependances\v24.09\myway.c05.10.commun\myway.c05.10.commun.js" />
+    <Content Include="_dependances\v24.09\myway.c05.10.editique-dat\myway.c05.10.editique-dat.js" />
+    <Content Include="_dependances\v24.09\myway.c05.10.ggho-commun\myway.c05.10.ggho-commun.js" />
+    <Content Include="_dependances\v24.09\myway.c05.10.hors-offre-commun\myway.c05.10.hors-offre-commun.js" />
+    <Content Include="_dependances\v24.09\myway.c05.10.releve-livret\myway.c05.10.releve-livret.js" />
+    <Content Include="_dependances\v24.09\myway.clients.suivi-dossier-vente.suivi-dossier-vente\myway.clients.suivi-dossier-vente.suivi-dossier-vente.js" />
+    <Content Include="_dependances\v24.09\myway.gestion-offres-commun\myway.gestion-offres-commun.js" />
+    <Content Include="_dependances\v24.09\myway.lib-synchro-synthese-cc\myway.lib-synchro-synthese-cc.js" />
+    <Content Include="_dependances\v24.09\myway.lib-synchro-synthese-cc\pivotSynthese.json" />
+    <Content Include="_dependances\v24.09\myway.portail.lib-portail\myway.portail.lib-portail.js" />
+    <Content Include="_dependances\v24.09\tokens\myway-dua.par" />
+    <TypeScriptCompile Include="application\typescript\constantes\indicateur-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-details-rentabilite-pnb-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-details-flux-crediteur-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-details-flux-debiteur-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-details-revue-portefeuille-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-details-taux-visite-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-details-portefeuille-controleur.ts" />
+    <Content Include="application\typescript\directives\pf-bloc-condition-filtre\pf-bloc-condition-filtre-style.less" />
+    <Content Include="application\typescript\directives\pf-bloc-condition-filtre\pf-bloc-condition-filtre-vue.html" />
+    <Content Include="application\typescript\directives\pf-choix-portefeuille\pf-choix-portefeuille-vue.html" />
+    <Content Include="application\typescript\directives\pf-diagramme-colonne\pf-diagramme-colonne-vue.html" />
+    <Content Include="application\typescript\directives\pf-diagramme-donut\pf-diagramme-donut-style.less" />
+    <Content Include="application\typescript\directives\pf-choix-portefeuille\pf-choix-portefeuille-style.less" />
+    <None Include="application\typescript\directives\pf-detail-filtre\pf-detail-filtre-style.less" />
+    <Content Include="application\typescript\directives\pf-diagramme-donut\pf-diagramme-donut-vue.html" />
+    <Content Include="application\typescript\directives\pf-detail-filtre\pf-detail-filtre-vue.html" />
+    <Content Include="application\typescript\directives\pf-diagramme-grande-barre\pf-diagramme-grande-barre-vue.html" />
+    <Content Include="application\typescript\directives\pf-diagramme-petite-barre\pf-diagramme-petite-barre-vue.html" />
+    <Content Include="application\typescript\directives\pf-indicateur-badge\pf-indicateur-badge-vue.html" />
+    <Content Include="application\typescript\directives\pf-indicateur-pourcentage\pf-indicateur-pourcentage-vue.html" />
+    <Content Include="application\typescript\directives\pf-indicateur-colonne\pf-indicateur-colonne-vue.html" />
+    <Content Include="application\typescript\directives\pf-indicateur-fleche\pf-indicateur-fleche-vue.html" />
+    <Content Include="application\typescript\directives\pf-ligne-relation-eco\pf-ligne-relation-eco-vue.html" />
+    <Content Include="application\typescript\directives\pf-panel-niveau-2\pf-panel-niveau-2-vue.html" />
+    <Content Include="application\typescript\directives\pf-puce-legende\pf-puce-legende-vue.html" />
+    <Content Include="application\typescript\directives\pf-tuile-catalogue\pf-tuile-catalogue-vue.html" />
+    <Content Include="application\typescript\directives\pf-element-eds\pf-element-eds-vue.html" />
+    <Content Include="application\typescript\directives\pf-tuile-indicateur\pf-tuile-indicateur-vue.html" />
+    <Content Include="application\typescript\directives\pf-tuile-panier\pf-tuile-panier-vue.html" />
+    <Content Include="application\vues\bilan-revue-vue.html" />
+    <Content Include="application\vues\bilan-revues-portefeuille-vue.html" />
+    <Content Include="application\vues\saisie-revue-vue.html" />
+    <Content Include="application\vues\detail-client-vue.html" />
+    <Content Include="application\vues\clients-vue.html" />
+    <Content Include="application\vues\page-non-trouvee.html" />
+    <Content Include="application\vues\portefeuille-vue.html" />
+    <Content Include="application\vues\selection-indicateurs-vue.html" />
+    <Content Include="application\vues\template-modale\modale-avertissement-choix-portefeuille-vue.html" />
+    <Content Include="application\vues\template-modale\modale-choix-eds-vue.html" />
+    <Content Include="application\vues\template-modale\modale-clients-activer-vue.html" />
+    <Content Include="application\vues\template-modale\modale-details-rentabilite-pnb-vue.html" />
+    <Content Include="application\vues\template-modale\modale-details-flux-crediteur-vue.html" />
+    <Content Include="application\vues\template-modale\modale-details-flux-debiteur-vue.html" />
+    <Content Include="application\vues\template-modale\modale-details-revue-portefeuille-vue.html" />
+    <Content Include="application\vues\template-modale\modale-details-taux-visite-vue.html" />
+    <Content Include="application\vues\template-modale\modale-details-portefeuille-vue.html" />
+    <Content Include="application\vues\template-modale\modale-filtre-vue.html" />
+    <Content Include="application\vues\template-modale\modale-paniers-vue.html" />
+    <Content Include="application\vues\templates-tableau\colonne-date-derniere-revue-rel.html" />
+    <Content Include="application\vues\templates-tableau\colonne-objectif-flux.html" />
+    <Content Include="application\vues\templates-tableau\colonne-date-derniere-revue.html" />
+    <Content Include="application\vues\templates-tableau\colonne-potentiel-prospect.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-flux-debiteur.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-flux-crediteur.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-pnb-n.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-data-ca-n-1.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-data-ca-n.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-data-relation.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-data-client.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-top-cc.html" />
+    <Content Include="application\vues\templates-tableau\colonne-tableau-statut.html" />
+    <Content Include="gulpfile.js" />
+    <Content Include="projet.conf.js" />
+    <Content Include="application\typescript\directives\pf-tuile-catalogue\pf-tuile-catalogue-style.less" />
+    <Content Include="application\typescript\directives\pf-tuile-panier\pf-tuile-panier-style.less" />
+    <Content Include="application\typescript\directives\pf-panel-niveau-2\pf-panel-niveau-2-style.less" />
+    <Content Include="application\typescript\directives\pf-indicateur-badge\pf-indicateur-badge-style.less" />
+    <Content Include="application\typescript\directives\pf-diagramme-petite-barre\pf-diagramme-petite-barre-style.less" />
+    <Content Include="application\typescript\directives\pf-diagramme-grande-barre\pf-diagramme-grande-barre-style.less" />
+    <Content Include="application\typescript\directives\pf-indicateur-fleche\pf-indicateur-fleche-style.less" />
+    <Content Include="application\typescript\directives\pf-indicateur-colonne\pf-indicateur-colonne-style.less" />
+    <Content Include="application\typescript\directives\pf-diagramme-colonne\pf-diagramme-colonne-style.less" />
+    <Content Include="application\typescript\directives\pf-puce-legende\pf-puce-legende-style.less" />
+    <Content Include="npm-shrinkwrap.json" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuilleV1\suivi-complementaire-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuilleV1\suivi-complementaire-service.ts" />
+    <TypeScriptCompile Include="_dependances\typings\reference.commun.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\19.05\myway-core-api.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\com-eds.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\com-interdomaine.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\framework-client-app.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\portail\framework-client-portal.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\portail\framework-client-tech.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\encaisseagenceservice\v1\ctrlDebutJournee.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\entitetitulaire\v1\recherche.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\entitetitulaire\v2\informationEntiteTitulaire.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\application.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\elementconfportail.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\elementconfzone.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\famille.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\rechercheapplication.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\recherchefamille.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\recherchefavori.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\recherchesousfamille.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\recherchewidget.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\recherchewidgetjourneefo.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\regleApplication.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\sousfamille.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\widget.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\portailmyway\v1\zoneportail.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\structure\v2\caracteristique-eds.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\structure\v2\etablissement-mysys.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\structure\v2\poste-fonctionnel-agent.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\tiers\v1\tiers-identification.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\tiers\v2\tiers-identification.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\tiers\v2\tiers-portefeuille.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\ressources\tiers\v3\tiers-media.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\services\tables-delocalisees.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\socle-fonctionnel\19.11\myway.trans-pdt-entreprise.pdt-entreprise.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\socle-fonctionnel\libSynchroSynthese\18.03\myway.lib-synchro-synthese-cc.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\socle-fonctionnel\portail\19.05\myway.portail.lib-portail.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\tests-unitaires\myway.mock-tu.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\angular-protractor\angular-protractor.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\angular-ui-bootstrap\angular-ui-bootstrap.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\d3\d3.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\jasmine\jasmine.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\lodash\-lodash.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\lodash\lodash.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\moment\moment.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\selenium-webdriver\selenium-webdriver.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\third-party\tinymce\tinymce.d.ts" />
+    <TypeScriptCompile Include="_dependances\typings\ui\myway-ui.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="application\typescript\constantes\actions-remarquables.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\inject-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\messages-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\modale-paniers-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\preferences-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\rest-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\service-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\token-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\selection-indicateurs-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-avertissement-choix-portefeuille-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-choix-eds-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-clients-activer-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-clients-renegocier-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-filtre-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-modale\modale-paniers-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-ca-n-1-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-derniere-revue-rel-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-flux-crediteur-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-flux-debiteur-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-pnb-n-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-ca-n-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-client-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-relation-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-data-derniere-revue-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-potentiel-prospect-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-top-cc-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\template-tableau\colonne-statut-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-bloc-condition-filtre\pf-bloc-condition-filtre-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-bloc-condition-filtre\pf-bloc-condition-filtre-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-choix-portefeuille\pf-choix-portefeuille-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-choix-portefeuille\pf-choix-portefeuille-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-multi-colonne\pf-diagramme-multi-colonne-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-multi-colonne\pf-diagramme-multi-colonne-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-colonne\pf-diagramme-colonne-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-colonne\pf-diagramme-colonne-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-donut\pf-diagramme-donut-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-donut\pf-diagramme-donut-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-detail-filtre\pf-detail-filtre-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-detail-filtre\pf-detail-filtre-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-grande-barre\pf-diagramme-grande-barre-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-grande-barre\pf-diagramme-grande-barre-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-pourcentage\pf-diagramme-pourcentage-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-pourcentage\pf-diagramme-pourcentage-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-petite-barre\pf-diagramme-petite-barre-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-diagramme-petite-barre\pf-diagramme-petite-barre-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-core-draggable-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-core-draggable-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-core-drop-target-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-core-drop-target-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-drag-and-drop-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-drag-and-drop-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-drag-and-drop\pf-drag-and-drop-service.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-badge\pf-indicateur-badge-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-badge\pf-indicateur-badge-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-pourcentage\pf-indicateur-pourcentage-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-pourcentage\pf-indicateur-pourcentage-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-colonne\pf-indicateur-colonne-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-colonne\pf-indicateur-colonne-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-fleche\pf-indicateur-fleche-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-indicateur-fleche\pf-indicateur-fleche-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-ligne-relation-eco\pf-ligne-relation-eco-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-ligne-relation-eco\pf-ligne-relation-eco-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-panel-niveau-2\pf-panel-niveau-2-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-panel-niveau-2\pf-panel-niveau-2-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-puce-legende\pf-puce-legende-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-puce-legende\pf-puce-legende-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-tuile-catalogue\pf-tuile-catalogue-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-tuile-catalogue\pf-tuile-catalogue-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-element-eds\pf-element-eds-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-element-eds\pf-element-eds-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-tuile-indicateur\pf-tuile-indicateur-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-tuile-indicateur\pf-tuile-indicateur-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-tuile-panier\pf-tuile-panier-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\directives\pf-tuile-panier\pf-tuile-panier-directive.ts" />
+    <TypeScriptCompile Include="application\typescript\enums\application-enums.ts" />
+    <TypeScriptCompile Include="application\typescript\filtres\application-filtre.ts" />
+    <TypeScriptCompile Include="application\typescript\mocks\application-mocks.ts" />
+    <TypeScriptCompile Include="application\typescript\app.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\application-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\contexte-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\lisa-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\popup-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\tableau-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\url-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\constantes\urls-rest-constantes.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\detail-client-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\clients-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\index-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\controleurs\portefeuille-controleur.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\application\application-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\application\application-stats-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\application\contexte-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\application\modale-panier-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\mwCsv\mw-csv-config.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\propositioncorporateV1\stat-portefeuille-eds-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\structureV2\eds-niveau-inferieur-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\begacli-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\mock-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\export-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\mw-csv-service.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\application\popup-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\application\preferences-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\agentV2\gestion-affectation-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\agentV2\recherche-agent-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\propositioncorporateV1\recherche-revue-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\propositioncorporateV1\stat-revue-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuillcorporateV1\stat-flux-mouvement-financier-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuillcorporateV1\stat-rentabilite-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuillcorporateV1\stat-portefeuille-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuilleV1\client-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuilleV1\relation-commerciale-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\portefeuilleV1\recherche-portefeuille-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\preferenceUtilisateurV1\preference-utilisateur-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\rest\synthesecorporate\donnee-flux-modele.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\tableau\comparator\date-comparator.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\tableau\comparator\relations-comparator.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\tableau\comparator\clients-comparator.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\tableau\tableau-raison-sociale.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\tableau\tableau-relation.ts" />
+    <TypeScriptCompile Include="application\typescript\modeles\tableau\tableau-client.ts" />
+    <TypeScriptCompile Include="application\typescript\reference.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\ihm-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\choix-eds-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\choix-utilisateur-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\contexte-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\event-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\filtre-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\habilitation-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\indicateur-fleche-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\indicateur-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\initialisation-application-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\lisa-application-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\liste-clients-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\modale-paniers-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\popup-application-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\portefeuille-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\preferences-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\application\stats-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\d3\creation-donut-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\d3\creation-pourcentage-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\agentV2\gestion-affectation-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\agentV2\recherche-agent-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuillcorporateV1\recherche-revue-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuillcorporateV1\stat-flux-mouvement-financier-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuillcorporateV1\stat-portefeuille-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuillcorporateV1\stat-revue-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuillcorporateV1\stat-rentabilite-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuilleV1\client-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuilleV1\relation-commerciale-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\portefeuilleV1\recherche-portefeuille-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\preferenceUtilisateurV1\preference-utilisateur-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\propositioncorporateV1\stat-portefeuille-eds-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\structureV2\eds-niveau-inferieur-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\rest\synthesecorporate\donnee-flux-service.ts" />
+    <TypeScriptCompile Include="application\typescript\services\utils\application-utils.ts" />
+    <TypeScriptCompile Include="application\typescript\services\utils\data-utils.ts" />
+    <TypeScriptCompile Include="test\integration\scenario1.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\clients-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\detail-client-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\index-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\portefeuille-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\template-modale\modale-choix-eds-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\template-modale\modale-filtre-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\controleurs\template-modale\modale-paniers-controleur-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-bloc-condition-filtre\pf-bloc-condition-filtre-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-detail-filtre\pf-detail-filtre-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-diagramme-colonne\pf-diagramme-colonne-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-drag-and-drop\pf-core-draggable-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-drag-and-drop\pf-core-drop-target-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-drag-and-drop\pf-drag-and-drop-service-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-tuile-panier\pf-tuile-panier-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\filter\application-filtre-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\directives\pf-tuile-catalogue\pf-tuile-catalogue-directive-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\authentification-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\filtre-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-agences-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\contexte-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-clients-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-filtres-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\panier-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-indicateurs-choix-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-portefeuilles-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-relation-eco-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\liste-totale-indicateurs-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\modale-paniers-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\panier-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\panier-preferences-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\choix-utilisateur-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\portefeuille-v1-rest-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\caracteristiques-agent-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\preference-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\mock\services-applicatifs-mock.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\application\contexte-service-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\application\filtre-service-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\application\initialisation-application-service-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\application\popup-application-service-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\application\preferences-service-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\utils\application-utils-tu.ts" />
+    <TypeScriptCompile Include="test\unitaire\services\utils\data-utils-tu.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application\less\custom.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="update.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application\typescript\directives\pf-tuile-indicateur\pf-tuile-indicateur-style.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application\typescript\directives\pf-ligne-relation-eco\pf-ligne-relation-eco-style.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="--v23.11 portefeuille-v31 export Excel date CA\" />
+    <Folder Include="test\unitaire\services\rest\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\myway.c05.10.depot-a-terme-commun\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-instruction-credit-business\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-instruction-credit-common\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-instruction-credit-components\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-instruction-credit-rest-services\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\socle-fonctionnel\myway-credits-instruction-credit-ui-components\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\tests-unitaires\" />
+    <Folder Include="_dependances\v24.09\cdn\v1\third-party\bluebird\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <RootNamespace>demonstration</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7278</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7278/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties package_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="'$(BuildingInsideVisualStudio)' == 'true' and Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != '' and Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
+</Project>

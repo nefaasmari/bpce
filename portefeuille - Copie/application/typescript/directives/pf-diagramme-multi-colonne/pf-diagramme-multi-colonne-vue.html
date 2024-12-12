@@ -1,0 +1,15 @@
+﻿<div class="pf-diagramme-multi-colonne-detail" ng-style="{'max-height': '30em'}">
+        <section ng-repeat="config in pfDiagrammeMultiColonneCtrl.config track by $index" 
+             class="colonne-indicateur" ng-class="{'padding': '0.5rem 0.6rem', 'margin': '0.5rem', 'border-style': 'outset', 'border-color': 'gray', 'max-height': '17em'}">
+            <mw-pf-indicateur-fleche ng-attr-id="'indicateur-fleche-pnb'+config.id"
+                                     class="margin-left-auto" 
+                                     ng-style="{'margin-top': '20%', 'text-align': 'center', 'justify-content': 'center'}"
+                                     config="config.tendence">
+            </mw-pf-indicateur-fleche>
+            <mw-pf-diagramme-colonne ng-attr-id="config.id"
+                                     config="config.dataIndicateurMutliColonne"
+                                     typeDiagramme="0">
+            </mw-pf-diagramme-colonne>
+            <span ng-bind="config.intitule" mw-truncate ng-style="{'text-align': 'center', 'font-weight': 'bold', 'display': 'flex', 'justify-content': 'center'}"></span>
+        </section>
+</div>

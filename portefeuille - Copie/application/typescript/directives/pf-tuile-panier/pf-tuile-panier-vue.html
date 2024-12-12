@@ -1,0 +1,44 @@
+﻿<li class="pf-tuile-panier" 
+    ng-class="{'tuile-mode-edition':pfTuilePanierCtrl.tuilePanierSettings.estEnEdition}">
+    <div class="drop-content-tuile-panier pf-drop-target-element" 
+         mw-pf-core-drop-target 
+         drop-settings="pfTuilePanierCtrl.tuilePanierSettings.dropSettings">
+        <div class="container-pf-tuile-panier" 
+             mw-pf-core-draggable 
+             drag-settings="pfTuilePanierCtrl.tuilePanierSettings.dragSettings">
+            <mw-tuile-standard ng-attr-id="indicateur-{{pfTuilePanierCtrl.tuilePanierSettings.indicateur.indicateur.code}}"
+                               avec-marquage="pfTuilePanierCtrl.afficherMarquage()"
+                               texte-marquage="pfTuilePanierCtrl.nomMarquage()"
+                               titre="pfTuilePanierCtrl.tuilePanierSettings.indicateur.indicateur.intitule"
+                               ligne1="pfTuilePanierCtrl.famille"
+                               object="pfTuilePanierCtrl.tuilePanierSettings.indicateur"
+                               couleur="{{pfTuilePanierCtrl.couleur()}}"
+                               config="pfTuilePanierCtrl.configTuile">
+            </mw-tuile-standard>
+            <button ng-show="pfTuilePanierCtrl.tuilePanierSettings.estEnEdition" 
+                    class="mw-tuile-action bouton-poubelle" 
+                    id="bouton-poubelle" 
+                    ng-click="pfTuilePanierCtrl.supprimer()">
+                <span class="icon itce-trash" 
+                      aria-hidden="true">
+                </span>
+            </button>
+            <button ng-show="pfTuilePanierCtrl.afficherFlecheDroite()" 
+                    class="mw-tuile-action bouton-droit" 
+                    id="bouton-droit" 
+                    ng-click="pfTuilePanierCtrl.deplacerADroite()">
+                <span class="icon itce-arrow-right" 
+                      aria-hidden="true">
+                </span>
+            </button>
+            <button ng-show="pfTuilePanierCtrl.afficherFlecheGauche()" 
+                    class="mw-tuile-action bouton-gauche" 
+                    id="bouton-gauche" 
+                    ng-click="pfTuilePanierCtrl.deplacerAGauche()">
+                <span class="icon itce-arrow-left" 
+                      aria-hidden="true">
+                </span>
+            </button>
+        </div>
+    </div>
+</li>

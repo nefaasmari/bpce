@@ -1,0 +1,10 @@
+﻿<div class="col-md-12">
+    <div class="row">
+        <mw-pf-tuile-indicateur ng-repeat="indicateur in mwTableRow.listeIndicateurs track by $index"
+                                couleur="indicateur.couleur"
+                                intitule="indicateur.intitule"
+                                icone="indicateur.icone"
+                                valeur="indicateur.valeur"
+                                ng-attr-id="pf-tuile-indicateur-{{$index}}"></mw-pf-tuile-indicateur>
+    </div>
+</div>
