@@ -1,0 +1,34 @@
+<myway-dialog titleHeader="Evolution PNB">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="datas$ | async as data">
+      <div class="content">
+        <ng-container *ngIf="data.montantN1 || data.montantN">
+          PNB glissant<span *ngIf="data.montantN1 && data.montantN"> ({{ getEvolutionPNB(data.montantN, data.montantN1) }})</span>
+          <table class="tab-pnb">
+            <tr *ngIf="data.montantN1">
+              <td>{{ data.periodeN1 }}</td>
+              <td>{{ data.montantN1 | currency: 'EUR':'symbol':'1.0-0':'fr' }}</td>
+            </tr>
+            <tr *ngIf="data.montantN">
+              <td>{{ data.periodeN }}</td>
+              <td>{{ data.montantN | currency: 'EUR':'symbol':'1.0-0':'fr' }}</td>
+            </tr>
+          </table>
+        </ng-container>
+        <ng-container *ngIf="data.montant3112">
+          PNB au 31/12 N-1
+          <table class="tab-pnb">
+            <tr>
+              <td>{{ data.periode3112 }}</td>
+              <td>{{ data.montant3112 | currency: 'EUR':'symbol':'1.0-0':'fr' }}</td>
+            </tr>
+          </table>
+        </ng-container>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>

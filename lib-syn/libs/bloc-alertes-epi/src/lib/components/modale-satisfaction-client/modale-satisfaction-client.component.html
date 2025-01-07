@@ -1,0 +1,26 @@
+<myway-dialog titleHeader="Enquêtes satisfaction client">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="indicateurDetail$ | async as data">
+      <myway-table
+        [items]="data.datas"
+        [multiple]="false"
+        [editable]="false"
+        [filterable]="false"
+        [sortable]="false"
+        [pagination]="5"
+        [height]="250"
+        selection="none"
+      >
+        <myway-table-item type="input" width="100" data-date-reponse-enquete label="Date"></myway-table-item>
+        <myway-table-item type="input" width="175" data-libelle-niveau-satisfaction label="Satisfaction"></myway-table-item>
+        <myway-table-item type="input" width="110" data-code-note-recommandation label="Reco. de 0 à 10"></myway-table-item>
+        <myway-table-item type="input" width="250" data-motif-echange label="Motif de l'échange"></myway-table-item>
+        <clients-profcli-description-detail-satisfaction #contentDescription></clients-profcli-description-detail-satisfaction>
+      </myway-table>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>

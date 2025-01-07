@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+@import  '../../../../../../node_modules/@myway/material/styles/theming/colors/caisse-d-epargne-colors';
+@import '../../style/alertes-indicateurs.scss';
+
+.tab-tarification {
+    border:  0;
+    td:nth-child(1) {
+        padding-left: 3rem;
+        padding-right: .5rem;
+        color: mat.get-color-from-palette($ce-theme-bc, input-label-color);
+    }
+    td:nth-child(2) {
+        text-align: end;
+    }
+    
+}

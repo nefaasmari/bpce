@@ -1,0 +1,35 @@
+{
+  "name": "bloc-opportunites-epi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/bloc-opportunites-epi/src",
+  "prefix": "clients-profcli",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "tsConfig": "libs/bloc-opportunites-epi/tsconfig.lib.json",
+        "project": "libs/bloc-opportunites-epi/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/bloc-opportunites-epi/tsconfig.lib.prod.json"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/bloc-opportunites-epi/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/libs/bloc-opportunites-epi"]
+    },
+    "lint": {
+      "executor": "@angular-eslint/builder:lint",
+      "options": {
+        "lintFilePatterns": ["libs/bloc-opportunites-epi/**/*.ts", "libs/bloc-opportunites-epi/**/*.html"]
+      }
+    }
+  },
+  "tags": ["scope:pro"]
+}

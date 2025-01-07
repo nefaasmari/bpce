@@ -1,0 +1,78 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "excludedFiles": ["*.spec.ts", "*.mock.ts"],
+      "parserOptions": {
+        "ecmaVersion": "latest",
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "prettier"
+      ],
+      "plugins": ["prettier", "import", "jsdoc"],
+      "rules": {
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/consistent-type-definitions": "warn",
+        "@angular-eslint/component-selector": "off",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowShortCircuit": true
+          }
+        ],
+        "brace-style": ["error", "1tbs"],
+        "id-blacklist": "off",
+        "id-match": "off",
+        "import/order": "warn",
+        "jsdoc/no-types": "warn",
+        "max-len": [
+          "error",
+          {
+            "code": 300
+          }
+        ],
+        "no-bitwise": "off",
+        "no-console": "off",
+        "no-underscore-dangle": "off",
+        "@typescript-eslint/ban-types": "warn",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@typescript-eslint/prefer-for-of": "warn",
+        "no-shadow": "off",
+        "jsdoc/check-alignment": "warn"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "@angular-eslint/template/no-negated-async": "off",
+        "@angular-eslint/template/eqeqeq": "error"
+      }
+    }
+  ]
+}

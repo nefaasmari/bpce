@@ -1,0 +1,23 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": ["!**/*", "**/*.spec.ts", "**/*.mock.ts"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["app/lanceur-lib-ihm/tsconfig.app.json", "app/lanceur-lib-ihm/tsconfig.spec.json"],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "warn",
+          {
+            "type": "element",
+            "prefix": "lanceur-lib-ihm",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<myway-loading-spinner [show]="isLoading$ | async"></myway-loading-spinner>
+<ng-container *ngIf="habilitation$ | async as habilitations">
+  <ng-container *ngIf="traitementPointAccesTermine && (opportunites || opportunitesCorp || nbDemandesMonExpert)">
+    <myway-cell
+      (outputCell)="opportunites.estMigre ? debrancherFocus() : debrancherConfig(idConfigOpportunite)"
+      [rightIcon]="getLibRightIcon(true)"
+      [leftIcon]="getLeftIcon()"
+      [disabled]="opportunites?.nombreOpportunitesClient ? opportunites.estMigre ? dataPointAccesFocus.disabled : dataPointAccesOpportunite.disabled : true"
+      [mywayTooltip]="opportunites.estMigre ? dataPointAccesFocus.disabled : dataPointAccesOpportunite.label"
+      *ngIf="!estVueClient && opportunites && dataPointAccesOpportunite"
+    >
+      <template #title>
+        {{ getLibOpportunites(opportunites?.nombreOpportunitesClient) }}
+      </template>
+      <template #subtitle>
+        {{ getLibSubtitleOpportunites() }}
+      </template>
+    </myway-cell>
+
+    <div class="dv-gellule-liste">
+      <myway-chip-button
+        (click)="debrancherConfig(idConfigAffaires)"
+        [disabled]="dataPointAccesAffaires.disabled"
+        [maxWidth]="false"
+        [mywayTooltip]="dataPointAccesAffaires.label"
+        *ngIf="!estVueClient && getEstAfficheSiExiste(opportunitesCorp?.nombreAffairesEnCours)"
+        >Affaires en cours
+        <myway-badge
+          alone="true"
+          value="{{ getValue(opportunitesCorp?.nombreAffairesEnCours) }}"
+          [ngClass]="getBadge(opportunitesCorp?.nombreAffairesEnCours)"
+        ></myway-badge
+      ></myway-chip-button>
+      <myway-chip-button
+        (click)="openModale()"
+        [disabled]="!opportunitesCorp?.aAppetenceProduits || !habilitations.get('SHDC24')"
+        [maxWidth]="false"
+        [mywayTooltip]="!habilitations.get('SHDC24') ? txtNonHabilite : ''"
+        *ngIf="!estVueClient && getEstAfficheSiExiste(opportunitesCorp?.nombreAppetencesProduits) && opportunitesCorp?.aAppetenceProduits"
+        >Appétences produits
+        <myway-badge
+          alone="true"
+          value="{{ getValue(opportunitesCorp?.nombreAppetencesProduits) }}"
+          [ngClass]="getBadge(opportunitesCorp?.nombreAppetencesProduits)"
+        ></myway-badge
+      ></myway-chip-button>
+      <myway-chip-button
+        (click)="debrancherConfig(idConfigDossierVente)"
+        [disabled]="dataPointAccesDossierVente.disabled"
+        [maxWidth]="false"
+        [mywayTooltip]="opportunites.aPropositionsOuDossierVente ? dataPointAccesDossierVente.label : ''"
+        *ngIf="dataPointAccesDossierVente && opportunites"
+        >Dossiers de vente
+        <myway-badge
+          alone="true"
+          value="{{ getValue(opportunites?.nombrePropositionsClient) }}"
+          [ngClass]="getBadge(opportunites?.nombrePropositionsClient)"
+        ></myway-badge
+      ></myway-chip-button>
+      <!-- <myway-chip-button
+      (click)="debrancherConfig(idConfigOpportunite)"
+      [maxWidth]="false"
+      [disabled]="dataPointAccesOpportunite.disabled"
+      [mywayTooltip]="opportunites.aOpportunites ? dataPointAccesOpportunite.label : ''"
+      *ngIf="!estVueClient && opportunites && dataPointAccesOpportunite"
+      >Opportunités à traiter <myway-badge alone="true" value="{{ opportunites?.nombreOpportunitesClient }}" [ngClass]="opportunites?.nombreOpportunitesClient === 0 ? 'gellule-icon-badge-cpt-ok' : ''"></myway-badge
+    ></myway-chip-button> -->
+      <myway-chip-button
+        (click)="debrancherConfig(idConfigRevue)"
+        [maxWidth]="false"
+        [disabled]="dataPointAccesRevue.disabled"
+        [mywayTooltip]="dataPointAccesRevue.label"
+        *ngIf="!estVueClient && getEstAfficheSiExiste(opportunitesCorp?.nombreProduitsAProposer)"
+        >Produits à proposer - Revue
+        <myway-badge
+          alone="true"
+          value="{{ getValue(opportunitesCorp?.nombreProduitsAProposer) }}"
+          [ngClass]="getBadge(opportunitesCorp?.nombreProduitsAProposer)"
+        ></myway-badge
+      ></myway-chip-button>
+      <myway-chip-button
+        (click)="debrancherConfig(idConfigPropoCom)"
+        [maxWidth]="false"
+        [disabled]="dataPointAccesPropoCom.disabled"
+        [mywayTooltip]="dataPointAccesPropoCom.label"
+        *ngIf="dataPointAccesPropoCom && opportunitesCorp"
+        >Propositions commerciales
+        <myway-badge
+          alone="true"
+          value="{{ getValue(opportunitesCorp?.nombrePropositions) }}"
+          [ngClass]="getBadge(opportunitesCorp?.nombrePropositions)"
+        ></myway-badge
+      ></myway-chip-button>
+      <myway-chip-button
+        (click)="debrancherConfig(idConfigProjFinancement)"
+        [disabled]="dataPointAccesProjFinancement.disabled"
+        [maxWidth]="false"
+        [mywayTooltip]="dataPointAccesProjFinancement.label"
+        *ngIf="!estVueClient && getEstAfficheSiExiste(opportunitesCorp?.nombreProjetsFinancement)"
+      >
+        Besoin{{ opportunitesCorp?.nombreProjetsFinancement > 1 ? 's' : '' }} de financement
+        <myway-badge
+          alone="true"
+          value="{{ getValue(opportunitesCorp?.nombreProjetsFinancement) }}"
+          [ngClass]="getBadge(opportunitesCorp?.nombreProjetsFinancement)"
+        ></myway-badge
+      ></myway-chip-button>
+
+      <myway-chip-button
+        (click)="debrancherConfig(idConfigSuiviMonExpert)"
+        [disabled]="dataPointAccesSuiviMonExpert.disabled"
+        [maxWidth]="false"
+        [mywayTooltip]="dataPointAccesSuiviMonExpert.label"
+        *ngIf="true"
+      >
+        Demandes MonExpert
+
+        <myway-badge alone="true" value="{{ getValue(nbDemandesMonExpert) }}" [ngClass]="getBadge(nbDemandesMonExpert)"> </myway-badge>
+        <myway-loading-spinner [show]="isMonExpertLoading$ | async"></myway-loading-spinner>
+      </myway-chip-button>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf="error$ | async as err">
+  <myway-error [message]="date + ' ==> ' + (err | json)"></myway-error>
+</ng-container>

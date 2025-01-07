@@ -1,0 +1,17 @@
+<myway-loading-spinner [show]="isLoading$ | async"></myway-loading-spinner>
+<div *ngIf="listeAlertes as data" class="datas">
+  <clients-profcli-data-display
+    *ngFor="let indic of data"
+    [donnee]="indic"
+    [identifiantPersonne]="identifiantPersonne"
+    [codeEtablissement]="codeEtablissement"
+    (debranchement)="debranchementEvt()"
+    (popUp)="popUpEvt($event)"
+  ></clients-profcli-data-display>
+  <div *ngIf="data.length === 0">
+    Aucune alerte
+  </div>
+</div>
+<ng-container *ngIf="error$ | async as err">
+  <myway-error [message]="date + ' ==> ' + (err | json)"></myway-error>
+</ng-container>

@@ -1,0 +1,11 @@
+{
+  "linterOptions": {
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.mock.ts",
+    "**/*.test.ts",
+    "**/*/environment.ts",
+    "**/*/constante.caisse.ts",
+    "/node_modules"    ]
+  }
+}

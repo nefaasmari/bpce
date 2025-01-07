@@ -1,0 +1,3930 @@
+{
+  "swagger": "2.0",
+  "host": "localhost",
+  "basePath": "/bapi/productorExpert",
+  "consumes": [
+    "application/hal+json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "x-restlab-context": "BAPI",
+  "info": {
+    "title": "productorExpert",
+    "version": "1.5.1",
+    "description": "productorExpert api for bapi Project"
+  },
+  "paths": {
+    "/v1/expertInquiries/{expertInquiryId}/feedback": {
+      "parameters": [
+        {
+          "required": true,
+          "in": "path",
+          "name": "expertInquiryId",
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesByExpertInquiryIdFeedbackV1",
+        "summary": "Permet la sauvegarde dans l'application MonExpert des informations saisie par l'expert au moment de l'entretien client",
+        "x-restlab-channels": [
+          "partenaire"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesByExpertInquiryIdFeedbackV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesByExpertInquiryIdFeedbackV1Response"
+            }
+          },
+          "400": {
+            "description": "La syntaxe de la requête est erronée",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "403": {
+            "description": "Refus de l'accés à l'opération demandée",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": true,
+            "in": "body",
+            "name": "feedback",
+            "schema": {
+              "$ref": "#/definitions/Feedback"
+            },
+            "x-restlab-description": "Ensemble des attributs susceptibles d'etre mis à jour suite à l'entretien client"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateAutoLease": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateAutoLeaseV1",
+        "summary": "Création d'une demande d'expertise Bail Auto",
+        "description": "Permet la création d'une demande d'expertise Bail Auto",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateAutoLeaseV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateAutoLeaseV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": true,
+            "in": "body",
+            "name": "initiateAutoLease",
+            "schema": {
+              "$ref": "#/definitions/InitiateAutoLease"
+            },
+            "x-restlab-description": "Ensemble des attributs permettant la création d'une demande d'expertise Bail Auto"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateServiceVoucher": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateServiceVoucherV1",
+        "summary": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise NIT",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise NIT\n",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateServiceVoucherV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateServiceVoucherV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "required": true,
+            "in": "body",
+            "name": "initiateServiceVoucher",
+            "schema": {
+              "$ref": "#/definitions/InitiateServiceVoucher"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateOrganizationManagementService": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateOrganizationManagementServiceV1",
+        "summary": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecotiz",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecotiz",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateOrganizationManagementServiceV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateOrganizationManagementServiceV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": true,
+            "in": "body",
+            "name": "initiateOrganizationManagementService",
+            "schema": {
+              "$ref": "#/definitions/InitiateOrganizationManagementService"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecotiz"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/{expertInquiryId}": {
+      "parameters": [
+        {
+          "required": true,
+          "in": "path",
+          "name": "expertInquiryId",
+          "description": "",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "deprecated": false,
+        "operationId": "readExpertInquiriesByExpertInquiryIdV1",
+        "x-restlab-channels": [
+          "interne",
+          "partenaire"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response object for readExpertInquiriesByExpertInquiryIdV1",
+            "schema": {
+              "$ref": "#/definitions/ReadExpertInquiriesByExpertInquiryIdV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "productorExpertScopes": [
+              "readProductorExpert"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "operationId": "modifyExpertInquiriesByExpertInquiryIdV1",
+        "x-restlab-channels": [
+          "interne",
+          "partenaire"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response object for modifyExpertInquiriesByExpertInquiryIdV1",
+            "schema": {
+              "$ref": "#/definitions/ModifyExpertInquiriesByExpertInquiryIdV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": true,
+            "in": "body",
+            "name": "expertInquiry",
+            "schema": {
+              "$ref": "#/definitions/ExpertInquiry"
+            }
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries": {
+      "parameters": [],
+      "get": {
+        "deprecated": false,
+        "operationId": "readExpertInquiriesV1",
+        "summary": "Recherche d'une collection de demandes d'expertise à partir d'une liste d'entités légales ou de Professional Role (exclusif)",
+        "description": "Recherche d'une collection de demandes d'expertise à partir d'une liste d'entités légales ou de Professional rôle (exclusif)",
+        "x-restlab-channels": [
+          "interne",
+          "partenaire",
+          "metier"
+        ],
+        "responses": {
+          "200": {
+            "description": "Response object for readExpertInquiriesV1",
+            "schema": {
+              "$ref": "#/definitions/ReadExpertInquiriesV1Response"
+            }
+          },
+          "206": {
+            "description": "Partial response object for readExpertInquiriesV1",
+            "schema": {
+              "$ref": "#/definitions/ReadExpertInquiriesV1PartialResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": false,
+            "in": "query",
+            "name": "legalEntityId",
+            "description": "un ou plusieurs entités légales \t\t\t\n",
+            "type": "string"
+          },
+          {
+            "required": false,
+            "in": "query",
+            "name": "pageSize",
+            "type": "string"
+          },
+          {
+            "required": false,
+            "in": "query",
+            "name": "pageNumber",
+            "type": "string"
+          },
+          {
+            "required": false,
+            "in": "query",
+            "name": "recoveryKey",
+            "type": "string"
+          },
+          {
+            "required": false,
+            "in": "query",
+            "name": "sort",
+            "type": "string"
+          },
+          {
+            "required": false,
+            "in": "query",
+            "name": "followUpProfessionalRoleId",
+            "description": "un ou plusieurs rôles professionnels\t\t\t\n",
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "readProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateRetirementProduct": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateRetirementProductV1",
+        "summary": "",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise NIE",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateRetirementProductV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateRetirementProductV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateRetirementProduct",
+            "schema": {
+              "$ref": "#/definitions/InitiateRetirementProduct"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Interépargne\t\t\t\t\t\t"
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateConsumerLoan": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateConsumerLoanV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Oney",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateConsumerLoanV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateConsumerLoanV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateConsumerLoan",
+            "schema": {
+              "$ref": "#/definitions/InitiateConsumerLoan"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation Oney\t\t\t\t\t\t"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateInsuranceProduct": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateInsuranceProductV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Gras Savoye",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateInsuranceProductV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateInsuranceProductV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateInsuranceProduct",
+            "schema": {
+              "$ref": "#/definitions/InitiateInsuranceProduct"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation Gras Savoye"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateAcceptanceDevice": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateAcceptanceDeviceV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise TPE Santé",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateAcceptanceDeviceV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateAcceptanceDeviceV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateAcceptanceDevice",
+            "schema": {
+              "$ref": "#/definitions/InitiateAcceptanceDevice"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation TPE Santé"
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateEcommerce": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateEcommerceV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecommerce",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateEcommerceV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateEcommerceV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateEcommerce",
+            "schema": {
+              "$ref": "#/definitions/InitiateEcommerce"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecommerce"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateFactoring": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateFactoringV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Factor",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateFactoringV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateFactoringV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateFactoring",
+            "schema": {
+              "$ref": "#/definitions/InitiateFactoring"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Factor"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateBillingService": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateBillingServiceV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Je Pilote",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateBillingServiceV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateBillingServiceV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateBillingService",
+            "schema": {
+              "$ref": "#/definitions/InitiateBillingService"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Je Pilote"
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateLoyaltyService": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateLoyaltyServiceV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Izicap",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateLoyaltyServiceV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateLoyaltyServiceV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateLoyaltyService",
+            "schema": {
+              "$ref": "#/definitions/InitiateLoyaltyService"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Izicap"
+          }
+        ],
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ]
+      }
+    },
+    "/v1/expertInquiries/initiateInternationalImplementation": {
+      "parameters": [],
+      "post": {
+        "deprecated": false,
+        "operationId": "createExpertInquiriesInitiateInternationalImplementationV1",
+        "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Pramex",
+        "x-restlab-channels": [
+          "interne"
+        ],
+        "responses": {
+          "201": {
+            "description": "Response object for createExpertInquiriesInitiateInternationalImplementationV1",
+            "schema": {
+              "$ref": "#/definitions/CreateExpertInquiriesInitiateInternationalImplementationV1Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "productorExpertScopes": [
+              "manageProductorExpert"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "in": "body",
+            "name": "initiateInternationalImplementation",
+            "schema": {
+              "$ref": "#/definitions/InitiateInternationalImplementation"
+            },
+            "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Pramex"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "NoContent": {
+      "type": "object",
+      "description": "Empty object for symbolize no-content (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {}
+    },
+    "Href": {
+      "type": "object",
+      "description": "Href object (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "href": {
+          "description": "Uri",
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "LinksSelf": {
+      "type": "object",
+      "description": "Object _link on unit & simple list response (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "self": {
+          "$ref": "#/definitions/Href"
+        }
+      }
+    },
+    "Links": {
+      "type": "object",
+      "description": "Object _link on list response (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "self": {
+          "$ref": "#/definitions/Href"
+        },
+        "first": {
+          "$ref": "#/definitions/Href"
+        },
+        "prev": {
+          "$ref": "#/definitions/Href"
+        },
+        "next": {
+          "$ref": "#/definitions/Href"
+        },
+        "last": {
+          "$ref": "#/definitions/Href"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "description": "Error object (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "code": {
+          "description": "Error code",
+          "type": "string"
+        },
+        "message": {
+          "description": "Error message",
+          "type": "string"
+        },
+        "attribute": {
+          "description": "Error attribute",
+          "type": "string"
+        },
+        "additionalInformation": {
+          "description": "Optional data",
+          "type": "string"
+        }
+      }
+    },
+    "ErrorResponse": {
+      "type": "object",
+      "description": "Error response object (BAPI)",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true,
+      "properties": {
+        "errors": {
+          "description": "list of errors",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "description": "Message object (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "code": {
+          "description": "Message code",
+          "type": "string"
+        },
+        "label": {
+          "description": "Message",
+          "type": "string"
+        },
+        "attribute": {
+          "description": "Message attribute",
+          "type": "string"
+        },
+        "additionalInformation": {
+          "description": "Optional data",
+          "type": "string"
+        }
+      }
+    },
+    "MessageResponse": {
+      "type": "object",
+      "description": "Message response object (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "messages": {
+          "description": "list of messages",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Page": {
+      "type": "object",
+      "description": "Pagination (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "pageSize": {
+          "description": "Number of items by page",
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalElement": {
+          "description": "Total items",
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "description": "Total pages",
+          "type": "integer",
+          "format": "int64"
+        },
+        "pageNumber": {
+          "description": "Page number",
+          "type": "integer",
+          "format": "int64"
+        },
+        "recoveryKey": {
+          "description": "Cle de reprise de la page courante",
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "Sort": {
+      "type": "object",
+      "description": "Items sorting (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "attributeName": {
+          "description": "Sorting by",
+          "type": "string"
+        },
+        "direction": {
+          "description": "Sort direction",
+          "type": "string"
+        }
+      }
+    },
+    "AccountRef": {
+      "type": "object",
+      "description": "Account reference",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "type": {
+          "description": "ISO20022 typology",
+          "type": "string"
+        },
+        "value": {
+          "description": "Identifier value",
+          "type": "string"
+        }
+      }
+    },
+    "Phone": {
+      "type": "object",
+      "description": "Objet composite Phone",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "phoneCountryCode": {
+          "description": "Indicatif téléphonique international",
+          "type": "string"
+        },
+        "value": {
+          "description": "Identifier value",
+          "type": "string",
+          "format": "phone"
+        }
+      }
+    },
+    "DataSuppliedItemObjecty": {
+      "type": "object",
+      "description": "Generic objejct",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "suppliedName": {
+          "description": "Supplied name",
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/NoContent"
+        }
+      }
+    },
+    "Empty": {
+      "type": "object",
+      "x-restlab-editable": true,
+      "properties": {},
+      "x-restlab-type": "GENERATED"
+    },
+    "Identifier": {
+      "type": "object",
+      "description": "Objet défaut d'identifiant.",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "entityCode": {
+          "description": "",
+          "type": "string"
+        },
+        "id": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "Amount": {
+      "type": "object",
+      "description": "Objet défaut pour les montants.",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "value": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "currencyCode": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "ShortTypology": {
+      "type": "object",
+      "description": "Objet défaut de typologie courte.",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "label": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "LongTypology": {
+      "type": "object",
+      "description": "Objet défaut de typologie longue.",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "shortLabel": {
+          "description": "",
+          "type": "string"
+        },
+        "label": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "description": "Objet défaut d'adresse'.",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "location": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "postalCode": {
+          "description": "",
+          "type": "string"
+        },
+        "countrylso2": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "BankId": {
+      "type": "object",
+      "description": "Objet défaut de RIB (deprecated).",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "bankId": {
+          "description": "",
+          "type": "string"
+        },
+        "deskId": {
+          "description": "",
+          "type": "string"
+        },
+        "accountNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "ribKey": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "Rib": {
+      "type": "object",
+      "description": "Objet défaut de RIB.",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "bankId": {
+          "description": "",
+          "type": "string"
+        },
+        "deskId": {
+          "description": "",
+          "type": "string"
+        },
+        "accountNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "ribKey": {
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "CreateExpertInquiriesByExpertInquiryIdFeedbackV1Response": {
+      "type": "object",
+      "properties": {
+        "feedback": {
+          "$ref": "#/definitions/Feedback",
+          "x-restlab-description": "Ensemble des attributs susceptibles d'etre mis à jour suite à l'entretien client"
+        }
+      },
+      "description": "Api response for createExpertInquiriesByExpertInquiryIdFeedbackV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true,
+      "required": [
+        "feedback"
+      ]
+    },
+    "Feedback": {
+      "type": "object",
+      "description": "Ensemble des attributs susceptibles d'etre mis à jour suite à l'entretien client",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/FeedbackCharacteristics",
+          "x-restlab-description": "caractérisques de l'interaction de feedback"
+        },
+        "response": {
+          "$ref": "#/definitions/FeedbackResponse",
+          "x-restlab-description": "Resultat de l'interaction"
+        }
+      },
+      "required": [
+        "characteristics"
+      ]
+    },
+    "FeedbackCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction de feedback",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "expertInquiryId": {
+          "description": "Identifiant de la demande d'expertise",
+          "type": "string"
+        },
+        "expertInquiryStatus": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Statut de la demande"
+        },
+        "proposedOfferLabel": {
+          "description": "Libellé de l'offre proposée au lead",
+          "type": "string"
+        },
+        "expertInquiryProposedOffer": {
+          "description": "Libellé de l'offre proposée au lead",
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "internalComment": {
+          "type": "string"
+        },
+        "businessExpertName": {
+          "description": "Nom de l'expert en contact avec le client",
+          "type": "string"
+        },
+        "businessExpertEmail": {
+          "description": "Email de l'expert en contact avec le client",
+          "type": "string",
+          "format": "email"
+        },
+        "lastUpdate": {
+          "description": "Timestamp de dernière mise à jour dans le système de gestion de la relation client chez le producteur",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH.MM.SS+HH.MM"
+        },
+        "newProduct": {
+          "description": "Changement de produit suite à l'entretien (conduira à la création d'une nouvelle demande d'expertise dans l'application MonExpert). Cas spécifique au producteur NIT.",
+          "type": "string"
+        },
+        "newExpertInquiryId": {
+          "description": " Identifiant de la nouvelle demande d'expertise si un nouveau produit est indiqué (newProduct)",
+          "type": "string"
+        },
+        "vehicleRegistration": {
+          "description": "Plaque d'immatriculation du véhicule pour Lease",
+          "type": "string"
+        }
+      },
+      "required": [
+        "expertInquiryId"
+      ]
+    },
+    "FeedbackResponse": {
+      "type": "object",
+      "description": "Resultat de l'interaction",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.",
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "DataSuppliedItemObject": {
+      "type": "object",
+      "description": "Generic objejct",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "suppliedName": {
+          "description": "Supplied name",
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/NoContent"
+        }
+      }
+    },
+    "ResponseItem": {
+      "type": "object",
+      "description": "Response item",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "objectIdentification": {
+          "description": "Identification",
+          "type": "string"
+        },
+        "objejctIdentity": {
+          "description": "Identify",
+          "type": "string"
+        },
+        "_links": {
+          "$ref": "#/definitions/Links"
+        }
+      }
+    },
+    "PartialResponse": {
+      "type": "object",
+      "description": "Partial response object (BAPI)",
+      "x-restlab-type": "GENERATED",
+      "x-restlab-editable": true,
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/Page"
+        },
+        "sort": {
+          "$ref": "#/definitions/Sort"
+        },
+        "_links": {
+          "$ref": "#/definitions/Links"
+        },
+        "responseItem": {
+          "$ref": "#/definitions/ResponseItem"
+        }
+      }
+    },
+    "InitiateAutoLeaseCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateAutoLease",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateAutoLeaseResponse": {
+      "type": "object",
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      },
+      "description": "Resultat de l'interaction",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateAutoLease": {
+      "type": "object",
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateAutoLeaseCharacteristics",
+          "x-restlab-description": "caractérisques de l'interaction initiateAutoLease"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateAutoLeaseResponse",
+          "x-restlab-description": "Resultat de l'interaction"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateAutoLeaseAttributes",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead lease, nécessaires à sa création."
+        }
+      },
+      "description": "Ensemble des attributs permettant la création d'une demande d'expertise Bail Auto",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "required": [
+        "characteristics"
+      ]
+    },
+    "InitiateAutoLeaseAttributes": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "description": "Motif de la demande (Création 'C' ou Renouvellement 'R')",
+          "type": "string"
+        },
+        "brands": {
+          "description": "Liste des différents marques de véhicules de la flotte",
+          "items": {
+            "$ref": "#/definitions/BrandsItem"
+          },
+          "type": "array"
+        },
+        "vehicle": {
+          "$ref": "#/definitions/InitiateAutoLeaseVehicle",
+          "x-restlab-description": "Objet représentant les données liés au(x) véhicule(s) ainsi que les options"
+        },
+        "financingAgreement": {
+          "$ref": "#/definitions/InitiateAutoLeaseFinancingAgreement",
+          "x-restlab-description": "Object représentant les données du contrat"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead lease, nécessaires à sa création.",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "BrandsItem": {
+      "type": "object",
+      "description": "Marque de véhicule",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "brand": {
+          "description": "Marque de véhicule (exemple: Audi, Peugeot, Renault ...)\n",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateAutoLeaseVehicle": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "description": "Description du véhicule",
+          "type": "string"
+        },
+        "insuranceSuggestedBy": {
+          "description": "Assurance proposée par Agence VAD, Chargé PRO/DA",
+          "type": "string"
+        },
+        "replacementVehicleIndicator": {
+          "description": "Mise à disposition d'un véhicule de remplacement",
+          "type": "boolean"
+        },
+        "fuelCardIndicator": {
+          "description": "Mise à disposition d'une carte pour le carburant",
+          "type": "boolean"
+        },
+        "replacementTiresIndicator": {
+          "description": "Mise à disposition de pneumatiques de remplacement en cas d'usure",
+          "type": "boolean"
+        },
+        "libertBadgeIndicator": {
+          "description": "Mise à disposition d'un badge LiberT",
+          "type": "boolean"
+        },
+        "increaseFirstRentIndicator": {
+          "description": "Majoration premier loyer",
+          "type": "boolean"
+        },
+        "recoveryOldVehiclesIndicator": {
+          "description": "Reprise ancien véhicule",
+          "type": "boolean"
+        },
+        "motorizationType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Motorisation du (des) véhicule(s)"
+        }
+      },
+      "description": "Objet représentant les données liés au(x) véhicule(s) ainsi que les options",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateAutoLeaseFinancingAgreement": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "description": "Date du contrat",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "amount": {
+          "description": "Montant du contrat",
+          "type": "string"
+        },
+        "riskAmount": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Montant du risque HT"
+        },
+        "guaranteePercentage": {
+          "description": "Pourcentage garanti",
+          "type": "number",
+          "format": "float"
+        },
+        "vehicleNumber": {
+          "description": "Nombre de véhicule du contrat",
+          "type": "number",
+          "format": "double"
+        },
+        "contractDuration": {
+          "description": "Durée du contrat en nombre d'années",
+          "type": "number",
+          "format": "double"
+        },
+        "agreementValidityDuration": {
+          "description": "Durée de validité de l'accord (par défaut 12 mois)",
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "description": "Object représentant les données du contrat",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateAutoLeaseV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateAutoLease": {
+          "$ref": "#/definitions/InitiateAutoLease",
+          "x-restlab-description": "Ensemble des attributs permettant la création d'une demande d'expertise Bail Auto"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateAutoLeaseV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true,
+      "required": [
+        "initiateAutoLease"
+      ]
+    },
+    "RegistrationsItem": {
+      "type": "object",
+      "properties": {
+        "registration": {
+          "description": "Numéro d'immatriculation",
+          "type": "string"
+        }
+      },
+      "description": "Numéro d'immatriculation",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateOrganizationManagementService": {
+      "type": "object",
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateOrganizationManagementServiceCharacteristics",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement."
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateOrganizationManagementServiceResponse",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. \nNature de donnée : readOnly\n"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateOrganizationManagementServiceAttributes",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecotiz"
+        }
+      },
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecotiz",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateServiceVoucher": {
+      "type": "object",
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateServiceVoucherCharacteristics",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement."
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateServiceVoucherResponse",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. \nNature de donnée : readOnly"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateServiceVoucherAttributes",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead lease, nécessaires à sa création. \nNature de donnée : readOnly"
+        }
+      },
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise NIT",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiry": {
+      "type": "object",
+      "properties": {
+        "identification": {
+          "$ref": "#/definitions/ExpertInquiryIdentification",
+          "x-restlab-description": "Cette structure doit contenir les identifiants potentiels de la ressource. Ceux qui sont susceptibles d'être utilisés pour identifier la ressource."
+        },
+        "characteristics": {
+          "$ref": "#/definitions/ExpertInquiryCharacteristics",
+          "x-restlab-description": " "
+        },
+        "autoLease": {
+          "$ref": "#/definitions/ExpertInquiryAutoLease",
+          "x-restlab-description": " "
+        },
+        "serviceVoucher": {
+          "$ref": "#/definitions/ExpertInquiryServiceVoucher",
+          "x-restlab-description": " "
+        },
+        "organizationManagementService": {
+          "$ref": "#/definitions/ExpertInquiryOrganizationManagementService",
+          "x-restlab-description": " "
+        },
+        "retirementProduct": {
+          "$ref": "#/definitions/ExpertInquiryRetirementProduct",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne"
+        },
+        "consumerLoan": {
+          "$ref": "#/definitions/ExpertInquiryConsumerLoan",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Oney"
+        },
+        "insuranceProduct": {
+          "$ref": "#/definitions/ExpertInquiryInsuranceProduct",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Gras savoye"
+        },
+        "acceptanceDevice": {
+          "$ref": "#/definitions/ExpertInquiryAcceptanceDevice",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead TPE Santé"
+        },
+        "ecommerce": {
+          "$ref": "#/definitions/ExpertInquiryEcommerce",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecommerce"
+        },
+        "factoring": {
+          "$ref": "#/definitions/ExpertInquiryFactoring",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Factor"
+        },
+        "billingService": {
+          "$ref": "#/definitions/ExpertInquiryBillingService",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Je Pilote"
+        },
+        "loyaltyService": {
+          "$ref": "#/definitions/ExpertInquiryLoyaltyService",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Izicap"
+        },
+        "internationalImplementation": {
+          "$ref": "#/definitions/ExpertInquiryInternationalImplementation",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Pramex"
+        }
+      },
+      "description": "Ressource représentant les caractéristiques d'une demande d'expertise sur un produit pour un client (non implementée pour le moment). Parfois qualifiée de \"lead\" ou opportunité.",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryIdentification": {
+      "type": "object",
+      "properties": {
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        }
+      },
+      "description": "Cette structure doit contenir les identifiants potentiels de la ressource. Ceux qui sont susceptibles d'être utilisés pour identifier la ressource.",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateOrganizationManagementServiceCharacteristics": {
+      "type": "object",
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "x-restlab-description": "Marché (\"ENT\" ; \"PRO\")\n",
+          "description": "Indique si PRO",
+          "type": "boolean"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement.",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateOrganizationManagementServiceResponse": {
+      "type": "object",
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. \nNature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateOrganizationManagementServiceAttributes": {
+      "type": "object",
+      "properties": {
+        "organizationManagementServiceType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type d'association (\"assoSpo\" ; \"assoOmn\" ; \"assoCult\" ; \"assoCar\" ; \"assoEduFor\" ; \"assoMedSoc\" ; \"comEnt\" ; \"synd\" ; \"soc\" ; \"ats\")"
+        },
+        "memberCountType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "code indiquant la plage de nombre d'adhérents (1:\"inf200\" ; 2:\"bet200_500\" ; 3:\"sup500\"...)"
+        },
+        "websiteUrl": {
+          "description": "Url du site web du client",
+          "type": "string"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead lease, nécessaires à sa création. \nNature de donnée : readOnly",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateServiceVoucherCharacteristics": {
+      "type": "object",
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "Indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement.",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateServiceVoucherResponse": {
+      "type": "object",
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. \nNature de donnée : readOnly",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateServiceVoucherAttributes": {
+      "type": "object",
+      "properties": {
+        "serviceVouchers": {
+          "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead NIT",
+          "items": {
+            "$ref": "#/definitions/ServiceVouchersItem"
+          },
+          "type": "array"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead lease, nécessaires à sa création. \nNature de donnée : readOnly",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateServiceVoucherV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateServiceVoucher": {
+          "$ref": "#/definitions/InitiateServiceVoucher",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise NIT"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateServiceVoucherV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateOrganizationManagementServiceV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateOrganizationManagementService": {
+          "$ref": "#/definitions/InitiateOrganizationManagementService",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecotiz"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateOrganizationManagementServiceV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryCharacteristics": {
+      "type": "object",
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque (Format code Banque de France 5 Digits)",
+          "type": "string",
+          "format": "codeBDF"
+        },
+        "professionalIndicator": {
+          "description": "Indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryStatus": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "status du lead"
+        },
+        "expertInquiryType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type de lead :  ('autoLease', 'serviceVoucher', 'organizationManagementService', 'retirementProduct', 'consumerLoan', 'insuranceProduct', 'acceptanceDevice', 'ecommerce', 'factoring', 'billingService', 'loyaltyService', 'internationalImplementation')"
+        },
+        "opportunityReference": {
+          "description": "Reference du dossier d'étude",
+          "type": "string"
+        },
+        "legalEntityId": {
+          "$ref": "#/definitions/Identifier",
+          "x-restlab-description": "Objet défaut d'identifiant."
+        },
+        "followUpProfessionalRoleId": {
+          "$ref": "#/definitions/Identifier",
+          "x-restlab-description": "identifiant de l'agent en charge du suivi de la demande d'expertise"
+        },
+        "companyName": {
+          "description": "Raison sociale de la personne morale en relation avec l'organisme financier",
+          "type": "string"
+        },
+        "creationDate": {
+          "description": "date de création de la demande d'expertise",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH:MM:SS+/-HH:MM"
+        },
+        "lastUpdate": {
+          "description": "date de dernière modification de la demande d'expertise",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH:MM:SS+/-HH:MM"
+        },
+        "creatorProfessionalRoleId": {
+          "$ref": "#/definitions/Identifier",
+          "x-restlab-description": "identifiant du poste fonctionnel à l'intiative de la demande "
+        },
+        "instructionMode": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Mode d'instruction (selfcare, intervenant, agence)"
+        },
+        "implementationDelayType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Délai de mise en place souhaité"
+        }
+      },
+      "description": " ",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryAutoLease": {
+      "type": "object",
+      "description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Bail Auto",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "reason": {
+          "description": "Motif de la demande (Création 'C' ou Renouvellement 'R' ou Extension de parc 'E')",
+          "type": "string"
+        },
+        "brands": {
+          "description": "Liste des différents marques de véhicules de la flotte",
+          "items": {
+            "$ref": "#/definitions/ExpertInquiryBrandsItem"
+          },
+          "type": "array"
+        },
+        "vehicle": {
+          "$ref": "#/definitions/ExpertInquiryVehicle",
+          "x-restlab-description": "Objet représentant les données liés au(x) véhicule(s) ainsi que les options"
+        },
+        "financingAgreement": {
+          "$ref": "#/definitions/ExpertInquiryFinancingAgreement",
+          "x-restlab-description": "Object représentant les données du contrat "
+        }
+      }
+    },
+    "ExpertInquiryBrandsItem": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "description": "Marque de véhicule (exemple: Audi, Peugeot, Renault ...)",
+          "type": "string"
+        }
+      },
+      "description": " ",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryVehicle": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "description": "Description du (des) véhicule(s)",
+          "type": "string"
+        },
+        "insuranceSuggestedBy": {
+          "description": "Assurance proposée par Agence VAD, Chargé PRO/DA",
+          "type": "string"
+        },
+        "replacementVehicleIndicator": {
+          "description": "Mise à disposition d'un véhicule de remplacement",
+          "type": "boolean"
+        },
+        "fuelCardIndicator": {
+          "description": "Mise à disposition d'une carte pour le carburant",
+          "type": "boolean"
+        },
+        "replacementTiresIndicator": {
+          "description": "Mise à disposition de pneumatiques de remplacement en cas d'usure",
+          "type": "boolean"
+        },
+        "libertBadgeIndicator": {
+          "description": "Mise à disposition d'un badge LiberT",
+          "type": "boolean"
+        },
+        "increaseFirstRentIndicator": {
+          "description": "Majoration premier loyer",
+          "type": "boolean"
+        },
+        "recoveryOldVehiclesIndicator": {
+          "description": "Reprise ancien véhicule",
+          "type": "boolean"
+        },
+        "motorizationType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Motorisation du (des) véhicule(s)"
+        }
+      },
+      "description": "Objet représentant les données liés au(x) véhicule(s) ainsi que les options",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryFinancingAgreement": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "description": "Date de demande de financement",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH:MM:SS+/-HH:MM"
+        },
+        "amount": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Montant du financement HT"
+        },
+        "riskAmount": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Montant du risque HT"
+        },
+        "guaranteePercentage": {
+          "description": "Pourcentage garanti",
+          "type": "number",
+          "format": "float"
+        },
+        "vehicleNumber": {
+          "description": "Nombre de véhicule du contrat",
+          "type": "number",
+          "format": "double"
+        },
+        "contractDuration": {
+          "description": "Durée du contrat en nombre de mois (par défaut 60 mois)",
+          "type": "number",
+          "format": "double"
+        },
+        "agreementValidityDuration": {
+          "description": "Durée de validité de l'accord (par défaut 12 mois)",
+          "type": "number",
+          "format": "double"
+        },
+        "propositionReference": {
+          "description": "Reference de la dernière proposition/décision de financement par le conseiller",
+          "type": "string"
+        }
+      },
+      "description": "Object représentant les données du contrat ",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryServiceVoucher": {
+      "type": "object",
+      "description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead NIT",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "serviceVouchers": {
+          "description": "Liste des différentes offres titre de services",
+          "items": {
+            "$ref": "#/definitions/ServiceVouchersItem"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "ExpertInquiryOrganizationManagementService": {
+      "type": "object",
+      "description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecotiz",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "organizationManagementServiceType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type d'association (\"assoSpo\" ; \"assoOmn\" ; \"assoCult\" ; \"assoCar\" ; \"assoEduFor\" ; \"assoMedSoc\" ; \"comEnt\" ; \"synd\" ; \"soc\" ; \"ats\")"
+        },
+        "memberCountType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "code indiquant la plage de nombre d'adhérents (1:\"inf200\" ; 2:\"bet200_500\" ; 3:\"sup500\"….)"
+        },
+        "websiteUrl": {
+          "description": "Url du site web du client",
+          "type": "string"
+        }
+      }
+    },
+    "ReadExpertInquiriesByExpertInquiryIdV1Response": {
+      "type": "object",
+      "properties": {
+        "expertInquiry": {
+          "$ref": "#/definitions/ExpertInquiry",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead"
+        }
+      },
+      "description": "Api response for readExpertInquiriesByExpertInquiryIdV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "ReadExpertInquiriesByExpertInquiryIdV1PartialResponse": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "$ref": "#/definitions/Links",
+          "x-restlab-description": "List uri HAL"
+        },
+        "page": {
+          "$ref": "#/definitions/Page",
+          "x-restlab-description": "Pagination (BAPI)"
+        },
+        "sort": {
+          "$ref": "#/definitions/Sort",
+          "x-restlab-description": "Items sorting (BAPI)"
+        },
+        "messageResponse": {
+          "description": "Message response string",
+          "type": "string"
+        },
+        "expertInquiry": {
+          "description": "List of item",
+          "items": {
+            "$ref": "#/definitions/ExpertInquiry"
+          },
+          "type": "array"
+        }
+      },
+      "description": "Api partial response for readExpertInquiriesByExpertInquiryIdV1",
+      "x-restlab-type": "HAL",
+      "x-restlab-editable": true,
+      "required": [
+        "_links",
+        "page",
+        "sort",
+        "expertInquiry"
+      ]
+    },
+    "ReadExpertInquiriesV1Response": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "$ref": "#/definitions/Links",
+          "x-restlab-description": "List uri HAL"
+        },
+        "page": {
+          "$ref": "#/definitions/Page",
+          "x-restlab-description": "Pagination (BAPI)"
+        },
+        "sort": {
+          "$ref": "#/definitions/Sort",
+          "x-restlab-description": "Items sorting (BAPI)"
+        },
+        "expertInquiryIdentification": {
+          "$ref": "#/definitions/ExpertInquiryIdentification",
+          "x-restlab-description": "Cette structure doit contenir les identifiants potentiels de la ressource. Ceux qui sont susceptibles d'être utilisés pour identifier la ressource."
+        },
+        "expertInquiryIdentity": {
+          "$ref": "#/definitions/ExpertInquiryIdentity",
+          "x-restlab-description": " "
+        }
+      },
+      "description": "Api response for readExpertInquiriesV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true,
+      "required": [
+        "_links",
+        "page",
+        "sort"
+      ]
+    },
+    "ReadExpertInquiriesV1PartialResponse": {
+      "type": "object",
+      "properties": {
+        "_links": {
+          "$ref": "#/definitions/Links",
+          "x-restlab-description": "List uri HAL"
+        },
+        "page": {
+          "$ref": "#/definitions/Page",
+          "x-restlab-description": "Pagination (BAPI)"
+        },
+        "sort": {
+          "$ref": "#/definitions/Sort",
+          "x-restlab-description": "Items sorting (BAPI)"
+        },
+        "messageResponse": {
+          "description": "Message response string",
+          "type": "string"
+        },
+        "expertInquiryIdentification": {
+          "$ref": "#/definitions/ExpertInquiryIdentification",
+          "x-restlab-description": "Cette structure doit contenir les identifiants potentiels de la ressource. Ceux qui sont susceptibles d'être utilisés pour identifier la ressource."
+        },
+        "expertInquiryIdentity": {
+          "$ref": "#/definitions/ExpertInquiryIdentity",
+          "x-restlab-description": " "
+        }
+      },
+      "description": "Api partial response for readExpertInquiriesV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true,
+      "required": [
+        "_links",
+        "page",
+        "sort"
+      ]
+    },
+    "ExpertInquiryIdentity": {
+      "type": "object",
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/ExpertInquiryIdentityCharacteristics",
+          "x-restlab-description": " "
+        },
+        "autoLease": {
+          "$ref": "#/definitions/ExpertInquiryIdentityAutoLease",
+          "x-restlab-description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Bail Auto"
+        },
+        "serviceVoucher": {
+          "$ref": "#/definitions/ExpertInquiryIdentityServiceVoucher",
+          "x-restlab-description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead NIT"
+        },
+        "organizationManagementService": {
+          "$ref": "#/definitions/ExpertInquiryIdentityOrganizationManagementService",
+          "x-restlab-description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecotiz"
+        },
+        "retirementProduct": {
+          "$ref": "#/definitions/ExpertInquiryIdentityRetirementProduct",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne"
+        },
+        "consumerLoan": {
+          "$ref": "#/definitions/ExpertInquiryIdentityConsumerLoan",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Oney"
+        },
+        "insuranceProduct": {
+          "$ref": "#/definitions/ExpertInquiryIdentityInsuranceProduct",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne"
+        },
+        "acceptanceDevice": {
+          "$ref": "#/definitions/ExpertInquiryIdentityAcceptanceDevice",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead TPE Santé"
+        },
+        "ecommerce": {
+          "$ref": "#/definitions/ExpertInquiryIdentityEcommerce",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecommerce"
+        },
+        "factoring": {
+          "$ref": "#/definitions/ExpertInquiryIdentityFactoring",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Factor"
+        },
+        "billingService": {
+          "$ref": "#/definitions/ExpertInquiryIdentityBillingService",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Je Pilote"
+        },
+        "loyaltyService": {
+          "$ref": "#/definitions/ExpertInquiryIdentityLoyaltyService",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Izicap"
+        },
+        "internationalImplementation": {
+          "$ref": "#/definitions/ExpertInquiryIdentityInternationalImplementation",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Pramex"
+        }
+      },
+      "description": " ",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ModifyExpertInquiriesByExpertInquiryIdV1Response": {
+      "type": "object",
+      "properties": {
+        "expertInquiry": {
+          "$ref": "#/definitions/ExpertInquiry",
+          "x-restlab-description": "Cette structure doit contenir les éléments représentant la ressource "
+        }
+      },
+      "description": "Api response for modifyExpertInquiriesByExpertInquiryIdV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "ServiceVouchersItem": {
+      "type": "object",
+      "properties": {
+        "serviceVoucherType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Offre titre de services (\"restau\" ; \"cado\" ; \"cesu\" ; \"intensiteam\")"
+        }
+      },
+      "description": "Objet représentant l'une des différentes offres titre de services",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateRetirementProduct": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/InitiateRetirementProductResponse",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateRetirementProductAttributes",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead NIE"
+        },
+        "characteristics": {
+          "$ref": "#/definitions/InitiateRetirementProductCharacteristics",
+          "x-restlab-description": "caractérisques de l'interaction initiateRetirementProduct"
+        }
+      },
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Interépargne\t\t\t\t\t\t",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateRetirementProductAttributes": {
+      "type": "object",
+      "properties": {
+        "staffSize": {
+          "description": "Nombre de salariés dans l'entreprise",
+          "type": "integer",
+          "format": "int32"
+        },
+        "financialClosingDate": {
+          "description": "Date de clôture de l'exercice",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead NIE",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateRetirementProductResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateRetirementProductCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateRetirementProduct",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateConsumerLoan": {
+      "type": "object",
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateConsumerLoanCharacteristics",
+          "x-restlab-description": "caractérisques de l'interaction initiateConsumerLoan"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateConsumerLoanAttributes",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Oney"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateConsumerLoanResponse",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n"
+        }
+      },
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation Oney\t\t\t\t\t\t",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateConsumerLoanResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateConsumerLoanAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Oney",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "brandName": {
+          "description": "Nom de la marque (enseigne)",
+          "type": "string"
+        },
+        "businessUniverseType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Univers de rattachement"
+        },
+        "legalRepresentativeName": {
+          "description": "Nom du représentant légal",
+          "type": "string"
+        },
+        "pointOfSale": {
+          "$ref": "#/definitions/InitiateConsumerLoanPointOfSale",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le point de vente du lead Oney"
+        }
+      }
+    },
+    "InitiateConsumerLoanCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateConsumerLoan",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateConsumerLoanPointOfSale": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Nom du point de vente",
+          "type": "string"
+        },
+        "managerName": {
+          "description": "Nom du responsable du point de vente / gérant",
+          "type": "string"
+        },
+        "managerFirstname": {
+          "description": "Prénom du responsable du point de vente / gérant",
+          "type": "string"
+        },
+        "managerEmail": {
+          "description": "Email du responsable du point de vente / contact",
+          "type": "string"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le point de vente du lead Oney",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "InitiateInsuranceProduct": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Gras Savoye",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateInsuranceProductCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateInsuranceProductAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateInsuranceProductResponse"
+        }
+      }
+    },
+    "InitiateInsuranceProductAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Gras Savoye",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "expertType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type d'expert"
+        },
+        "contractSignedEstablishmentIndicator": {
+          "description": "Contrat souscrit via l'établissement",
+          "type": "boolean"
+        },
+        "insuranceNeeds": {
+          "x-restlab-description": "Liste des différents besoins en assurance",
+          "description": "Liste des différents besoins en assurance",
+          "items": {
+            "$ref": "#/definitions/InsuranceNeedsItem"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "InitiateInsuranceProductCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateInsuranceProduct",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateInsuranceProductResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InsuranceNeedsItem": {
+      "type": "object",
+      "properties": {
+        "insuranceNeedType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type de besoin en assurance"
+        }
+      },
+      "description": "Objet représentant l'un des besoin en assurance",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateConsumerLoanV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateConsumerLoan": {
+          "$ref": "#/definitions/InitiateConsumerLoan",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation Oney\t\t\t\t\t\t"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateConsumerLoanV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateRetirementProductV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateRetirementProduct": {
+          "$ref": "#/definitions/InitiateRetirementProduct",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Interépargne\t\t\t\t\t\t"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateRetirementProductV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateInsuranceProductV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateInsuranceProduct": {
+          "$ref": "#/definitions/InitiateInsuranceProduct",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation Gras Savoye"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateInsuranceProductV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "InitiateAcceptanceDevice": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise TPE Santé\t\t\t\t\t\t",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateAcceptanceDeviceCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateAcceptanceDeviceAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateAcceptanceDeviceResponse"
+        }
+      }
+    },
+    "InitiateAcceptanceDeviceAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead TPE Santé",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "contractRequestIndicator": {
+          "description": "Demande de type Contrat (Oui) ou Devis (Non)",
+          "type": "boolean"
+        },
+        "acceptanceContractIndicator": {
+          "description": "indique qu'il existe déjà  un contrat d'acceptation CB",
+          "type": "boolean"
+        },
+        "acceptanceContractNumber": {
+          "description": "Nom du représentant légal",
+          "type": "number",
+          "format": "double"
+        },
+        "standardPricingIndicator": {
+          "description": "indque que la tarification est standard",
+          "type": "boolean"
+        },
+        "equipmentAndServiceType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type de demande Matériel et services"
+        },
+        "agencyDeliveryIndicator": {
+          "description": "Livraison à l'agence du conseiller (Oui) ou sur le point de vente (Non)",
+          "type": "boolean"
+        },
+        "professionalActivityType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Activité professionnelle"
+        }
+      }
+    },
+    "InitiateAcceptanceDeviceCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateAcceptanceDevice",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateAcceptanceDeviceResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "CreateExpertInquiriesInitiateAcceptanceDeviceV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateAcceptanceDevice": {
+          "$ref": "#/definitions/InitiateAcceptanceDevice",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise crédit consommation TPE Santé"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateAcceptanceDeviceV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateEcommerceV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateEcommerce": {
+          "$ref": "#/definitions/InitiateEcommerce",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecommerce"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateEcommerceV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateFactoringV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateFactoring": {
+          "$ref": "#/definitions/InitiateFactoring",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Factor"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateFactoringV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateBillingServiceV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateBillingService": {
+          "$ref": "#/definitions/InitiateBillingService",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Je Pilote"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateBillingServiceV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateLoyaltyServiceV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateLoyaltyService": {
+          "$ref": "#/definitions/InitiateLoyaltyService",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Izicap"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateLoyaltyServiceV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "CreateExpertInquiriesInitiateInternationalImplementationV1Response": {
+      "type": "object",
+      "properties": {
+        "initiateInternationalImplementation": {
+          "$ref": "#/definitions/InitiateInternationalImplementation",
+          "x-restlab-description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Pramex"
+        }
+      },
+      "description": "Api response for createExpertInquiriesInitiateInternationalImplementationV1",
+      "x-restlab-type": "RESPONSE",
+      "x-restlab-editable": true
+    },
+    "InitiateEcommerce": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Ecommerce",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateEcommerceCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateEcommerceAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateEcommerceResponse"
+        }
+      }
+    },
+    "InitiateEcommerceCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateEcommerce",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateEcommerceResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateEcommerceAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecommerce",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "nafn5": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Code NAF de l'activité de l'entreprise"
+        },
+        "existingWebsiteIndicator": {
+          "description": "Indique si le client possède déjà un site internet",
+          "type": "boolean"
+        },
+        "websiteOptions": {
+          "description": "Liste des options souscrites pour la création du site web",
+          "items": {
+            "$ref": "#/definitions/WebsiteOptionsItem"
+          },
+          "type": "array"
+        },
+        "websiteUrl": {
+          "description": "Adresse URL du site client",
+          "type": "string"
+        },
+        "paymentSolutions": {
+          "$ref": "#/definitions/PaymentSolutionsItem",
+          "x-restlab-description": "Liste des solutions d'encaissement en ligne souhaitées par le client"
+        },
+        "btobIndicator": {
+          "description": "Indique si le type de commerce effectué est BtoB (sinon BtoC)",
+          "type": "boolean"
+        },
+        "annualRevenue": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Chiffre d'affaire total de l'entrprise"
+        },
+        "realEcommerceAnnualRevenueIndicator": {
+          "description": "Indique si le chiffre d'affaire Ecommerce est réel (sinon prévisionnel)",
+          "type": "boolean"
+        },
+        "annualEcommerceRevenue": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Chiffre d'affaire Ecommerce de l'entreprise"
+        },
+        "commercialCampaignIndicator": {
+          "description": "Indique si le client vient d'une campagne commerciale",
+          "type": "boolean"
+        },
+        "commercialCampaignName": {
+          "description": "Nom de la campagne commerciale",
+          "type": "string"
+        },
+        "multipleNeedsIndicator": {
+          "description": "Indique si le client dispose de plusieurs entreprises avec des besoins e-commerce",
+          "type": "boolean"
+        }
+      }
+    },
+    "WebsiteOptionsItem": {
+      "type": "object",
+      "description": "Objet représentant l'une des options souscrites pour la création du site web",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "websiteOptionType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type d'option soucrite"
+        }
+      }
+    },
+    "PaymentSolutionsItem": {
+      "type": "object",
+      "description": "Objet représentant l'une des solutions d'encaissement en ligne souhaitées par le client",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "paymentSolutionType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type de solution d'encaissement en ligne"
+        }
+      }
+    },
+    "InitiateFactoring": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Factor",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateFactoringCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateFactoringAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateFactoringResponse"
+        }
+      }
+    },
+    "InitiateFactoringResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateFactoringCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateFactoring",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateFactoringAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Factoring",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "connectionDate": {
+          "description": "Date d'entrée en relation",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "flashfactureIndicator": {
+          "description": "Indique si la demande est une demande Flashfacture (sinon Affacturage)",
+          "type": "boolean"
+        }
+      }
+    },
+    "InitiateBillingServiceResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateBillingService": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Je Pilote",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateBillingServiceCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateBillingServiceAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateBillingServiceResponse"
+        }
+      }
+    },
+    "InitiateBillingServiceCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateBillingService",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateBillingServiceAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Je Pilote",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "financialClosingDate": {
+          "description": "Date de clôture de l'exercice",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "legalCreationDate": {
+          "description": "Date de création de l'établissement",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "selfEmployedIndicator": {
+          "description": "Indique si le client est micro-entrepreneur",
+          "type": "boolean"
+        }
+      }
+    },
+    "InitiateLoyaltyServiceAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Izicap",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "socialNetworkIndicator": {
+          "description": "Indique si le client est présent sur les réseaux sociaux",
+          "type": "boolean"
+        },
+        "socialNetworkDurationType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Si oui, depuis combien de temps ?"
+        },
+        "tpeQuantity": {
+          "description": "Nombre de TPE à équiper",
+          "type": "integer",
+          "format": "int32"
+        },
+        "implementationDelayType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Délai de mise en place souhaité"
+        }
+      }
+    },
+    "InitiateLoyaltyServiceCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateLoyaltyService",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "InitiateLoyaltyService": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Izicap",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateLoyaltyServiceCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateLoyaltyServiceAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateLoyaltyServiceResponse"
+        }
+      }
+    },
+    "InitiateLoyaltyServiceResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateInternationalImplementationResponse": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant l'interaction, nécessaires à sa réalisation ou issues de son traitement. Nature de donnée : readOnly\n",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "interactionId": {
+          "description": "Identifiant unique de l'interaction.\n",
+          "type": "string"
+        },
+        "code": {
+          "description": "Le code est une donnée obligatoire dont la plage de valeur doit être décrite dans la spécification de la requête. Il qualifie la façon dont l'interaction s'est exécutée.",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label fonction du code, documentant le résultat.",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateInternationalImplementation": {
+      "type": "object",
+      "description": "Sous-Ressource d'interaction permettant la creation d'une demande d'expertise Pramex",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "characteristics": {
+          "$ref": "#/definitions/InitiateInternationalImplementationCharacteristics"
+        },
+        "attributes": {
+          "$ref": "#/definitions/InitiateInternationalImplementationAttributes"
+        },
+        "response": {
+          "$ref": "#/definitions/InitiateInternationalImplementationResponse"
+        }
+      }
+    },
+    "InitiateInternationalImplementationAttributes": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Pramex",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "countryType": {
+          "description": "Pays associé à la demande",
+          "type": "string",
+          "format": "countrylso2"
+        },
+        "productType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Produit concerné par la demande"
+        },
+        "delayType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Délai de traitement de la demande"
+        },
+        "reason": {
+          "description": "Raison de la demande",
+          "type": "string"
+        }
+      }
+    },
+    "InitiateInternationalImplementationCharacteristics": {
+      "type": "object",
+      "description": "caractérisques de l'interaction initiateInternationalImplementation",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "siren": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "professionalIndicator": {
+          "description": "indique si PRO",
+          "type": "boolean"
+        },
+        "expertInquiryId": {
+          "description": "Identifiant interne du lead",
+          "type": "string"
+        },
+        "bankCode": {
+          "description": "Code de la banque",
+          "type": "string",
+          "format": "codeBDF"
+        }
+      }
+    },
+    "ExpertInquiryRetirementProduct": {
+      "type": "object",
+      "properties": {
+        "staffSize": {
+          "description": "Nombre de salariés dans l'entreprise",
+          "type": "integer",
+          "format": "int32"
+        },
+        "financialClosingDate": {
+          "description": "Date de clôture de l'exercice",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryConsumerLoan": {
+      "type": "object",
+      "properties": {
+        "brandName": {
+          "description": "Nom de la marque (enseigne)",
+          "type": "string"
+        },
+        "businessUniverseType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Univers de rattachement"
+        },
+        "legalRepresentativeName": {
+          "description": "Nom du représentant légal",
+          "type": "string"
+        },
+        "pointOfSale": {
+          "$ref": "#/definitions/ExpertInquiryPointOfSale",
+          "x-restlab-description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le point de vente du lead Oney"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Oney",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryPointOfSale": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Nom du point de vente",
+          "type": "string"
+        },
+        "managerLastname": {
+          "description": "Nom du responsable du point de vente / gérant",
+          "type": "string"
+        },
+        "managerFirstname": {
+          "description": "PrÃ©nom du responsable du point de vente / gérant",
+          "type": "string"
+        },
+        "managerEmail": {
+          "description": "Email du responsable du point de vente / contact",
+          "type": "string",
+          "format": "email"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le point de vente du lead Oney",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryInsuranceProduct": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "expertType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type d'expert"
+        },
+        "contractSignedEstablishmentIndicator": {
+          "description": "Contrat souscrit via l'établissement",
+          "type": "boolean"
+        },
+        "insuranceNeeds": {
+          "$ref": "#/definitions/ExpertInquiryInsuranceNeedsItem",
+          "x-restlab-description": "Liste des différents besoins en assurance"
+        }
+      }
+    },
+    "ExpertInquiryInsuranceNeedsItem": {
+      "type": "object",
+      "properties": {
+        "insuranceNeedType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "exemple : {code:\"cyber\", label:\"Cyber/Fraude\"}"
+        }
+      },
+      "description": "Objet représentant l'un des besoin en assurance",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryAcceptanceDevice": {
+      "type": "object",
+      "properties": {
+        "contractRequestIndicator": {
+          "description": "Demande de type Contrat (Oui) ou Devis (Non)",
+          "type": "boolean"
+        },
+        "acceptanceContractIndicator": {
+          "description": "indique qu'il existe déjà un contrat d'acceptation CB",
+          "type": "boolean"
+        },
+        "acceptanceContractNumber": {
+          "description": "Numéro du contrat d'acceptation CB",
+          "type": "number",
+          "format": "float"
+        },
+        "standardPricingIndicator": {
+          "description": "indique que la tarification est standard",
+          "type": "boolean"
+        },
+        "equipmentAndServiceType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Matériel et services"
+        },
+        "agencyDeliveryIndicator": {
+          "description": "Livraison à l'agence du conseiller (Oui) ou sur le point de vente (Non)",
+          "type": "boolean"
+        },
+        "professionalActivityType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Activité professionnelle"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead TPE Santé",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryEcommerce": {
+      "type": "object",
+      "properties": {
+        "nafn5": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Code NAF de l'activité de l'entreprise"
+        },
+        "existingWebsiteIndicator": {
+          "description": "Indique si le client possède déjà un site internet",
+          "type": "boolean"
+        },
+        "websiteOptions": {
+          "items": {
+            "$ref": "#/definitions/ExpertInquiryWebsiteOptionsItem"
+          },
+          "type": "array",
+          "description": "Liste des options souscrites pour la création du site web"
+        },
+        "websiteUrl": {
+          "description": "Adresse URL du site client",
+          "type": "string"
+        },
+        "paymentSolutions": {
+          "description": "Objet représentant l'une des solutions d'encaissement en ligne souhaitées par le client",
+          "items": {
+            "$ref": "#/definitions/ExpertInquiryPaymentSolutionsItem"
+          },
+          "type": "array"
+        },
+        "btobIndicator": {
+          "description": "Indique si le type de commerce effectué est BtoB (sinon BtoC)",
+          "type": "boolean"
+        },
+        "annualRevenue": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Chiffre d'affaire total de l'entrprise"
+        },
+        "realEcommerceAnnualRevenueIndicator": {
+          "description": "Indique si le chiffre d'affaire Ecommerce est réel (sinon prévisionnel)",
+          "type": "boolean"
+        },
+        "annualEcommerceRevenue": {
+          "$ref": "#/definitions/Amount",
+          "x-restlab-description": "Chiffre d'affaire Ecommerce de l'entreprise"
+        },
+        "commercialCampaignIndicator": {
+          "description": "Indique si le client vient d'une campagne commerciale",
+          "type": "boolean"
+        },
+        "commercialCampaignName": {
+          "description": "Nom de la campagne commerciale",
+          "type": "string"
+        },
+        "multipleNeedsIndicator": {
+          "description": "Indique si le client dispose de plusieurs entreprises avec des besoins e-commerce",
+          "type": "boolean"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecommerce",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryWebsiteOptionsItem": {
+      "type": "object",
+      "properties": {
+        "websiteOptionType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type d'option soucrite"
+        }
+      },
+      "description": "Objet représentant l'une des options souscrite pour la création du site web",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryPaymentSolutionsItem": {
+      "type": "object",
+      "properties": {
+        "paymentSolutionType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Type de solution d'encaissement en ligne"
+        }
+      },
+      "description": "Objet représentant l'une des solutions d'encaissement en ligne souhaitées par le client",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryFactoring": {
+      "type": "object",
+      "properties": {
+        "connectionDate": {
+          "description": "Date d'entrée en relation",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "flashfactureIndicator": {
+          "description": "Indique si la demande est une demande Flashfacture (sinon Affacturage)",
+          "type": "boolean"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Factor",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryBillingService": {
+      "type": "object",
+      "properties": {
+        "financialClosingDate": {
+          "description": "Date de clôture de l'exercice",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "legalCreationDate": {
+          "description": "Date de création de l'établissement",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "selfEmployedIndicator": {
+          "description": "Indique si le client est micro-entrepreneur",
+          "type": "boolean"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Je Pilote",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryLoyaltyService": {
+      "type": "object",
+      "properties": {
+        "socialNetworkIndicator": {
+          "description": "Indique si le client est présent sur les réseaux sociaux",
+          "type": "boolean"
+        },
+        "socialNetworkDurationType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Si oui, depuis combien de temps ?"
+        },
+        "tpeQuantity": {
+          "description": "Nombre de TPE à équiper",
+          "type": "integer",
+          "format": "int32"
+        },
+        "implementationDelayType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Délai de mise en place souhaité"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Izicap",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryInternationalImplementation": {
+      "type": "object",
+      "properties": {
+        "countryType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Pays associé à la demande"
+        },
+        "productType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Produit concerné par la demande"
+        },
+        "delayType": {
+          "$ref": "#/definitions/ShortTypology",
+          "x-restlab-description": "Délai de traitement de la demande"
+        },
+        "reason": {
+          "description": "Raison de la demande",
+          "type": "string"
+        }
+      },
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Pramex",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true
+    },
+    "ExpertInquiryIdentityAcceptanceDevice": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead TPE Santé",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "contractRequestIndicator": {
+          "description": "Demande de type Contrat (Oui) ou Devis (Non)",
+          "type": "boolean"
+        },
+        "professionalActivityType": {
+          "$ref": "#/definitions/ShortTypology"
+        }
+      }
+    },
+    "ExpertInquiryIdentityAutoLease": {
+      "type": "object",
+      "description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Bail Auto",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "reason": {
+          "description": "Motif de la demande (Création 'C' ou Renouvellement 'R' ou Extension de parc 'E')",
+          "type": "string"
+        },
+        "financingAgreement": {
+          "$ref": "#/definitions/ExpertInquiryIdentityFinancingAgreement"
+        }
+      }
+    },
+    "ExpertInquiryIdentityBillingService": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Je Pilote",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "legalCreationDate": {
+          "description": "Date de création de l'établissement",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "selfEmployedIndicator": {
+          "description": "Indique si le client est micro-entrepreneur",
+          "type": "boolean"
+        }
+      }
+    },
+    "ExpertInquiryIdentityCharacteristics": {
+      "type": "object",
+      "description": " ",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "siret": {
+          "description": "Code Insee permettant l'identification d'un établissement ou d'une entreprise française (W)",
+          "type": "string"
+        },
+        "expertInquiryStatus": {
+          "$ref": "#/definitions/ShortTypology"
+        },
+        "expertInquiryType": {
+          "$ref": "#/definitions/ShortTypology"
+        },
+        "legalEntityId": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "followUpProfessionalRoleId": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "companyName": {
+          "description": "Raison sociale de la personne morale en relation avec l'organisme financier",
+          "type": "string"
+        },
+        "creationDate": {
+          "description": "date de création de la demande d'expertise",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH:MM:SS+/-HH:MM"
+        },
+        "lastUpdate": {
+          "description": "date de dernière modification de la demande d'expertise",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH:MM:SS+/-HH:MM"
+        },
+        "creatorProfessionalRoleId": {
+          "$ref": "#/definitions/Identifier"
+        },
+        "instructionMode": {
+          "$ref": "#/definitions/ShortTypology"
+        },
+        "implementationDelayType": {
+          "$ref": "#/definitions/ShortTypology"
+        }
+      }
+    },
+    "ExpertInquiryIdentityConsumerLoan": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Oney",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "brandName": {
+          "description": "Nom de la marque (enseigne)",
+          "type": "string"
+        },
+        "businessUniverseType": {
+          "$ref": "#/definitions/ShortTypology"
+        }
+      }
+    },
+    "ExpertInquiryIdentityEcommerce": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecommerce",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "existingWebsiteIndicator": {
+          "description": "Indique si le client possède déjà un site internet",
+          "type": "boolean"
+        },
+        "websiteOptions": {
+          "description": "Liste des options souscrites pour la création du site web",
+          "items": {
+            "$ref": "#/definitions/ExpertInquiryWebsiteOptionsItem"
+          },
+          "type": "array"
+        },
+        "commercialCampaignIndicator": {
+          "description": "Indique si le client vient d'une campagne commerciale",
+          "type": "boolean"
+        },
+        "commercialCampaignName": {
+          "description": "Nom de la campagne commerciale",
+          "type": "string"
+        },
+        "multipleNeedsIndicator": {
+          "description": "Indique si le client dispose de plusieurs entreprises avec des besoins e-commerce",
+          "type": "boolean"
+        }
+      }
+    },
+    "ExpertInquiryIdentityFactoring": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Factor",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "connectionDate": {
+          "description": "Date d'entrée en relation",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        },
+        "flashfactureIndicator": {
+          "description": "Indique si la demande est une demande Flashfacture (sinon Affacturage)",
+          "type": "boolean"
+        }
+      }
+    },
+    "ExpertInquiryIdentityFinancingAgreement": {
+      "type": "object",
+      "description": "Object représentant les données du contrat ",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "date": {
+          "description": "Date de demande de financement",
+          "type": "string",
+          "format": "AAAA-MM-JJTHH:MM:SS+/-HH:MM"
+        },
+        "amount": {
+          "$ref": "#/definitions/Amount"
+        }
+      }
+    },
+    "ExpertInquiryIdentityInsuranceProduct": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "insuranceNeeds": {
+          "$ref": "#/definitions/ExpertInquiryInsuranceNeedsItem"
+        }
+      }
+    },
+    "ExpertInquiryIdentityInternationalImplementation": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Pramex",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "countryType": {
+          "$ref": "#/definitions/ShortTypology"
+        },
+        "productType": {
+          "$ref": "#/definitions/ShortTypology"
+        },
+        "delayType": {
+          "$ref": "#/definitions/ShortTypology"
+        }
+      }
+    },
+    "ExpertInquiryIdentityLoyaltyService": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Izicap",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "implementationDelayType": {
+          "$ref": "#/definitions/ShortTypology"
+        }
+      }
+    },
+    "ExpertInquiryIdentityOrganizationManagementService": {
+      "type": "object",
+      "description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Ecotiz",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "organizationManagementServiceType": {
+          "$ref": "#/definitions/ShortTypology"
+        }
+      }
+    },
+    "ExpertInquiryIdentityRetirementProduct": {
+      "type": "object",
+      "description": "Cette structure doit contenir toutes les données fonctionnelles décrivant le lead Interépargne",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "staffSize": {
+          "description": "Nombre de salariés dans l'entreprise",
+          "type": "integer",
+          "format": "int32"
+        },
+        "financialClosingDate": {
+          "description": "Date de clôture de l'exercice",
+          "type": "string",
+          "format": "AAAA-MM-JJ"
+        }
+      }
+    },
+    "ExpertInquiryIdentityServiceVoucher": {
+      "type": "object",
+      "description": " Cette structure doit contenir toutes les données fonctionnelles décrivant le lead NIT",
+      "x-restlab-type": "CLASSIQ",
+      "x-restlab-editable": true,
+      "properties": {
+        "serviceVouchers": {
+          "description": "Liste des différentes offres titre de services",
+          "items": {
+            "$ref": "#/definitions/ServiceVouchersItem"
+          },
+          "type": "array"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "productorExpertScopes": {
+      "description": "Scopes invoqués par les ressources de l'API productorExpert",
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "http://localhost",
+      "scopes": {
+        "manageProductorExpert": "Scope for manage",
+        "readProductorExpert": "Scope for manage"
+      }
+    }
+  }
+}

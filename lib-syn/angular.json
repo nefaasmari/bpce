@@ -1,0 +1,193 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "bloc-alertes-epi": {
+      "projectType": "library",
+      "root": "libs/bloc-alertes-epi",
+      "sourceRoot": "libs/bloc-alertes-epi/src",
+      "prefix": "clients-profcli",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libs/bloc-alertes-epi/tsconfig.lib.json",
+            "project": "libs/bloc-alertes-epi/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/bloc-alertes-epi/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@nx/jest:jest",
+          "options": {
+            "jestConfig": "libs/bloc-alertes-epi/jest.config.ts",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/bloc-alertes-epi"]
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["libs/bloc-alertes-epi/**/*.ts", "libs/bloc-alertes-epi/**/*.html"]
+          }
+        }
+      }
+    },
+    "bloc-opportunites-epi": {
+      "projectType": "library",
+      "root": "libs/bloc-opportunites-epi",
+      "sourceRoot": "libs/bloc-opportunites-epi/src",
+      "prefix": "clients-profcli",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libs/bloc-opportunites-epi/tsconfig.lib.json",
+            "project": "libs/bloc-opportunites-epi/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/bloc-opportunites-epi/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@nx/jest:jest",
+          "options": {
+            "jestConfig": "libs/bloc-opportunites-epi/jest.config.ts",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/bloc-opportunites-epi"]
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["libs/bloc-opportunites-epi/**/*.ts", "libs/bloc-opportunites-epi/**/*.html"]
+          }
+        }
+      }
+    },
+    "lanceur-lib-ihm": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "app/lanceur-lib-ihm",
+      "sourceRoot": "app/lanceur-lib-ihm/src",
+      "prefix": "clients-profcli",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/app/lanceur-lib-ihm",
+            "index": "app/lanceur-lib-ihm/src/index.html",
+            "main": "app/lanceur-lib-ihm/src/main.ts",
+            "polyfills": "app/lanceur-lib-ihm/src/polyfills.ts",
+            "tsConfig": "app/lanceur-lib-ihm/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "app/lanceur-lib-ihm/src/favicon.ico",
+              "app/lanceur-lib-ihm/src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@myway/material/assets",
+                "output": "/"
+              }
+            ],
+            "styles": ["app/lanceur-lib-ihm/src/styles.scss", "node_modules/@myway/material/styles/icoic.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/@myway/material/styles"]
+            }
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "app/lanceur-lib-ihm/src/environments/environment.ts",
+                  "with": "app/lanceur-lib-ihm/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "15mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "lanceur-lib-ihm:build"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "app/lanceur-lib-ihm/src/environments/environment.ts",
+                  "with": "app/lanceur-lib-ihm/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "15mb"
+                }
+              ]
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "lanceur-lib-ihm:build"
+          }
+        },
+        "test": {
+          "builder": "@nx/jest:jest",
+          "options": {
+            "jestConfig": "app/lanceur-lib-ihm/jest.config.ts",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/app/lanceur-lib-ihm"]
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["app/lanceur-lib-ihm/**/*.ts", "app/lanceur-lib-ihm/**/*.html"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

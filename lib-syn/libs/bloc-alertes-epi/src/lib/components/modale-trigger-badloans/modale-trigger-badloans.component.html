@@ -1,0 +1,26 @@
+<myway-dialog titleHeader="Surveillance Risque">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="datasBadloans$ | async as data">
+      <myway-table
+        [items]="data"
+        [multiple]="false"
+        [editable]="false"
+        [filterable]="false"
+        [sortable]="true"
+        [pagination]="5"
+        [height]="250"
+        selection="none"
+      >
+        <!-- <myway-table-item type="input" width="75" data-code label="Code"></myway-table-item> -->
+        <myway-table-item type="input" width="150" data-date-debut-str label="Date d'entrée"></myway-table-item>
+        <myway-table-item type="input" width="350" data-libelle label="Libellé"></myway-table-item>
+        <!-- <myway-table-item type="input" width="325" data-desc label="Description"></myway-table-item> -->
+        <clients-profcli-description-tableau-simple #contentDescription></clients-profcli-description-tableau-simple>
+      </myway-table>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>

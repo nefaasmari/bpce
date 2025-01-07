@@ -1,0 +1,25 @@
+<myway-dialog titleHeader="Demandes & réclamations">
+  <div myway-dialog-body class="wrapper">
+    <tr *ngIf="txtDemandeReclamation">
+      <td>{{ txtDemandeReclamation }}</td>
+      <td>
+        <div style="display:inline-block" [mywayTooltip]="dataPointAccesSalesForce.label" *ngIf="dataPointAccesSalesForce">
+          <button class="btn-secondary" [disabled]="dataPointAccesSalesForce.disabled" (click)="debranchementSalesForce()">
+            Consulter
+          </button>
+        </div>
+      </td>
+    </tr>
+    <!-- <tr class="spacer"></tr> -->
+    <tr>
+      <td>Réclamation(s) transmise(s) au SRC en cours</td>
+      <td>
+        <div style="display:inline-block" [mywayTooltip]="dataPointAccesReclamationAquarel.label" *ngIf="dataPointAccesReclamationAquarel">
+          <button class="btn-secondary" [disabled]="dataPointAccesReclamationAquarel.disabled" (click)="debranchement0951()">
+            Consulter
+          </button>
+        </div>
+      </td>
+    </tr>
+  </div>
+</myway-dialog>

@@ -1,0 +1,118 @@
+{
+  "name": "ces43-rialib-epi",
+  "version": "17.0.0",
+  "babel": {
+    "presets": [],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import"
+    ]
+  },
+  "scripts": {
+    "version": "bpce-ng-tools version-all",
+    "ng": "ng",
+    "start": "ng serve",
+    "build:ci": "",
+    "build:libs:ci": "ng build bloc-alertes-epi --configuration production && ng build bloc-opportunites-epi --configuration production",
+    "test": "npx nx run-many --all --target=test",
+    "test:ci": "npx nx run-many --all --target=test --runInBand && node ./tools/mergeLcov.js",
+    "lint:ci": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "17.3.11",
+    "@angular/cdk": "17.3.10",
+    "@angular/common": "17.3.11",
+    "@angular/compiler": "17.3.11",
+    "@angular/core": "17.3.11",
+    "@angular/forms": "17.3.11",
+    "@angular/material": "17.3.10",
+    "@angular/platform-browser": "17.3.11",
+    "@angular/platform-browser-dynamic": "17.3.11",
+    "@angular/router": "17.3.11",
+    "@material/layout-grid": "^3.1.0",
+    "@myway/env": "^17.10.3",
+    "@myway/material": "^17.2.0",
+    "@myway/ui": "^17.2.0",
+    "@ngxs/store": "3.8.2",
+    "@oscaiss-pormyway-managers/portal-interface": "^10.10.18",
+    "@outinfr-commyway/commycli-lib-habilitations-upgrade": "^17.1.2",
+    "@outinfr-commyway/commycli-lib-ngxs-upgrade": "^17.1.2",
+    "@outinfr-commyway/commycli-lib-utils": "^17.1.2",
+    "@ptmyway-stc-v2/ngx-bpce": "^16.26.12",
+    "@ptmyway-stc-v2/ngx-mysys": "^16.26.12",
+    "@schematics/angular": "17.3.8",
+    "google-libphonenumber": "^3.2.6",
+    "jest-html-reporter": "^3.1.4",
+    "moment": "2.24.0",
+    "ngx-extended-pdf-viewer": "^19.2.0",
+    "rxjs": "^7.4.0",
+    "tslib": "^2.0.0",
+    "unorm": "^1.6.0",
+    "zone.js": "0.14.7"
+  },
+  "devDependencies": {
+    "@angular-devkit/architect": "0.1703.8",
+    "@angular-devkit/build-angular": "17.3.8",
+    "@angular-devkit/core": "17.3.8",
+    "@angular-devkit/schematics": "17.3.8",
+    "@angular-eslint/builder": "^17.5.2",
+    "@angular-eslint/eslint-plugin": "17.3.0",
+    "@angular-eslint/eslint-plugin-template": "17.3.0",
+    "@angular-eslint/schematics": "^1.2.0",
+    "@angular-eslint/template-parser": "17.3.0",
+    "@angular/cli": "~17.3.0",
+    "@angular/compiler-cli": "17.3.11",
+    "@angular/language-service": "17.3.11",
+    "@bpce/ng-tools": "^10.0.0",
+    "@ngxs/devtools-plugin": "3.8.2",
+    "@ngxs/logger-plugin": "3.8.2",
+    "@nx/angular": "18.2.0",
+    "@nx/jest": "18.2.0",
+    "@nx/workspace": "18.2.0",
+    "@types/jest": "29.4.4",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsdoc": "^48.0.4",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^3.1.0",
+    "jasmine-core": "4.2.0",
+    "jasmine-spec-reporter": "7.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-preset-angular": "14.0.4",
+    "lint-staged": "^9.5.0",
+    "ng-packagr": "17.3.0",
+    "ngx-build-plus": "^17.0.0",
+    "nx": "18.2.0",
+    "postcss": "^8.3.9",
+    "postcss-import": "14.1.0",
+    "postcss-preset-env": "7.5.0",
+    "postcss-url": "10.1.3",
+    "prettier": "^3.1.1",
+    "protractor": "7.0.0",
+    "ts-jest": "29.1.5",
+    "ts-node": "10.9.1",
+    "typescript": "5.4.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "subpackages": [
+    {
+      "version": "libs/bloc-alertes-epi",
+      "publish": "dist/libs/bloc-alertes-epi"
+    },
+    {
+      "version": "libs/bloc-opportunites-epi",
+      "publish": "dist/libs/bloc-opportunites-epi"
+    }
+  ]
+}

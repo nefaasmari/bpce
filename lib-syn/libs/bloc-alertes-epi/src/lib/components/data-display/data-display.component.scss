@@ -1,0 +1,29 @@
+@import '../../../../../../node_modules/@myway/material/styles/caisse-d-epargne-theme';
+
+
+.data-display {
+  padding-bottom: 8px;
+  padding-right: 8px;
+  
+  .valign-icon {
+    vertical-align: middle;
+  }
+
+  .halign-icon {
+    margin-right: .5rem;
+  }
+
+  myway-chip-button {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+}
+
+::ng-deep .gellule-icon-badge-cpt-error {
+  span {
+    background: gray;
+    border-radius: 12px;
+    color: #ffffff;
+  }
+}

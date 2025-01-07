@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+@import '../../../../../node_modules/@myway/material/styles/theming/colors/caisse-d-epargne-colors';
+@import '../../../../../node_modules/@myway/material/styles/caisse-d-epargne-theme';
+
+.datas {
+  display: flex;
+  flex: 1 0 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.erreur {
+  color: red;
+}
+
+.content {
+  text-align: left;
+  span {
+    margin-right: 8px;
+  }
+  .libelle {
+    color: mat.get-color-from-palette($ce-theme-bc, input-label-color);
+  }
+  .valeur {
+    font-weight: bold;
+  }
+  .mention {
+    @include mention-typography();
+  }
+}

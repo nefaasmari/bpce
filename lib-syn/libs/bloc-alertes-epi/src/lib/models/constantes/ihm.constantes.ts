@@ -1,0 +1,16 @@
+export const LBL_LIEN_DISPO_BIENTOT = 'Prochainement disponible';
+export const LBL_LIEN_NON_DISPO = 'Non disponible';
+export const LBL_LIEN_NON_HABILITE = "Vous n'êtes pas habilité";
+export const LBL_LIEN_NON_ELIGIBLE = 'Application non autorisée';
+export const DATANONRENSEIGNEE = 'Non renseignée';
+export const DATAINCONNUE = 'NC';
+export const ICONWARNING = 'icon-warning';
+export const ICONFLECHEHAUT = 'icon-arrow-up';
+export const ICONFLECHEBAS = 'icon-arrow-down';
+export const ICONFLECHEEGAL = 'icon-arrow-right';
+export const ICONCHECK = 'icon-check-circle';
+export const ICONCLOCHE = 'icon-alert';
+export const ICONEMOJICONTENT = 'icon-emoji-happy';
+export const ICONEMOJINEUTRE = 'icon-emoji-neutral';
+export const ICONEMOJIMECONTENT = 'icon-emoji-unhappy';
+export const formatDateAffichage = 'dd/MM/yyyy';

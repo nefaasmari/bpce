@@ -1,0 +1,23 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": ["!**/*", "**/*.spec.ts", "**/*.mock.ts"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["libs/bloc-opportunites-epi/tsconfig.lib.json", "libs/bloc-opportunites-epi/tsconfig.spec.json"],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "warn",
+          {
+            "type": "element",
+            "prefix": "clients-profcli",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    }
+  ]
+}

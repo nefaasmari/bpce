@@ -1,0 +1,35 @@
+{
+  "name": "bloc-alertes-epi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/bloc-alertes-epi/src",
+  "prefix": "clients-profcli",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "tsConfig": "libs/bloc-alertes-epi/tsconfig.lib.json",
+        "project": "libs/bloc-alertes-epi/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/bloc-alertes-epi/tsconfig.lib.prod.json"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/bloc-alertes-epi/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/libs/bloc-alertes-epi"]
+    },
+    "lint": {
+      "executor": "@angular-eslint/builder:lint",
+      "options": {
+        "lintFilePatterns": ["libs/bloc-alertes-epi/**/*.ts", "libs/bloc-alertes-epi/**/*.html"]
+      }
+    }
+  },
+  "tags": ["scope:pro"]
+}

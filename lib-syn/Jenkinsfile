@@ -1,0 +1,25 @@
+@Library(['ria@latest', 'riaConfig@ce-bis10']) _
+ria.pipeline {
+    init {
+        doDefault() 
+    
+        configure {
+            application = [
+                name: 'ces43-rialib-synthese-epi',
+                CIA: 'CEK17',
+                CIAElement: 'CES43',
+                lint: ['lint:ci'],
+                tu: ['test:ci'],
+                build: [''],
+                ignoreScripts: true,
+                packages: []
+            ]
+
+            libraries = [ 
+                build: ['build:libs:ci'],
+                publishIndependantVersions : false,
+                autoSuffixTag: false
+            ]  
+        }
+    }
+}

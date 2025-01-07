@@ -1,0 +1,41 @@
+<myway-dialog titleHeader="Entités titulaires en RPM Actif">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="datasRPM$ | async as data">
+      <myway-table
+        [items]="data"
+        [multiple]="false"
+        [editable]="false"
+        [filterable]="false"
+        [sortable]="false"
+        [pagination]="5"
+        [height]="250"
+        selection="mono"
+        (selectedItem)="selectItem($event)"
+      >
+        <myway-table-item type="input" width="250" data-identifiant-entite-titulaire label="N° Entité Titulaire"></myway-table-item>
+        <myway-table-item type="input" width="250" data-designation-entite-titulaire label="Libellé"></myway-table-item>
+        <myway-table-item type="input" width="150" data-code-usage-entite-titulaire label="Usage"></myway-table-item>
+        <myway-table-item type="input" width="250" data-mode-composition-entite-titulaire label="Mode de composition"></myway-table-item>
+      </myway-table>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+
+  </div>
+  <ng-container myway-dialog-footer >
+    <div style="display:inline-block" [mywayTooltip]="dataPointAccesGestionRPM.label" *ngIf="dataPointAccesGestionRPM">
+      <button class="btn-secondary" [disabled]="!itemSelected || dataPointAccesGestionRPM.disabled" (click)="debranchementGestionRPM()">
+        Gérer le RPM
+      </button>
+    </div>
+
+    <div style="display:inline-block" [mywayTooltip]="dataPointAccesHistoriqueRPM.label" *ngIf="dataPointAccesHistoriqueRPM">
+      <button class="btn-secondary" [disabled]="!itemSelected || dataPointAccesHistoriqueRPM.disabled" (click)="debranchementHistoriqueRPM()">
+        Consulter l'historique RPM
+      </button>
+    </div>
+  </ng-container>
+
+</myway-dialog>

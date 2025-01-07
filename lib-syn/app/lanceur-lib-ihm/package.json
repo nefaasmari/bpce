@@ -1,0 +1,121 @@
+{
+  "name": "lanceur-lib-ihm",
+  "version": "0.0.0",
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "ngx-build-plus:build",
+        "options": {
+          "outputPath": "dist/app/lanceur-lib-ihm",
+          "index": "app/lanceur-lib-ihm/src/index.html",
+          "main": "app/lanceur-lib-ihm/src/main.ts",
+          "polyfills": "app/lanceur-lib-ihm/src/polyfills.ts",
+          "tsConfig": "app/lanceur-lib-ihm/tsconfig.app.json",
+          "aot": true,
+          "assets": [
+            "app/lanceur-lib-ihm/src/favicon.ico",
+            "app/lanceur-lib-ihm/src/assets",
+            {
+              "glob": "**/*",
+              "input": "node_modules/@myway/material/assets",
+              "output": "/"
+            }
+          ],
+          "styles": [
+            "app/lanceur-lib-ihm/src/styles.scss",
+            "node_modules/@myway/material/styles/icoic.scss"
+          ],
+          "scripts": [],
+          "stylePreprocessorOptions": {
+            "includePaths": [
+              "node_modules/@myway/material/styles"
+            ]
+          }
+        },
+        "configurations": {
+          "production": {
+            "fileReplacements": [
+              {
+                "replace": "app/lanceur-lib-ihm/src/environments/environment.ts",
+                "with": "app/lanceur-lib-ihm/src/environments/environment.prod.ts"
+              }
+            ],
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": false,
+            "extractCss": true,
+            "namedChunks": false,
+            "aot": true,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "buildOptimizer": true,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "15mb"
+              }
+            ]
+          }
+        }
+      },
+      "serve": {
+        "executor": "ngx-build-plus:dev-server",
+        "options": {
+          "browserTarget": "lanceur-lib-ihm:build"
+        },
+        "configurations": {
+          "production": {
+            "fileReplacements": [
+              {
+                "replace": "app/lanceur-lib-ihm/src/environments/environment.ts",
+                "with": "app/lanceur-lib-ihm/src/environments/environment.prod.ts"
+              }
+            ],
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": false,
+            "extractCss": true,
+            "namedChunks": false,
+            "aot": true,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "buildOptimizer": true,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "15mb"
+              }
+            ]
+          }
+        }
+      },
+      "extract-i18n": {
+        "executor": "@angular-devkit/build-angular:extract-i18n",
+        "options": {
+          "browserTarget": "lanceur-lib-ihm:build"
+        }
+      },
+      "test": {
+        "executor": "@nx/jest:jest",
+        "options": {
+          "jestConfig": "app/lanceur-lib-ihm/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "outputs": [
+          "{workspaceRoot}/coverage/app/lanceur-lib-ihm"
+        ]
+      },
+      "lint": {
+        "executor": "@angular-eslint/builder:lint",
+        "options": {
+          "lintFilePatterns": [
+            "app/lanceur-lib-ihm/**/*.ts",
+            "app/lanceur-lib-ihm/**/*.html"
+          ]
+        }
+      }
+    }
+  }
+}

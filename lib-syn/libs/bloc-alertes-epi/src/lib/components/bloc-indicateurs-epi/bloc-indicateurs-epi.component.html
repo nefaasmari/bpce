@@ -1,0 +1,24 @@
+<myway-loading-spinner [show]="isLoading$ | async"></myway-loading-spinner>
+<div *ngIf="listeIndicateurs as data" class="datas">
+  <ng-container *ngIf="data.length > 0; else noData">
+    <clients-profcli-data-display
+      *ngFor="let indic of data | vueClientPipe: estVueClient"
+      [donnee]="indic"
+      [identifiantPersonne]="identifiantPersonne"
+      [codeEtablissement]="codeEtablissement"
+    ></clients-profcli-data-display>
+  </ng-container>
+  <ng-template #noData>
+    <div>
+      Aucun indicateur
+    </div>
+  </ng-template>
+</div>
+<ng-container *ngIf="messages$ | async as messagesData">
+  <ng-container *ngIf="messagesData.length > 0">
+    <p class="erreur" *ngFor="let message of messagesData">{{ message.messageLib }}</p>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="error$ | async as err">
+  <myway-error [message]="date + ' ==> ' + (err | json)"></myway-error>
+</ng-container>

@@ -1,0 +1,43 @@
+<div>
+  BLOC ALERTES
+  <div class="bloc">
+    <clients-profcli-bloc-alerte-epi
+      [codeEtablissement]="11315"
+      [identifiantPersonne]="500162471"
+      [estPersonnePhysique]="false"
+      [estBlocSynthese]="true"
+    >
+    </clients-profcli-bloc-alerte-epi>
+  </div>
+  BLOC INDICATEURS
+  <div class="bloc">
+    <clients-profcli-bloc-indicateurs-epi
+      context="{
+      codeAgent: '0005354',
+      codeEtablissement: '11315',
+      codeMarche: undefined,
+      dataRecherchePersonne: undefined,
+      estClient: true,
+      estPersonnePhysique: false,
+      estProspect: false,
+      estTiers: false,
+      identifiantEdsAgent: 1590463,
+      identifiantNationalAgent: 'JEAN-MARC.FOLLETTI@cemp',
+      identifiantPersonne: '500162471'}"
+      [estBlocSynthese]="true"
+      [estVueClient]="false"
+    >
+    </clients-profcli-bloc-indicateurs-epi>
+  </div>
+  BLOC OPPORTUNITES
+  <div class="bloc">
+    <clients-profcli-bloc-opportunites-epi
+      [codeEtablissement]="11315"
+      [identifiantPersonne]="500162471"
+      [identifiantAgent]="5354"
+      [estVueClient]="false"
+      [estBlocSynthese]="true"
+    >
+    </clients-profcli-bloc-opportunites-epi>
+  </div>
+</div>

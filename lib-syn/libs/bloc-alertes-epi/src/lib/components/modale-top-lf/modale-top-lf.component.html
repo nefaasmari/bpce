@@ -1,0 +1,18 @@
+<myway-dialog titleHeader="Top Leverage Finance">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="datas$ | async as data">
+      <div class="content">
+        <span class="libelle">Ratio de Levier Net</span><span class="valeur">{{ data.rationLevierNet }}</span
+        ><br />
+        <span class="libelle">Ratio de Levier Brut</span><span class="valeur">{{ data.rationLevierBrut }}</span
+        ><br />
+        <span class="libelle">Date d'entrée</span><span class="valeur">{{ data.dateRatio }}</span
+        >
+      </div>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>

@@ -1,0 +1,29 @@
+<myway-dialog titleHeader="Liste des offres en instance">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="offresEnInstance$ | async as data">
+      <myway-table
+        [items]="data"
+        [multiple]="false"
+        [editable]="false"
+        [filterable]="false"
+        [sortable]="false"
+        [pagination]="5"
+        [height]="225"
+        selection="none"
+      >
+        <myway-table-item type="input" width="200" data-designation-entite label="Entité titulaire"></myway-table-item>
+        <myway-table-item type="input" width="200" data-compte-ou-contrat-support label="N° de compte"></myway-table-item>
+        <myway-table-item type="input" width="300" data-libelle-offre label="Libellé de l'offre"></myway-table-item>
+        <myway-table-item type="input" width="150" data-commentaire label="Observations"></myway-table-item>
+        <myway-table-item type="customAction" width="50" data-data-suppression-offre label="Actions"></myway-table-item>
+      </myway-table>
+      <div class='info'>
+        <strong>Info</strong> : pour finaliser une offre en instance "À FINALISER", cliquez sur la tuile du contrat concerné dans le bloc "Produits et services" pour accéder aux actes de gestion (avenant...). Pour une offre "VIDE", cliquez sur l'icône "Poubelle".
+      </div>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>

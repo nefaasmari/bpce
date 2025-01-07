@@ -1,0 +1,48 @@
+<myway-dialog titleHeader="Relevé de tarification">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="datas$ | async as data">
+      <div class="content">
+        <ng-container>
+          Facturation CCE {{ data.dateDebutN }} :
+          <b> {{ data.montantAppliqueN - data.montantRemiseN | currency: 'EUR':'symbol':'1.2-2':'fr' }}</b>
+          <table class="tab-tarification">
+            <tr>
+              <td>Tarif standard :</td>
+              <td>{{ data.montantStandardN | currency: 'EUR':'symbol':'1.2-2':'fr' }}</td>
+            </tr>
+            <tr>
+              <td>Tarif appliqué :</td>
+              <td>{{ data.montantAppliqueN | currency: 'EUR':'symbol':'1.2-2':'fr' }}</td>
+            </tr>
+            <tr>
+              <td>Remises :</td>
+              <td>{{ data.montantRemiseN | currency: 'EUR':'symbol':'1.2-2':'fr' }}</td>
+            </tr>
+          </table>
+        </ng-container>
+        <ng-container>
+          Facturation CCE {{ data.dateDebutN1 }} :
+          <b> {{ data.montantAppliqueN1 - data.montantRemiseN1 | currency: 'EUR':'symbol':'1.2-2':'fr' }}</b>
+          <table class="tab-tarification">
+            <tr>
+              <td>Tarif standard :</td>
+              <td>{{ data.montantStandardN1 | currency: 'EUR':'symbol':'1.2-2':'fr' }}</td>
+            </tr>
+            <tr>
+              <td>Tarif appliqué :</td>
+              <td>{{ data.montantAppliqueN1 | currency: 'EUR':'symbol':'1.2-2':'fr' }}</td>
+            </tr>
+            <tr>
+              <td>Remises :</td>
+              <td>{{ data.montantRemiseN1 | currency: 'EUR':'symbol':'1.2-2':'fr' }}</td>
+            </tr>
+          </table>
+        </ng-container>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>

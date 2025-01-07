@@ -1,0 +1,77 @@
+<ng-container *ngIf="donnee">
+  <div class="data-display" *ngIf="estHabilite$ | async as habilitations">
+    <ng-container *ngIf="habilitations.get(this.donnee.habilitation)">
+      <ng-container *ngIf="donnee.typeDebranchement === enumTypeDebranchement.CONFIGLANCEMENT && getIcon()">
+        <myway-chip-button
+          (click)="debrancherConfig()"
+          icon="{{ getIcon() }}"
+          iconColor="{{ getIconColor() }}"
+          [disabled]="dataPointAcces.disabled"
+          [maxWidth]="false"
+          [mywayTooltip]="dataPointAcces.label"
+          *ngIf="dataPointAcces"
+          >{{ donnee.libelle }}{{ donnee.valeur ? ' : ' + donnee.valeur : '' }}
+          <myway-badge alone="true" *ngIf="donnee.valeurBadge" value="{{ donnee.valeurBadge }}" [ngClass]="getBadge(donnee.valeurBadge)">
+          </myway-badge>
+        </myway-chip-button>
+      </ng-container>
+      <ng-container *ngIf="donnee.typeDebranchement === enumTypeDebranchement.CONFIGLANCEMENT && !getIcon() && aTypeInfo()">
+        <myway-chip-button
+          (click)="debrancherConfig()"
+          [status]="getStatus()"
+          [disabled]="dataPointAcces.disabled"
+          [maxWidth]="false"
+          [mywayTooltip]="dataPointAcces.label"
+          *ngIf="dataPointAcces"
+          >{{ donnee.libelle }}{{ donnee.valeur ? ' : ' + donnee.valeur : '' }}
+          <myway-badge alone="true" *ngIf="donnee.valeurBadge" value="{{ donnee.valeurBadge }}" [ngClass]="getBadge(donnee.valeurBadge)">
+          </myway-badge>
+        </myway-chip-button>
+      </ng-container>
+      <ng-container *ngIf="donnee.typeDebranchement === enumTypeDebranchement.CONFIGLANCEMENT && !getIcon() && !aTypeInfo()">
+        <myway-chip-button
+          (click)="debrancherConfig()"
+          [disabled]="dataPointAcces.disabled"
+          [maxWidth]="false"
+          [mywayTooltip]="dataPointAcces.label"
+          *ngIf="dataPointAcces"
+          >{{ donnee.libelle }}{{ donnee.valeur ? ' : ' + donnee.valeur : '' }}
+          <myway-badge alone="true" *ngIf="donnee.valeurBadge" value="{{ donnee.valeurBadge }}" [ngClass]="getBadge(donnee.valeurBadge)">
+          </myway-badge>
+        </myway-chip-button>
+      </ng-container>
+      <ng-container *ngIf="donnee.typeDebranchement === enumTypeDebranchement.POPUP">
+        <myway-chip-button
+          (click)="openModale()"
+          icon="{{ getIcon() }}"
+          iconColor="{{ getIconColor() }}"
+          [disabled]="donnee.dataPopupInfo === undefined"
+          [maxWidth]="false"
+          >{{ donnee.libelle }}{{ donnee.valeur ? ' : ' + donnee.valeur : '' }}
+          <myway-badge alone="true" *ngIf="donnee.valeurBadge" value="{{ donnee.valeurBadge }}" [ngClass]="getBadge(donnee.valeurBadge)">
+          </myway-badge>
+        </myway-chip-button>
+      </ng-container>
+      <ng-container *ngIf="donnee.typeDebranchement === undefined">
+        <ng-container *ngIf="donnee.iconType === iconFleche; else iconeADroite">
+          <myway-sticker type="{{ getIconClass() }}" margin="0"
+            >{{ donnee.libelle }}{{ donnee.valeur ? ' : ' + donnee.valeur : '' }}
+            <myway-badge alone="true" *ngIf="donnee.valeurBadge" value="{{ donnee.valeurBadge }}" [ngClass]="getBadge(donnee.valeurBadge)">
+            </myway-badge>
+            <span *ngIf="donnee.iconType" class="icon {{ getIcon() }} valign-icon"></span
+            ><span *ngIf="getAvecTooltip()" class="icon icon-information" mywayTooltip="{{ donnee.tooltip }}"></span
+          ></myway-sticker>
+        </ng-container>
+        <ng-template #iconeADroite>
+          <myway-sticker type="{{ getIconClass() }}" margin="0"
+            ><span *ngIf="donnee.iconType" class="icon {{ getIcon() }} valign-icon halign-icon"></span>{{ donnee.libelle
+            }}{{ donnee.valeur ? ' : ' + donnee.valeur : '' }}
+            <myway-badge alone="true" *ngIf="donnee.valeurBadge" value="{{ donnee.valeurBadge }}" [ngClass]="getBadge(donnee.valeurBadge)">
+            </myway-badge>
+            <span *ngIf="getAvecTooltip()" class="icon icon-information" mywayTooltip="{{ donnee.tooltip }}"></span
+          ></myway-sticker>
+        </ng-template>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>

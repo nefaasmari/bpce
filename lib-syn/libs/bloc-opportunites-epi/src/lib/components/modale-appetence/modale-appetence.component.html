@@ -1,0 +1,23 @@
+<myway-dialog titleHeader="Appétence produit">
+  <div myway-dialog-body>
+    <ng-container *mywayLoading="isLoading$ | async"></ng-container>
+    <ng-container *ngIf="datas$ | async as data">
+      <myway-table
+        [items]="data"
+        [multiple]="false"
+        [editable]="false"
+        [filterable]="false"
+        [sortable]="true"
+        [pagination]="4"
+        [height]="250"
+        selection="none"
+      >
+        <myway-table-item type="input" width="300" data-famille label="Famille de produit"></myway-table-item>
+        <myway-table-item type="input" width="150" data-libelle-appetence label="Appétence"></myway-table-item>
+      </myway-table>
+    </ng-container>
+    <ng-container *ngIf="error$ | async as err">
+      <span class="erreur">{{ err.error ? err.error.libelle : err.message }}</span>
+    </ng-container>
+  </div>
+</myway-dialog>
